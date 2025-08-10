@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【ANAインターコンチネンタル万座ビーチリゾート】沖縄本島で車なし贅沢ステイ | りゅうきとあかねの旅行記</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --ivory: #F2F2EB;
+            --beige: #D9C49C;
+            --terracotta: #BF6A39;
+            --salmon: #F2A7A0;
+            --black: #0D0D0D;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--ivory);
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--terracotta);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--salmon);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--ivory);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--terracotta);
+        }
+
+        .logo span {
+            color: var(--black);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--black);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        nav ul li a:hover {
+            color: var(--terracotta);
+        }
+
+        /* Blog Post Section */
+        .blog-post {
+            padding: 80px 0;
+        }
+
+        .blog-post-content {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .blog-post-header {
+            margin-bottom: 30px;
+        }
+
+        .blog-post-header h1 {
+            font-size: 2.5rem;
+            color: var(--terracotta);
+            margin-bottom: 20px;
+        }
+
+        .blog-post-meta {
+            display: flex;
+            align-items: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .blog-post-meta span {
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .blog-post-meta i {
+            margin-right: 5px;
+            color: var(--beige);
+        }
+
+        .blog-post-image {
+            width: 100%;
+            height: 400px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .blog-post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-post-body {
+            line-height: 1.8;
+        }
+
+        .blog-post-body p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .blog-post-body h2 {
+            font-size: 1.8rem;
+            color: var(--terracotta);
+            margin: 40px 0 20px;
+        }
+
+        .blog-post-body h3 {
+            font-size: 1.4rem;
+            color: var(--black);
+            margin: 30px 0 15px;
+        }
+
+        .blog-post-body img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .blog-post-body .caption {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        /* YouTube Section */
+        .youtube-section {
+            background-color: var(--beige);
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .youtube-section h3 {
+            color: var(--terracotta);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .youtube-section p {
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Info Box */
+        .info-box {
+            background-color: var(--ivory);
+            border-left: 4px solid var(--terracotta);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-box h4 {
+            color: var(--terracotta);
+            margin-bottom: 10px;
+        }
+
+        .info-box ul {
+            margin-left: 20px;
+        }
+
+        .info-box ul li {
+            margin-bottom: 5px;
+        }
+
+        /* Tags */
+        .tags {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--beige);
+            color: var(--black);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Author Section */
+        .author-section {
+            background-color: var(--ivory);
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .author-info h4 {
+            color: var(--terracotta);
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--black);
+            padding: 40px 0;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-content p {
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            .logo {
+                margin-bottom: 20px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+                margin-left: 0;
+            }
+            
+            .blog-post-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .blog-post-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <h1 class="logo">Ryuki<span> & </span>Akane</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">ホーム</a></li>
+                    <li><a href="#blog">ブログ</a></li>
+                    <li><a href="#youtube">Youtube</a></li>
+                    <li><a href="#instagram">インスタグラム</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post">
+        <div class="container">
+            <div class="blog-post-content">
+                <div class="blog-post-header">
+                    <h1>【ANAインターコンチネンタル万座ビーチリゾート】沖縄本島で車なし贅沢ステイ</h1>
+                    <div class="blog-post-meta">
+                        <span><i class="far fa-calendar"></i> 2024.06.15</span>
+                        <span><i class="far fa-user"></i> りゅうきとあかね</span>
+                        <span><i class="far fa-folder"></i> 沖縄旅行</span>
+                        <span><i class="far fa-clock"></i> 読了時間: 約12分</span>
+                    </div>
+                </div>
+                <div class="blog-post-image">
+                    <img src="https://source.unsplash.com/1200x400/?okinawa,resort,beach" alt="ANAインターコンチネンタル万座ビーチリゾートの外観">
+                </div>
+                <div class="blog-post-body">
+                    <p>沖縄本島屈指のリゾートホテル「ANAインターコンチネンタル万座ビーチリゾート」に2泊3日で滞在してきました🌺 車なしでも那覇空港から高速バスで90分という好アクセスで、プライベートビーチや多彩なマリンアクティビティ、地元食材を活かした絶品グルメまで存分に楽しむことができました。今回はその魅力をたっぷりとお伝えします！</p>
+
+                    <div class="youtube-section">
+                        <h3><i class="fab fa-youtube"></i> 動画で見たい方はこちら</h3>
+                        <p>この記事の内容はYouTubeでも公開しています。動画で雰囲気を感じながらご覧になりたい方は、ぜひこちらからご視聴ください。</p>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/yKi94fVJ6fs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <h2>那覇空港からのアクセス抜群！車なしでも安心</h2>
+                    <p>ANAインターコンチネンタル万座ビーチリゾートは、那覇空港から高速バス「やんばる急行バス」で約90分という好立地。車がなくても気軽にアクセスできるのが魅力的です。バスは1時間に1本程度運行しており、事前に時刻表をチェックしておけば安心です。</p>
+                    
+                    <p>バス停「万座ビーチ前」で下車すると、すぐ目の前がホテル。重い荷物を持っての長距離移動もこれなら心配ありません。沖縄らしい青い海と空が迎えてくれる瞬間は、旅の始まりを実感させてくれます。</p>
+
+                    <div class="info-box">
+                        <h4>アクセス情報</h4>
+                        <ul>
+                            <li><strong>バス：</strong>那覇空港→やんばる急行バス→万座ビーチ前（約90分）</li>
+                            <li><strong>料金：</strong>片道1,600円程度</li>
+                            <li><strong>運行間隔：</strong>約1時間に1本</li>
+                            <li><strong>タクシー：</strong>那覇空港から約1時間（約8,000円）</li>
+                        </ul>
+                    </div>
+
+                    <h2>クラシックツインでオーシャンビューを満喫</h2>
+                    <p>今回宿泊したのは「クラシックツイン（ミッドフロア）」。白とエメラルドブルーを基調とした爽やかでスタイリッシュなデザインの客室です。ミッドフロアということでオーシャンビューも素晴らしく、プライベートバルコニーから青く澄んだ輝く海を一望できました。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?hotel,room,ocean,view" alt="オーシャンビューの客室">
+                    <div class="caption">白とブルーを基調とした爽やかな客室からの絶景</div>
+
+                    <p>部屋の設備も充実しており、大きな窓からは万座毛の断崖絶壁と美しい海岸線が一望できます。朝は潮騒の音で目覚め、夕方にはバルコニーから美しいサンセットを眺めることができる贅沢な時間を過ごしました。</p>
+
+                    <h2>プライベートビーチで楽しむマリンアクティビティ</h2>
+                    <p>ホテル自慢のプライベートビーチでは、様々なマリンアクティビティが楽しめます。特に印象的だったのは、以下の3つのアクティビティでした。</p>
+
+                    <h3>潜水艦クルーズ：海中散歩の感動体験</h3>
+                    <p>毎日4回運航される潜水艦クルーズ（9:00、10:00、15:00、16:00）は、このホテルならではの特別な体験。実際に海中に潜り、熱帯魚やサンゴ礁を間近で観察できます。船内は快適で、大きな窓から海中の世界をゆっくりと楽しむことができました。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?submarine,underwater,coral" alt="潜水艦からの海中の様子">
+                    <div class="caption">潜水艦から見た美しい海中世界</div>
+
+                    <h3>ガラスボトムボート：安心して海中を観察</h3>
+                    <p>ライフジャケットを着用してガラスボトムボートに乗船。船底がガラス張りになっているため、濡れることなく海中の魚たちを観察できます。泳ぎが得意でない方でも安心して楽しめるアクティビティです。</p>
+
+                    <h3>ジャングル探検：陸と水の冒険</h3>
+                    <p>沖縄本島の豊かな自然を体感できるジャングル探検も体験しました。トレッキングと水中散策を組み合わせたプログラムで、普段見ることのできない沖縄の自然を満喫できます。</p>
+
+                    <h2>地元食材を活かしたグルメ体験</h2>
+
+                    <h3>ホワイトアヌオーシャンカフェでのアフタヌーンティー</h3>
+                    <p>ランチは「ホワイトアヌオーシャンカフェ」でアフタヌーンティーを楽しみました。12時から17時までの長い時間帯で提供されているのが嬉しいポイントです。海を眺めながら、地元の食材を使ったスイーツや軽食を堪能しました。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?afternoon,tea,ocean,view" alt="アフタヌーンティーの様子">
+                    <div class="caption">オーシャンビューを楽しみながらのアフタヌーンティー</div>
+
+                    <p>特に印象的だったのは、沖縄らしいトロピカルフルーツを使ったデザートの数々。マンゴー、パッションフルーツ、ドラゴンフルーツなど、本土ではなかなか味わえない新鮮なフルーツの甘さと酸味が絶妙でした。</p>
+
+                    <h3>日本料理レストランでの絶品ディナー</h3>
+                    <p>2日目の夕食は日本料理レストランで、地元沖縄産の海の幸・山の幸を厳選された旬の食材と合わせ、伝統的な和の技法で調理したコース料理をいただきました。</p>
+
+                    <p>特に印象的だったのは、沖縄近海で獲れた新鮮な魚の刺身と、やんばる豚を使った炙り焼き。素材の良さを活かした繊細な味付けで、沖縄の豊かな自然の恵みを感じることができました。</p>
+
+                    <h2>シーグラス工芸体験で思い出作り</h2>
+                    <p>滞在中には、シーグラス工芸体験にも参加しました。海岸で拾った美しいシーグラスを使って、オリジナルのアクセサリーやインテリア小物を作ることができます。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?sea,glass,craft,jewelry" alt="シーグラス工芸作品">
+                    <div class="caption">世界に一つだけのシーグラスアクセサリー</div>
+
+                    <p>インストラクターの方が丁寧に指導してくださるので、手作り経験がなくても安心。波に磨かれた美しいシーグラスは、まさに海からの贈り物。旅の思い出として持ち帰ることができる素敵な体験でした。</p>
+
+                    <h2>ホテル内施設も充実</h2>
+                    <p>マリンアクティビティの合間には、ホテル内の施設も満喫しました。ロビーラウンジは「癒しのロビーラウンジ」という名前の通り、開放的な空間でゆったりとした時間を過ごせます。</p>
+
+                    <p>また、ホテル内には複数のレストランやバーがあり、それぞれ異なる雰囲気とメニューを楽しめます。リゾート内を巡回するシャトルもあるため、広い敷地内の移動も楽々です。</p>
+
+                    <h2>車なし旅行のコツとおすすめポイント</h2>
+                    <p>今回の滞在を通じて、車なしでも十分にANAインターコンチネンタル万座ビーチリゾートを楽しめることを実感しました。以下が車なし滞在のポイントです：</p>
+
+                    <div class="info-box">
+                        <h4>車なし滞在のコツ</h4>
+                        <ul>
+                            <li><strong>高速バス：</strong>那覇空港からの直行バスを活用</li>
+                            <li><strong>ホテル内完結：</strong>ほとんどの体験がホテル内で完結</li>
+                            <li><strong>タクシー：</strong>近隣観光には配車アプリが便利</li>
+                            <li><strong>事前予約：</strong>アクティビティは事前予約がおすすめ</li>
+                            <li><strong>滞在型：</strong>ゆったりと滞在を楽しむスタイルが最適</li>
+                        </ul>
+                    </div>
+
+                    <p>特に、ホテル内だけでも十分に楽しめるアクティビティと施設が揃っているため、わざわざ外出しなくても充実した時間を過ごすことができます。これぞリゾートホテルの醍醐味と言えるでしょう。</p>
+
+                    <h2>まとめ：車なしでも満喫できる極上リゾート</h2>
+                    <p>ANAインターコンチネンタル万座ビーチリゾートでの2泊3日は、車なしでも十分に沖縄本島のリゾートライフを満喫できることを証明する素晴らしい体験となりました。</p>
+
+                    <p>プライベートビーチでのマリンアクティビティ、地元食材を活かしたグルメ、シーグラス工芸体験など、ここでしかできない特別な体験の数々。そして何より、美しい海を眺めながらゆったりと過ごす贅沢な時間が、日常の疲れを癒してくれました。</p>
+
+                    <p>沖縄本島でのリゾート滞在を検討されている方、特に車なしでの旅行を計画されている方には、心からおすすめできるホテルです。次回の沖縄旅行では、ぜひANAインターコンチネンタル万座ビーチリゾートでの滞在を検討してみてください！</p>
+
+                    <div class="info-box">
+                        <h4>ANAインターコンチネンタル万座ビーチリゾート 基本情報</h4>
+                        <ul>
+                            <li><strong>住所：</strong>沖縄県国頭郡恩納村瀬良垣2260</li>
+                            <li><strong>アクセス：</strong>那覇空港から高速バスで約90分</li>
+                            <li><strong>チェックイン：</strong>15:00 / チェックアウト：11:00</li>
+                            <li><strong>主要施設：</strong>プライベートビーチ、プール、スパ、複数レストラン</li>
+                            <li><strong>アクティビティ：</strong>潜水艦クルーズ、マリンスポーツ、工芸体験など</li>
+                        </ul>
+                    </div>
+
+                    <div class="tags">
+                        <span class="tag">#ANAインターコンチネンタル万座ビーチリゾート</span>
+                        <span class="tag">#沖縄旅行</span>
+                        <span class="tag">#車なし旅行</span>
+                        <span class="tag">#リゾートホテル</span>
+                        <span class="tag">#マリンアクティビティ</span>
+                        <span class="tag">#沖縄グルメ</span>
+                        <span class="tag">#プライベートビーチ</span>
+                        <span class="tag">#潜水艦クルーズ</span>
+                    </div>
+                </div>
+
+                <div class="author-section">
+                    <div class="author-info">
+                        <h4>りゅうきとあかね</h4>
+                        <p>夫婦で楽しむ贅沢旅をテーマに、車なしでも行ける全国の素敵なホテル・グルメ・観光スポットをご紹介しています。旅先での体験をVlog形式でお届け中！</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2025 りゅうきとあかね | Travel Without a Car: Hidden Gems</p>
+            </div>
+        </div>
+    </footer>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"96cf19c41be1d76c","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.7.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDmcQ2QSgQtAzHWub9%2Bx419XNfjAs5lZqDVRMkjxq5I%2BOxXv%2By6feMO9VOkyM9mmEw8CUnP0ANeODlB2sUAqsL0wSA1en5Tzhpc4CNQ6LvcaAXc6p0AIwcZGcUa6Qa8Yjxlz7dHX7oiyuCePNPhgw9SHkg%2Fq4%2FTtIYadpNLOHm0u8gfNG0hEvEADIdekbPd9%2FZYzE5P4oDv1lJKYR0I3K92ljXNHGZqW9qPqZHSR2VBR2zxTv%2BbjrevcOJvQaloFQgSHgYXlj4fyBO56iBWw9G6aA3A%2BfTmujFl0ZV1In3MIw3RHkbD5WKbrOiftLsWS9TcDycCYnWCZ%2Fp1v%2BdS6QEI9q2vrdrozjcpXChTyZyYkSSQwUjtzP%2FE7xDIuiYLWqTcWXJhcARCjsB0REbPPNMhQiKtbpz1ZtbEzanEPnQbp0wEEAt9Hsy7AOePoKxVfmjmIIxxidLBlIqHDNyH8ZMt4bt2F06X6a4VDhOs87Cr459xMU2%2B0aRB6RxykW4%2FszpQ%3D%3D";
+        window.__genspark_locale = "ja-JP";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDmcQ2QSgQtAzHWub9+x419XNfjAs5lZqDVRMkjxq5I+OxXv+y6feMO9VOkyM9mmEw8CUnP0ANeODlB2sUAqsL0wSA1en5Tzhpc4CNQ6LvcaAXc6p0AIwcZGcUa6Qa8Yjxlz7dHX7oiyuCePNPhgw9SHkg/q4/TtIYadpNLOHm0u8gfNG0hEvEADIdekbPd9/ZYzE5P4oDv1lJKYR0I3K92ljXNHGZqW9qPqZHSR2VBR2zxTv+bjrevcOJvQaloFQgSHgYXlj4fyBO56iBWw9G6aA3A+fTmujFl0ZV1In3MIw3RHkbD5WKbrOiftLsWS9TcDycCYnWCZ/p1v+dS6QEI9q2vrdrozjcpXChTyZyYkSSQwUjtzP/E7xDIuiYLWqTcWXJhcARCjsB0REbPPNMhQiKtbpz1ZtbEzanEPnQbp0wEEAt9Hsy7AOePoKxVfmjmIIxxidLBlIqHDNyH8ZMt4bt2F06X6a4VDhOs87Cr459xMU2+0aRB6RxykW4/szpQ==";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    
