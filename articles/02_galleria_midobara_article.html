@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【ガレリア御堂原】まるで泊まれる美術館！アート×温泉が融合した絶景ホテル | りゅうきとあかねの旅行記</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <meta name="description" content="別府の高台に位置するアートホテル「ガレリア御堂原」での1泊2日滞在記。全35室オーシャンビュー、源泉かけ流し半露天風呂、宿泊者限定アートツアー、グリルダイニング「The Peak」での地元食材ディナーなど、まるで美術館に泊まるような非日常の贅沢体験を詳しくレポート。">
+    <style>
+        :root {
+            --ivory: #F2F2EB;
+            --beige: #D9C49C;
+            --terracotta: #BF6A39;
+            --salmon: #F2A7A0;
+            --black: #0D0D0D;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--ivory);
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--terracotta);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--salmon);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--ivory);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--terracotta);
+        }
+
+        .logo span {
+            color: var(--black);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--black);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        nav ul li a:hover {
+            color: var(--terracotta);
+        }
+
+        /* Blog Post Section */
+        .blog-post {
+            padding: 40px 0 80px;
+        }
+
+        .blog-post-content {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .blog-post-header {
+            margin-bottom: 30px;
+        }
+
+        .blog-post-header h1 {
+            font-size: 2.5rem;
+            color: var(--terracotta);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .blog-post-meta {
+            display: flex;
+            align-items: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .blog-post-meta span {
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .blog-post-meta i {
+            margin-right: 5px;
+            color: var(--beige);
+        }
+
+        .blog-post-image {
+            width: 100%;
+            height: 400px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .blog-post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-post-body {
+            line-height: 1.8;
+        }
+
+        .blog-post-body p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .blog-post-body h2 {
+            font-size: 1.8rem;
+            color: var(--terracotta);
+            margin: 40px 0 20px;
+        }
+
+        .blog-post-body h3 {
+            font-size: 1.4rem;
+            color: var(--black);
+            margin: 30px 0 15px;
+        }
+
+        .blog-post-body img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .blog-post-body .caption {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        /* YouTube Section */
+        .youtube-section {
+            background-color: var(--beige);
+            padding: 30px;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+
+        .youtube-section h2 {
+            font-size: 1.5rem;
+            color: var(--black);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .youtube-section h2 i {
+            margin-right: 10px;
+            color: var(--terracotta);
+        }
+
+        .youtube-embed {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .youtube-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hotel-info-box {
+            background-color: var(--ivory);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--terracotta);
+            margin: 30px 0;
+        }
+
+        .hotel-info-box h3 {
+            color: var(--terracotta);
+            margin-bottom: 15px;
+        }
+
+        .hotel-info-box p {
+            margin-bottom: 10px;
+        }
+
+        .tags {
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background-color: var(--beige);
+            color: var(--black);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .related-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #eee;
+        }
+
+        .related-section h3 {
+            color: var(--terracotta);
+            margin-bottom: 30px;
+        }
+
+        .related-articles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .related-card {
+            background-color: var(--ivory);
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .related-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .related-card h4 {
+            color: var(--black);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .related-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--black);
+            padding: 40px 0;
+            color: white;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-column h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--beige);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--salmon);
+        }
+
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+                margin-left: 0;
+            }
+            
+            .blog-post-content {
+                padding: 20px;
+            }
+            
+            .blog-post-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .blog-post-meta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .blog-post-meta span {
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <h1 class="logo">Ryuki<span> & </span>Akane</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">ホーム</a></li>
+                    <li><a href="#blog">ブログ</a></li>
+                    <li><a href="#youtube">Youtube</a></li>
+                    <li><a href="#instagram">インスタグラム</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post">
+        <div class="container">
+            <div class="blog-post-content">
+                <div class="blog-post-header">
+                    <h1>【ガレリア御堂原】まるで泊まれる美術館！アート×温泉が融合した絶景ホテル</h1>
+                    <div class="blog-post-meta">
+                        <span><i class="far fa-calendar"></i> 2024.07.15</span>
+                        <span><i class="far fa-user"></i> りゅうきとあかね</span>
+                        <span><i class="far fa-folder"></i> 温泉旅行</span>
+                        <span><i class="far fa-clock"></i> 読了時間: 約12分</span>
+                    </div>
+                </div>
+                <div class="blog-post-image">
+                    <img src="https://source.unsplash.com/1200x800/?beppu,art,hotel,luxury" alt="ガレリア御堂原の外観">
+                </div>
+                <div class="blog-post-body">
+                    <p>大分県別府市の高台に佇む唯一無二のアートホテル「ガレリア御堂原」。まるで「泊まれる美術館」のような幻想的な空間で、絶景温泉×アートが融合したラグジュアリー体験を満喫してきました🎨✨</p>
+
+                    <div class="youtube-section">
+                        <h2><i class="fab fa-youtube"></i> 動画で見たい方はこちら</h2>
+                        <p>この記事の内容はYouTubeでも公開しています。動画で雰囲気を感じながらご覧になりたい方は、ぜひこちらからご視聴ください。</p>
+                        <div class="youtube-embed">
+                            <iframe src="https://www.youtube.com/embed/_0ufPu9mxkY" title="ガレリア御堂原滞在記" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <p>今回は別府を一望する高台にある全35室のアートホテル「ガレリア御堂原」での1泊2日の体験をお届けします。このホテルは、単なる宿泊施設を超えた芸術的な空間として、多くの旅行者から注目を集めています。</p>
+
+                    <h2>別府湾を見下ろす絶景ロケーション</h2>
+                    <p>ガレリア御堂原の最大の魅力は、その立地にあります。別府市内を見下ろす高台に位置し、全35室の客室は全てオーシャンビュー。パノラマビューで広がる別府湾の絶景は、まさに息をのむ美しさです。</p>
+                    
+                    <img src="https://source.unsplash.com/800x600/?beppu,bay,view,panorama" alt="別府湾のパノラマビュー">
+                    <div class="caption">客室から望む別府湾の絶景パノラマ</div>
+
+                    <p>特に夕暮れ時には、湯けむりが立ち上る別府の街並みと海が夕日に照らされ、まさに絵画のような光景が広がります。これだけでも訪れる価値のある景色です。</p>
+
+                    <h2>全室に源泉かけ流しの半露天風呂</h2>
+                    <p>ガレリア御堂原の客室には、すべてに源泉かけ流しの半露天風呂が完備されています。プライベート空間で別府の名湯を独り占めできる贅沢は、他では味わえない特別な体験です。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?onsen,private,bath,luxury" alt="客室の半露天風呂">
+                    <div class="caption">全室完備の源泉かけ流し半露天風呂</div>
+
+                    <p>お湯は別府の豊富な源泉から引いており、肌当たりが柔らかく、湯上がりの肌がしっとりとします。絶景を眺めながらの温泉入浴は、日頃の疲れを忘れさせてくれる至福の時間でした。</p>
+
+                    <h2>現代アートに囲まれた幻想的な空間</h2>
+                    <p>ホテル館内は、まさに現代美術館のような雰囲気。WEBの風景や別府の文化からインスピレーションを受けた特別な現代アート作品が随所に展示されており、滞在中は常に芸術に囲まれた非日常的な時間を過ごすことができます。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?modern,art,installation,museum" alt="館内のアート作品">
+                    <div class="caption">館内に展示された現代アート作品</div>
+
+                    <h3>宿泊者限定のアートツアー</h3>
+                    <p>午後4時30分から開始される宿泊者限定のアートツアーは、このホテルの目玉プログラムの一つです。迷路のような回廊を巡りながら、各作品の背景やコンセプトについて詳しい解説を聞くことができます。</p>
+
+                    <p>作品の多くは別府の温泉文化や地域の歴史をモチーフにしており、単なる装飾を超えた深い意味が込められています。アートに興味がない方でも、このツアーを通じて作品の魅力を感じることができるでしょう。</p>
+
+                    <h2>グリルダイニング「The Peak」での極上ディナー</h2>
+                    <p>夕食は、ホテル内のグリルダイニング「The Peak」で。大分県産の新鮮な食材を活かした創作料理は、見た目の美しさも味も一級品でした。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?gourmet,dinner,fine,dining" alt="The Peakでのディナー">
+                    <div class="caption">地元食材を活かした創作料理</div>
+
+                    <p>特に印象的だったのは、大分の海の幸を使った前菜と、九州唯一の薪窯で調理されたメイン料理。別府湾の絶景を眺めながらいただく食事は、五感すべてで楽しめる贅沢な体験でした。</p>
+
+                    <p>朝食も同じ会場で提供され、焼き立てのパン、エッグタルト、地元の新鮮な野菜を使ったサラダなど、朝から心も体も満たされるメニューが並びます。</p>
+
+                    <h2>バーでのウェルカムドリンク</h2>
+                    <p>アートツアー終了後は、別府のレトロな繁華街をイメージした華やかなバー空間でウェルカムドリンクをいただきました。地元産の温州みかんを使ったオリジナルカクテルは、別府らしさを感じられる特別な一杯でした。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?cocktail,bar,luxury,hotel" alt="バーでのカクテル">
+                    <div class="caption">地元食材を使ったオリジナルカクテル</div>
+
+                    <h2>客室でのくつろぎ時間</h2>
+                    <p>客室は白とモールテックス仕上げの家具で統一された、洗練されたデザイン。アイランドファニチャーが配置され、まさにアート空間の一部として設計されています。</p>
+
+                    <p>アメニティも充実しており、オリジナルコーヒー（プロテマ＆ブレンド）、ハーブティー、各種バスアメニティが完備されています。特にコーヒーの香りは素晴らしく、朝のひとときを豊かにしてくれました。</p>
+
+                    <h2>朝の散歩で楽しむ日の出鑑賞</h2>
+                    <p>翌朝は早起きして、ホテル外で日の出鑑賞を楽しみました。高台からの眺めは格別で、朝日が別府湾を照らす瞬間は神秘的な美しさでした。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?sunrise,beppu,mountain,view" alt="朝の別府湾">
+                    <div class="caption">高台から望む朝の別府湾と日の出</div>
+
+                    <div class="hotel-info-box">
+                        <h3>ガレリア御堂原 基本情報</h3>
+                        <p><strong>住所：</strong>大分県別府市御堂原町</p>
+                        <p><strong>アクセス：</strong>別府駅からタクシーで約15分</p>
+                        <p><strong>客室数：</strong>全35室（全室オーシャンビュー・源泉かけ流し半露天風呂付き）</p>
+                        <p><strong>特徴：</strong>現代アート美術館、宿泊者限定アートツアー、グリルダイニング「The Peak」</p>
+                        <p><strong>宿泊料金：</strong>1泊2名様 約80,000円～（シーズンにより変動）</p>
+                    </div>
+
+                    <h2>まとめ：アートと温泉が織りなす究極の非日常体験</h2>
+                    <p>ガレリア御堂原での滞在は、単なる温泉旅行を超えた芸術体験でした。現代アートに囲まれた空間で過ごす時間は、日常を忘れさせてくれる特別なひとときとなりました。</p>
+
+                    <p>特に以下のような方におすすめです：</p>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li>アートや文化に興味がある方</li>
+                        <li>ラグジュアリーな温泉体験をお求めの方</li>
+                        <li>非日常的な空間で特別な時間を過ごしたい方</li>
+                        <li>カップルや夫婦での記念日旅行を計画している方</li>
+                    </ul>
+
+                    <p>車なしでのアクセスは別府駅からタクシーが便利ですが、その価値は十分にある唯一無二のホテル体験でした。次回の別府旅行では、ぜひガレリア御堂原での滞在を検討してみてください🎨</p>
+
+                    <div class="tags">
+                        <span class="tag">#ガレリア御堂原</span>
+                        <span class="tag">#別府温泉</span>
+                        <span class="tag">#アートホテル</span>
+                        <span class="tag">#大分旅行</span>
+                        <span class="tag">#ラグジュアリーホテル</span>
+                        <span class="tag">#温泉旅館</span>
+                        <span class="tag">#美術館ホテル</span>
+                    </div>
+
+                    <div class="related-section">
+                        <h3>関連記事</h3>
+                        <div class="related-articles">
+                            <div class="related-card">
+                                <h4>【別府温泉】車なしで2泊3日完全攻略！地獄めぐり・グルメ・温泉の究極ガイド</h4>
+                                <p>別府温泉を車なしで満喫する2泊3日の完全ガイドをご紹介</p>
+                            </div>
+                            <div class="related-card">
+                                <h4>【宮古島・イラフSUI】車なしで味わう大人の贅沢と絶景ステイ</h4>
+                                <p>ラグジュアリーホテル「イラフSUI」での滞在体験をレポート</p>
+                            </div>
+                            <div class="related-card">
+                                <h4>【ANAインターコンチネンタル万座ビーチリゾート】沖縄本島で車なし贅沢ステイ</h4>
+                                <p>沖縄本島の極上リゾートでのマリンアクティビティ体験</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>ブログカテゴリー</h4>
+                    <ul>
+                        <li><a href="#">温泉旅行</a></li>
+                        <li><a href="#">ラグジュアリーホテル</a></li>
+                        <li><a href="#">沖縄旅行</a></li>
+                        <li><a href="#">グルメ</a></li>
+                        <li><a href="#">アート</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>人気の記事</h4>
+                    <ul>
+                        <li><a href="#">宮古島イラフSUI滞在記</a></li>
+                        <li><a href="#">別府温泉完全攻略</a></li>
+                        <li><a href="#">沖縄万座リゾート</a></li>
+                        <li><a href="#">車なし伊良部島観光</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>リンク</h4>
+                    <ul>
+                        <li><a href="#home">ホーム</a></li>
+                        <li><a href="#blog">ブログ</a></li>
+                        <li><a href="#youtube">Youtube</a></li>
+                        <li><a href="#instagram">Instagram</a></li>
+                        <li><a href="#contact">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>フォロー</h4>
+                    <ul>
+                        <li><a href="https://www.youtube.com/@ryuki_akane" target="_blank">Youtube</a></li>
+                        <li><a href="https://www.instagram.com/akn_523" target="_blank">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 りゅうきとあかね | Travel Without a Car:Hidden Gems</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDqb2wUG4MtImPjv8oCwS1tSYj5XZGUHwRq4QDokLonnWAQpm%2B%2BFfs%2FGpWQzIkdcBxtpt5OSjH9hZ3P8%2B%2F7SKUgpAcwpp9Mu4vbhz65x4XShUxxdi5Hd7F2RbNjofmCXAIzeT8wFnICmxecCpu4yVBrO1NIrf9RnKBOSVLUbUOasOyqRNfYxDy%2BMW1SQ61ltSnfpsUV24JdsD4P%2BYD41WhBScZ%2FS4k%2BZAHj04asw0%2FoC8nPfRKCXXIoXdGVJULt3tcQ%2BEzMnghKEescrfL85LHOxZwZLvh8tr%2B3Xa4K7XtJmoE8vIWTwAEgdXOx9oUDh7HkxI%2FyXllynZqFwIv3f8L0e7WF5z2fXnKImqhwALslONTH1jtB%2B3LXiAnjdnUGK5XHBPZaJYX4C5PkB4YKFlWHiCj0aQIi4z29Xt5MNVq4WmzJHT%2BSu6ivf7DyiVul8CM5vQ7U0jLvuKJdTb6H2q64sTzzFj75ID4R2kwfvv%2Bm3t5KmJ8gRjMh3P8hcfxrcgzWRHSdWRnjdVqmTpslfVTmc%3D";
+        window.__genspark_locale = "ja-JP";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDqb2wUG4MtImPjv8oCwS1tSYj5XZGUHwRq4QDokLonnWAQpm++Ffs/GpWQzIkdcBxtpt5OSjH9hZ3P8+/7SKUgpAcwpp9Mu4vbhz65x4XShUxxdi5Hd7F2RbNjofmCXAIzeT8wFnICmxecCpu4yVBrO1NIrf9RnKBOSVLUbUOasOyqRNfYxDy+MW1SQ61ltSnfpsUV24JdsD4P+YD41WhBScZ/S4k+ZAHj04asw0/oC8nPfRKCXXIoXdGVJULt3tcQ+EzMnghKEescrfL85LHOxZwZLvh8tr+3Xa4K7XtJmoE8vIWTwAEgdXOx9oUDh7HkxI/yXllynZqFwIv3f8L0e7WF5z2fXnKImqhwALslONTH1jtB+3LXiAnjdnUGK5XHBPZaJYX4C5PkB4YKFlWHiCj0aQIi4z29Xt5MNVq4WmzJHT+Su6ivf7DyiVul8CM5vQ7U0jLvuKJdTb6H2q64sTzzFj75ID4R2kwfvv+m3t5KmJ8gRjMh3P8hcfxrcgzWRHSdWRnjdVqmTpslfVTmc=";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    

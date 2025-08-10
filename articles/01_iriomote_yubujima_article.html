@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【西表島・由布島】車なし日帰りで満喫！水牛車と絶景ビーチの冒険旅 | りゅうきとあかねの旅行記</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --ivory: #F2F2EB;
+            --beige: #D9C49C;
+            --terracotta: #BF6A39;
+            --salmon: #F2A7A0;
+            --black: #0D0D0D;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--ivory);
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--terracotta);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--salmon);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--ivory);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--terracotta);
+        }
+
+        .logo span {
+            color: var(--black);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--black);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        nav ul li a:hover {
+            color: var(--terracotta);
+        }
+
+        /* Blog Post Section */
+        .blog-post {
+            padding: 80px 0;
+        }
+
+        .blog-post-content {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .blog-post-header {
+            margin-bottom: 30px;
+        }
+
+        .blog-post-header h1 {
+            font-size: 2.5rem;
+            color: var(--terracotta);
+            margin-bottom: 20px;
+        }
+
+        .blog-post-meta {
+            display: flex;
+            align-items: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .blog-post-meta span {
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .blog-post-meta i {
+            margin-right: 5px;
+            color: var(--beige);
+        }
+
+        .blog-post-image {
+            width: 100%;
+            height: 400px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .blog-post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-post-body {
+            line-height: 1.8;
+        }
+
+        .blog-post-body p {
+            margin-bottom: 20px;
+        }
+
+        .blog-post-body h2 {
+            font-size: 1.8rem;
+            color: var(--terracotta);
+            margin: 40px 0 20px;
+        }
+
+        .blog-post-body h3 {
+            font-size: 1.4rem;
+            color: var(--black);
+            margin: 30px 0 15px;
+        }
+
+        .blog-post-body img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .blog-post-body .caption {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        /* YouTube Section */
+        .youtube-section {
+            background-color: var(--beige);
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .youtube-section h3 {
+            font-size: 1.5rem;
+            color: var(--terracotta);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .youtube-embed {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .youtube-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Info Box */
+        .info-box {
+            background-color: var(--ivory);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--terracotta);
+            margin: 20px 0;
+        }
+
+        .info-box h4 {
+            color: var(--terracotta);
+            margin-bottom: 10px;
+        }
+
+        /* Related Articles */
+        .related-articles {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid var(--beige);
+        }
+
+        .related-articles h3 {
+            font-size: 1.5rem;
+            color: var(--terracotta);
+            margin-bottom: 20px;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .related-card {
+            background: var(--ivory);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .related-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .related-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .related-card-content {
+            padding: 15px;
+        }
+
+        .related-card h4 {
+            color: var(--black);
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .related-card p {
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--black);
+            padding: 40px 0;
+            color: white;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-column h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--beige);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--salmon);
+        }
+
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            .logo {
+                margin-bottom: 20px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+                margin-left: 0;
+            }
+            
+            .blog-post-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .blog-post-content {
+                padding: 20px;
+            }
+
+            .blog-post-meta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <h1 class="logo">Ryuki<span> & </span>Akane</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">ホーム</a></li>
+                    <li><a href="#blog">ブログ</a></li>
+                    <li><a href="#youtube">Youtube</a></li>
+                    <li><a href="#instagram">インスタグラム</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post">
+        <div class="container">
+            <div class="blog-post-content">
+                <div class="blog-post-header">
+                    <h1>【西表島・由布島】車なし日帰りで満喫！水牛車と絶景ビーチの冒険旅</h1>
+                    <div class="blog-post-meta">
+                        <span><i class="far fa-calendar"></i> 2025.01.10</span>
+                        <span><i class="far fa-user"></i> りゅうきとあかね</span>
+                        <span><i class="far fa-folder"></i> 八重山諸島旅行</span>
+                        <span><i class="far fa-clock"></i> 読了時間: 約12分</span>
+                    </div>
+                </div>
+                <div class="blog-post-image">
+                    <img src="https://i.ytimg.com/vi/WtvQoas5VTg/maxresdefault.jpg" alt="西表島と由布島の絶景">
+                </div>
+                <div class="blog-post-body">
+                    <p>運転免許がなくても、こんなに遠くまで行けるんです！🌺 今回は石垣島を拠点に、西表島と由布島を日帰りで巡る車なし旅に挑戦してきました。「東洋のガラパゴス」と呼ばれる西表島の手つかずの自然と、水牛車でしか渡れない由布島の魅力を存分に味わった、忘れられない一日をお届けします。</p>
+
+                    <div class="youtube-section">
+                        <h3>📺 動画で見たい方はこちら</h3>
+                        <p style="text-align: center; margin-bottom: 20px;">この記事の内容はYouTubeでも公開しています。動画で雰囲気を感じながらご覧になりたい方は、ぜひこちらからご視聴ください。</p>
+                        <div class="youtube-embed">
+                            <iframe src="https://www.youtube.com/embed/WtvQoas5VTg" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <p>車がないと楽しめないと思われがちな八重山諸島ですが、実は公共交通機関だけでも十分に満喫できるんです！今回は安栄観光のアイランドホッピングパスを活用して、効率よく島巡りを楽しんできました。</p>
+
+                    <h2>朝のコーヒータイムから始まる島旅</h2>
+                    <p>旅の始まりは、前日に見つけた「めちゃくちゃ美味しいコーヒー屋さん」での一杯から。石垣島の離島ターミナル近くには、こだわりのコーヒーを提供するお店がいくつかあり、旅の始まりにぴったりの特別な時間を過ごせます。</p>
+
+                    <p>コーヒーの蓋の違いで飲み比べができるという面白いサービスもあり、同じコーヒーでも蓋によって香りや味わいが変わることに驚きました。こうした細やかなおもてなしが、石垣島の魅力の一つだと感じます。</p>
+
+                    <div class="info-box">
+                        <h4>アイランドホッピングパスとは？</h4>
+                        <p>安栄観光が提供するフリーパスで、事前予約なしで八重山諸島の離島に自由に行き来できる便利なチケットです。石垣島⇄西表島の往復はもちろん、他の島への移動も可能で、島巡り旅行には必須のアイテムです。</p>
+                    </div>
+
+                    <h2>西表島上陸！「東洋のガラパゴス」の玄関口</h2>
+                    <p>石垣島の離島ターミナルからフェリーで約40分、ついに西表島に到着です。港に降り立った瞬間から、石垣島とは違う濃密な自然の香りが感じられます。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?iriomote,island,japan" alt="西表島の港周辺">
+                    <div class="caption">西表島港周辺の様子。マングローブが茂る自然豊かな景観が広がる</div>
+
+                    <p>港付近を散策すると、マングローブ林やジャングルの景観が目に飛び込んできます。本州では決して見ることのできない、亜熱帯特有の植生に圧倒されました。ここが日本だということを忘れてしまいそうな、まさに別世界の風景です。</p>
+
+                    <h2>やまねこパークでイリオモテヤマネコを学ぶ</h2>
+                    <p>最初に訪れたのは「ンママキーやまねこパーク」。西表島固有種であるイリオモテヤマネコについて学べる施設です。現在約100頭しか生息していないといわれる貴重なヤマネコの生態や保護活動について、詳しく知ることができます。</p>
+
+                    <p>施設では実際のイリオモテヤマネコの映像や、島の生態系について分かりやすく展示されています。車での移動中に野生のヤマネコに遭遇する可能性もあるそうですが、交通事故が大きな脅威になっているという現実も学びました。</p>
+
+                    <h2>キャッシュレス対応のバスで由布島へ</h2>
+                    <p>やまねこパークから由布島水牛車乗り場までは、西表島の公共バスを利用します。驚いたのは、このバスが完全キャッシュレス対応だったこと！離島でもこうした最新システムが導入されているのは、とても便利ですね。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?okinawa,bus" alt="西表島のバス">
+                    <div class="caption">キャッシュレス対応で便利な西表島の路線バス</div>
+
+                    <h2>水牛車で渡る神秘の島「由布島」</h2>
+                    <p>いよいよ今回の旅のハイライト、水牛車での由布島渡航です！由布島は西表島から約400メートル沖にある小さな島で、満潮時でも水深1メートルほどの浅瀬を水牛車でゆっくりと渡ります。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?yubu,island,water,buffalo" alt="水牛車での由布島渡航">
+                    <div class="caption">由布島への水牛車渡航。のんびりとした時間が流れる特別な体験</div>
+
+                    <p>水牛車に揺られながら海を渡る体験は、まさに非日常そのもの。ガイドさんから由布島の歴史や水牛について興味深い話を聞きながら、約15分かけてゆっくりと島に向かいます。水牛の名前はそれぞれ違い、性格も個体によって様々だそうです。</p>
+
+                    <h3>由布島での島内散策</h3>
+                    <p>由布島は周囲約2キロの小さな島ですが、亜熱帯植物園として整備されており、美しい花々や蝶々を観察できます。島内ガイドツアーでは、島の成り立ちや植物について詳しい説明を受けながら散策を楽しめます。</p>
+
+                    <p>特に印象的だったのは、色鮮やかな蝶々たち。本州では見られない南国特有の蝶が舞い踊る様子は、まるで楽園のようでした。雨の中での散策でしたが、それがかえって幻想的な雰囲気を演出してくれました。</p>
+
+                    <h2>由布島でのランチタイム</h2>
+                    <p>由布島のレストランでいただいたのは、バターチキン風のカレー。「ホテルのカレーのような味」と表現したように、上品で優しい味わいが特徴的でした。島の食材を活かしたナチュラルな味付けで、観光地のレストランとは思えないクオリティです。</p>
+
+                    <p>食後にはマンタ型のコップに入ったアイスクリーム・ジェラートもいただきました。南国らしい可愛らしい演出に、旅の気分も一層高まります。</p>
+
+                    <h2>「西表の少年」でピーチシャーベットタイム</h2>
+                    <p>由布島から戻り、バスで上原港へ移動する途中で立ち寄ったのがカフェ「西表の少年」。こちらではピーチシャーベットをいただきました。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?peach,sherbet,cafe" alt="ピーチシャーベット">
+                    <div class="caption">「西表の少年」の自家製ピーチシャーベット。氷を一切使わない濃厚な味わい</div>
+
+                    <p>驚いたのは、このシャーベットが氷を一切使わずに作られていること！ピーチの自然な甘さと爽やかさが口いっぱいに広がる、まさに絶品のデザートでした。地元の食材を活かした手作りの味に感動です。</p>
+
+                    <h2>レンタサイクルで海沿いサイクリング</h2>
+                    <p>上原港周辺では、レンタサイクルを利用して海沿いをサイクリング。車がないからこそ味わえる、島の風を感じながらのサイクリングは格別です。</p>
+
+                    <p>途中で出会った地元の方々との会話も、車なし旅ならではの楽しみの一つ。島の人たちの温かさや、観光客への気遣いを肌で感じることができました。</p>
+
+                    <h2>星砂の浜で奇跡の砂探し</h2>
+                    <p>サイクリングで向かったのは、有名な「星砂の浜」。雨の中でも美しく輝く砂浜で、実際に星の形をした砂を探してみました。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?star,sand,beach,okinawa" alt="星砂の浜">
+                    <div class="caption">雨の中でも美しい星砂の浜。よく見ると星の形をした砂粒が見つかる</div>
+
+                    <p>星砂は実は有孔虫という微生物の殻で、星の形をしているのは偶然ではなく、その生物の特徴なんだそうです。雨の中でも懸命に砂をふるいにかけて、ついに星砂を発見したときの喜びは忘れられません！</p>
+
+                    <h2>直売所で発見！100円のピーチパイン</h2>
+                    <p>星砂の浜の近くにある直売所では、なんと白ピーチパインを半玉100円で購入できました！沖縄ならではの南国フルーツを、こんなにお手頃価格で味わえるなんて感激です。</p>
+
+                    <p>ピーチパインは通常のパイナップルよりも甘く、ピーチのような香りがするのが特徴。その場で食べても良し、ホテルに持ち帰って食べても良しの、嬉しいお土産になりました。</p>
+
+                    <h2>展望カフェ「てんぼうだい」からの絶景</h2>
+                    <p>旅の締めくくりは、展望カフェ「てんぼうだい」でのドリンクタイム。高台からの眺望は、雨にも関わらず素晴らしいものでした。</p>
+
+                    <p>島の景観を眺めながら味わうドリンクは、一日の疲れを癒してくれる特別な時間。車なし旅だからこそ、こうしたゆったりとした時間を大切にできるのかもしれません。</p>
+
+                    <h2>車なしでも大満喫！八重山諸島の魅力</h2>
+                    <p>石垣島から西表島、由布島までの日帰り旅行を終えて感じたのは、車がなくても十分に島の魅力を堪能できるということです。むしろ、公共交通機関や自転車を使うことで、島の人々との触れ合いが増え、より深い旅の体験ができました。</p>
+
+                    <div class="info-box">
+                        <h4>車なし八重山旅行のポイント</h4>
+                        <ul style="margin-left: 20px;">
+                            <li>アイランドホッピングパスで効率よく移動</li>
+                            <li>公共バスはキャッシュレス対応で便利</li>
+                            <li>レンタサイクルで島内散策を楽しむ</li>
+                            <li>地元の人との交流を大切に</li>
+                            <li>雨でも楽しめる屋内施設を事前チェック</li>
+                        </ul>
+                    </div>
+
+                    <p>「車がないと楽しめない」というイメージを持たれがちな沖縄の離島ですが、今回の旅で本当にそうなのかという疑問を持ちました。確かに行動範囲は限られますが、その分一つ一つの体験をじっくりと味わえますし、予定に追われることなくのんびりと過ごせるのも魅力です。</p>
+
+                    <p>次回は宿泊してもっとゆっくりと島の魅力を探ってみたいと思います。車なしでの八重山諸島旅行を検討されている方の参考になれば嬉しいです！</p>
+
+                    <h2>まとめ：日帰りでも感動の連続</h2>
+                    <p>今回の西表島・由布島日帰り旅行は、車なしでもこれだけ充実した体験ができるということを証明してくれました。水牛車での由布島渡航、星砂探し、地元グルメ、そして島の人々との温かい交流。全てが特別な思い出となりました。</p>
+
+                    <p>島の自然の美しさはもちろんですが、それ以上に印象深かったのは人との出会いです。バスの運転手さん、カフェの店員さん、直売所のおじさん。みなさんが観光客である私たちを温かく迎えてくれました。</p>
+
+                    <p>車なし旅行に興味がある方、沖縄の離島に行ってみたいけれど車の運転が心配な方。ぜひ一度、公共交通機関での島旅に挑戦してみてください。きっと新しい発見と感動が待っているはずです！</p>
+
+                    <div style="text-align: center; margin: 30px 0; padding: 20px; background-color: var(--ivory); border-radius: 8px;">
+                        <p style="color: var(--terracotta); font-weight: bold;">#西表島旅行 #由布島 #車なし旅行 #八重山諸島 #石垣島 #水牛車 #星砂の浜 #沖縄旅行</p>
+                    </div>
+                </div>
+
+                <!-- Related Articles -->
+                <div class="related-articles">
+                    <h3>関連記事</h3>
+                    <div class="related-grid">
+                        <div class="related-card">
+                            <img src="https://i.ytimg.com/vi/Nr02LYD_CaE/maxresdefault.jpg" alt="宮古島イラフSUI">
+                            <div class="related-card-content">
+                                <h4>【車無し】宮古島イラフSUIで味わう大人の贅沢と近隣観光1泊2日</h4>
+                                <p>ラグジュアリーホテル「イラフSUI」での滞在と周辺観光の魅力をご紹介</p>
+                            </div>
+                        </div>
+                        <div class="related-card">
+                            <img src="https://i.ytimg.com/vi/yKi94fVJ6fs/maxresdefault.jpg" alt="ANAインターコンチネンタル万座ビーチリゾート">
+                            <div class="related-card-content">
+                                <h4>【沖縄・車なし】ANAインターコンチネンタル万座ビーチリゾート</h4>
+                                <p>沖縄屈指のリゾートホテルでの2泊3日の滞在記</p>
+                            </div>
+                        </div>
+                        <div class="related-card">
+                            <img src="https://i.ytimg.com/vi/ZhzlRxGh-gU/maxresdefault.jpg" alt="別府温泉">
+                            <div class="related-card-content">
+                                <h4>【車なし・別府温泉】2泊3日で完全制覇！観光・グルメ・温泉の究極ガイド</h4>
+                                <p>別府の魅力を車なしで存分に味わう旅</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>ブログカテゴリー</h4>
+                    <ul>
+                        <li><a href="#">沖縄旅行</a></li>
+                        <li><a href="#">温泉旅館</a></li>
+                        <li><a href="#">ラグジュアリーホテル</a></li>
+                        <li><a href="#">グルメ</a></li>
+                        <li><a href="#">おすすめスポット</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>人気の記事</h4>
+                    <ul>
+                        <li><a href="#">宮古島イラフSUI滞在記</a></li>
+                        <li><a href="#">車なしで行く伊良部島観光</a></li>
+                        <li><a href="#">沖縄万座ビーチリゾート</a></li>
+                        <li><a href="#">別府温泉2泊3日の旅</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>リンク</h4>
+                    <ul>
+                        <li><a href="#home">ホーム</a></li>
+                        <li><a href="#blog">ブログ</a></li>
+                        <li><a href="#youtube">Youtube</a></li>
+                        <li><a href="#instagram">Instagram</a></li>
+                        <li><a href="#contact">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>フォロー</h4>
+                    <ul>
+                        <li><a href="https://www.youtube.com/@ryuki_akane" target="_blank">Youtube</a></li>
+                        <li><a href="https://www.instagram.com/akn_523" target="_blank">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 りゅうきとあかね | Travel Without a Car:Hidden Gems</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDi8drDoV2%2FjGXOtT4vcBrPG%2Fo5xmc8IYTQwUYv6yPzcO5UNFdoLSDrSbpsSCuRAh8DmoKzC%2FWDXip%2BPqmMkyQGzH0WHbOHf6R9%2B4Apddfanbhb5phcRix03vyOfvZT%2FCo9jjDTCyjh6C%2FMlRF24UfwL2ZqvungHrg0X%2B7nfy%2BCAvCvwhnFpmBa5A5KnDrvAfgksmUeMbMiXuMjHiNY06aECR66a9LgDFz4JFvh35bUvDrkkdg0kw7W%2BaM%2B%2BqBXsUsyCX%2BHLR2ETHl5T04vfWVWAZvq1I7aJ%2B0YOmx%2Bl2SbMNWNUnz%2BHW6hcchOsoe4E8OAmmXdbRWfx1baOdy2wuXHfn8DXtyPRsGsNZ7C54PU0DIQMhgV3fBtlq6Xc6KzdEETOiiE2vjExSNbzf4T7fi8oHGutXaq2Z%2FTtyqdSZaXDJ%2BlgrSdF04AERu293lRBEYB03xMaA9VbKIAiJjrvSNW7BRK%2F3zg734nMGr1D6rgjO%2F%2BnG%2FHq8ef4%2BZwVfcBOAtvCINxN5pOzGTHteQkyRRUs%3D";
+        window.__genspark_locale = "ja-JP";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDi8drDoV2/jGXOtT4vcBrPG/o5xmc8IYTQwUYv6yPzcO5UNFdoLSDrSbpsSCuRAh8DmoKzC/WDXip+PqmMkyQGzH0WHbOHf6R9+4Apddfanbhb5phcRix03vyOfvZT/Co9jjDTCyjh6C/MlRF24UfwL2ZqvungHrg0X+7nfy+CAvCvwhnFpmBa5A5KnDrvAfgksmUeMbMiXuMjHiNY06aECR66a9LgDFz4JFvh35bUvDrkkdg0kw7W+aM++qBXsUsyCX+HLR2ETHl5T04vfWVWAZvq1I7aJ+0YOmx+l2SbMNWNUnz+HW6hcchOsoe4E8OAmmXdbRWfx1baOdy2wuXHfn8DXtyPRsGsNZ7C54PU0DIQMhgV3fBtlq6Xc6KzdEETOiiE2vjExSNbzf4T7fi8oHGutXaq2Z/TtyqdSZaXDJ+lgrSdF04AERu293lRBEYB03xMaA9VbKIAiJjrvSNW7BRK/3zg734nMGr1D6rgjO/+nG/Hq8ef4+ZwVfcBOAtvCINxN5pOzGTHteQkyRRUs=";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    

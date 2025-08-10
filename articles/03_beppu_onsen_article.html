@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【別府温泉】車なしで2泊3日完全攻略！地獄めぐり・グルメ・温泉の究極ガイド | りゅうきとあかねの旅行記</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --ivory: #F2F2EB;
+            --beige: #D9C49C;
+            --terracotta: #BF6A39;
+            --salmon: #F2A7A0;
+            --black: #0D0D0D;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--ivory);
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--terracotta);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--salmon);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--ivory);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--terracotta);
+        }
+
+        .logo span {
+            color: var(--black);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--black);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        nav ul li a:hover {
+            color: var(--terracotta);
+        }
+
+        /* Blog Post Section */
+        .blog-post {
+            padding: 80px 0;
+        }
+
+        .blog-post-content {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .blog-post-header {
+            margin-bottom: 30px;
+        }
+
+        .blog-post-header h1 {
+            font-size: 2.5rem;
+            color: var(--terracotta);
+            margin-bottom: 20px;
+        }
+
+        .blog-post-meta {
+            display: flex;
+            align-items: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .blog-post-meta span {
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .blog-post-meta i {
+            margin-right: 5px;
+            color: var(--beige);
+        }
+
+        .blog-post-image {
+            width: 100%;
+            height: 400px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .blog-post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-post-body {
+            line-height: 1.8;
+        }
+
+        .blog-post-body p {
+            margin-bottom: 20px;
+        }
+
+        .blog-post-body h2 {
+            font-size: 1.8rem;
+            color: var(--terracotta);
+            margin: 40px 0 20px;
+        }
+
+        .blog-post-body h3 {
+            font-size: 1.4rem;
+            color: var(--black);
+            margin: 30px 0 15px;
+        }
+
+        .blog-post-body img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .blog-post-body .caption {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        /* YouTube Section */
+        .youtube-section {
+            background-color: var(--beige);
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .youtube-section h2 {
+            color: var(--terracotta);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .video-embed {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Info Box */
+        .info-box {
+            background-color: var(--ivory);
+            border-left: 4px solid var(--terracotta);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .info-box h3 {
+            color: var(--terracotta);
+            margin-bottom: 10px;
+        }
+
+        /* Tags */
+        .tags {
+            margin: 30px 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--beige);
+            color: var(--black);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 5px 5px 5px 0;
+        }
+
+        /* Related Posts */
+        .related-posts {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid var(--beige);
+        }
+
+        .related-posts h2 {
+            color: var(--terracotta);
+            margin-bottom: 30px;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .related-item {
+            background-color: var(--ivory);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .related-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .related-img {
+            height: 150px;
+            overflow: hidden;
+        }
+
+        .related-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .related-info {
+            padding: 15px;
+        }
+
+        .related-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .related-info p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Author Box */
+        .author-box {
+            background-color: var(--ivory);
+            padding: 30px;
+            border-radius: 8px;
+            margin: 40px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 20px;
+            background-color: var(--beige);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--terracotta);
+        }
+
+        .author-info h3 {
+            color: var(--terracotta);
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--black);
+            padding: 40px 0;
+            color: white;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-column h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--beige);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--salmon);
+        }
+
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            .logo {
+                margin-bottom: 20px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+                margin-left: 0;
+            }
+            
+            .blog-post-content {
+                padding: 20px;
+            }
+            
+            .blog-post-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .author-box {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .author-avatar {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <h1 class="logo">Ryuki<span> & </span>Akane</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">ホーム</a></li>
+                    <li><a href="#blog">ブログ</a></li>
+                    <li><a href="#youtube">Youtube</a></li>
+                    <li><a href="#instagram">インスタグラム</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post">
+        <div class="container">
+            <div class="blog-post-content">
+                <div class="blog-post-header">
+                    <h1>【別府温泉】車なしで2泊3日完全攻略！地獄めぐり・グルメ・温泉の究極ガイド</h1>
+                    <div class="blog-post-meta">
+                        <span><i class="far fa-calendar"></i> 2024.07.27</span>
+                        <span><i class="far fa-user"></i> りゅうきとあかね</span>
+                        <span><i class="far fa-folder"></i> 温泉旅行</span>
+                        <span><i class="far fa-clock"></i> 読了時間: 約15分</span>
+                    </div>
+                </div>
+                <div class="blog-post-image">
+                    <img src="https://source.unsplash.com/1200x800/?beppu,onsen,hell" alt="別府地獄めぐりの風景">
+                </div>
+                <div class="blog-post-body">
+                    <p>日本屈指の温泉地・別府を車なしで2泊3日かけて徹底的に満喫してきました🌋 7つの地獄めぐりから大分名物グルメ、温泉ホテル体験、夜の別府巡りまで、公共交通機関だけで楽しめる別府旅行の決定版ガイドをお届けします✨</p>
+
+                    <!-- YouTube Section -->
+                    <div class="youtube-section">
+                        <h2>📺 動画で見たい方はこちら</h2>
+                        <p>この記事の内容はYouTubeでも公開しています。動画で雰囲気を感じながらご覧になりたい方は、ぜひこちらからご視聴ください。</p>
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/ZhzlRxGh-gU" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <p>羽田空港からソラシドエア93便で大分空港へ向かい、空港リムジンバスで別府入り。車がなくても十分に楽しめる別府の魅力を存分に味わってきました。雨の日でも楽しめるスポットから、地元の人に愛される隠れた名店まで詳しくレポートします！</p>
+
+                    <h2>羽田空港から別府へのアクセス</h2>
+                    
+                    <p>今回の旅は羽田空港からスタート。朝9時35分発のソラシドエア93便で大分空港へ向かいました。約1時間25分のフライトで、11時25分に大分空港に到着です。</p>
+
+                    <div class="info-box">
+                        <h3>別府へのアクセス情報</h3>
+                        <p><strong>航空便：</strong>ソラシドエア93便 羽田9:35→大分11:25<br>
+                        <strong>空港バス：</strong>大分空港→別府駅 約50分<br>
+                        <strong>料金：</strong>片道1,550円（IC カード利用可能）</p>
+                    </div>
+
+                    <p>大分空港から別府行きリムジンバスに乗車。約50分で別府駅に到着します。バスは定期的に運行しているので待ち時間もそれほど長くありません。車窓からは大分の美しい田園風景を楽しむことができました。</p>
+
+                    <h2>1日目：とり天と地獄めぐりで別府を満喫</h2>
+
+                    <h3>大分名物「とり天」で腹ごしらえ</h3>
+
+                    <p>別府駅に到着後、まず向かったのは「とよ常」。大分名物のとり天発祥の地として有名なお店です。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?japanese,fried,chicken,tempura" alt="とり天定食">
+                    <div class="caption">サクサクジューシーなとり天定食</div>
+
+                    <p>とり天は鶏の胸肉を天ぷらにした大分の郷土料理。外はサクサク、中はジューシーで、ポン酢や胡麻だれでいただきます。付け合わせの味噌汁や小鉢も含めて、ボリューム満点の定食でした。地元の方にも観光客にも愛される味で、別府に来たら絶対に食べたい一品です。</p>
+
+                    <h3>別府駅周辺散策</h3>
+
+                    <p>食事の後は、別府駅周辺を散策しました。駅前には油屋熊八の銅像があり、別府温泉の発展に貢献した人物として地元で親しまれています。観光案内所では、地獄めぐりの情報や周辺マップを入手できます。</p>
+
+                    <p>「べっぷ駅市場」は地元の新鮮な魚介類や特産品が並ぶ市場で、観光客でも気軽に立ち寄れます。地元の食材を使った惣菜なども販売されており、お土産選びにも最適です。</p>
+
+                    <h3>アートホテル「ガレリア御堂原」チェックイン</h3>
+
+                    <p>1泊目の宿泊は「ガレリア御堂原」。別府の高台に位置する全35室のアートホテルで、全室にオーシャンビューと源泉かけ流しの半露天風呂が備わっています。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?luxury,hotel,art,modern" alt="ガレリア御堂原の外観">
+                    <div class="caption">アートと温泉が融合したガレリア御堂原</div>
+
+                    <p>客室は白とベージュを基調とした洗練されたデザインで、まるで美術館に泊まっているような気分になります。宿泊者限定のアートツアーでは、館内の現代アート作品について詳しい説明を聞くことができました。</p>
+
+                    <h2>地獄めぐり完全攻略</h2>
+
+                    <p>別府といえば地獄めぐり！7つの地獄を効率よく回るため、路線バスを利用しました。1日バス券を購入すれば、市内のバスが乗り放題になりお得です。</p>
+
+                    <h3>血の池地獄</h3>
+
+                    <p>最初に向かったのは「血の池地獄」。赤い熱泥が沸き立つ日本最古の地獄で、その名の通り血のように真っ赤な池が印象的です。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?beppu,hot,spring,red,pond" alt="血の池地獄">
+                    <div class="caption">真っ赤な熱泥が沸き立つ血の池地獄</div>
+
+                    <p>隣接する「極楽亭」では、血の池地獄をイメージした真っ赤な「血ソフトクリーム」を販売しています。見た目はインパクト大ですが、実際はイチゴ味で美味しくいただけました。</p>
+
+                    <h3>龍巻地獄</h3>
+
+                    <p>血の池地獄から徒歩で移動できる「龍巻地獄」は、間欠泉が定期的に噴き上がる自然現象を観察できます。約6〜10分間隔で高さ約30mまで熱湯が噴き上がる様子は圧巻です。</p>
+
+                    <h3>海地獄</h3>
+
+                    <p>翌日朝一番に訪れたのは「海地獄」。コバルトブルーの美しい湯が特徴で、まるで海のような色をしていることからその名がついています。98度の高温で、卵を茹でる体験もできます。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?blue,hot,spring,steam" alt="海地獄のコバルトブルーの湯">
+                    <div class="caption">美しいコバルトブルーが印象的な海地獄</div>
+
+                    <h3>鬼石坊主地獄</h3>
+
+                    <p>「鬼石坊主地獄」では、灰色の熱泥が丸く盛り上がっては消える様子が坊主頭に見えることからこの名前がついています。ぼこぼこと湧き上がる様子が面白く、見ていて飽きません。</p>
+
+                    <h3>かまど地獄</h3>
+
+                    <p>「かまど地獄」は1丁目から6丁目まで、様々なタイプの地獄を一度に楽しめる施設です。特に白いシリカの堆積が美しく、それぞれ異なる温度と成分の湯を見比べることができます。</p>
+
+                    <h3>鬼山地獄</h3>
+
+                    <p>「鬼山地獄」は別名「ワニ地獄」とも呼ばれ、温泉熱を利用してワニを飼育している珍しい施設です。約100頭のワニが飼育されており、ワニの餌やりタイムも見学できます。</p>
+
+                    <h3>白池地獄</h3>
+
+                    <p>最後に訪れた「白池地獄」は、白濁した湯が特徴的で、熱帯魚の展示も行っています。温泉の熱を利用した熱帯魚の飼育施設もあり、地獄めぐりとは違った楽しみ方ができます。</p>
+
+                    <h2>地獄蒸し料理で極上グルメ体験</h2>
+
+                    <p>地獄めぐりの後は「地熱観光ラボ縁間」で地獄蒸し料理を体験。温泉の蒸気を利用して調理する地獄蒸しは別府ならではのグルメです。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?steam,cooking,vegetables" alt="地獄蒸し料理">
+                    <div class="caption">温泉蒸気で作る地獄蒸し料理</div>
+
+                    <p>野菜や魚、肉などを専用の蒸籠に入れ、約100度の温泉蒸気で蒸し上げます。素材本来の旨味が引き出され、普通の蒸し料理とは一味違う美味しさでした。特に地獄蒸しプリンは絶品で、温泉卵のような食感がクセになります。</p>
+
+                    <h2>2泊目：アマネク別府ゆらりでコスパ抜群ステイ</h2>
+
+                    <p>2泊目は別府駅から徒歩3分の好立地にある「アマネク別府ゆらり」に宿泊しました。2022年にオープンしたばかりの新しいホテルで、最上階にはインフィニティプールと大浴場があります。</p>
+
+                    <div class="info-box">
+                        <h3>アマネク別府ゆらり 基本情報</h3>
+                        <p><strong>住所：</strong>大分県別府市駅前本町5-26<br>
+                        <strong>アクセス：</strong>別府駅東口から徒歩3分<br>
+                        <strong>料金：</strong>1泊2名 約15,000円〜<br>
+                        <strong>設備：</strong>最上階大浴場、インフィニティプール、サウナ</p>
+                    </div>
+
+                    <img src="https://source.unsplash.com/800x600/?modern,hotel,pool,night,view" alt="アマネク別府ゆらりの夜景">
+                    <div class="caption">別府の夜景を一望するアマネク別府ゆらり</div>
+
+                    <p>客室はモダンで清潔感があり、必要な設備は全て揃っています。何より別府駅からのアクセスが抜群で、荷物を置いてすぐに市内観光に出かけることができるのが魅力です。</p>
+
+                    <h3>夜の別府で大分和牛を堪能</h3>
+
+                    <p>夕食は「焼肉一力」で大分和牛の焼肉を楽しみました。特にホルモンが絶品で、コリコリとした食感と旨味が印象的でした。地元の方にも人気のお店で、予約なしでは入れないこともあるそうです。</p>
+
+                    <p>食後は別府の夜の街を散策。「Bar LAMP」では地元産の焼酎を数種類テイスティングし、「TAKITO」ではタコスとマルガリータで国際色豊かな夜を楽しみました。</p>
+
+                    <h3>別府ヒットパレードクラブで昭和レトロ体験</h3>
+
+                    <p>夜の締めくくりは「別府ヒットパレードクラブ」。昭和の名曲を生演奏で楽しめるライブハウスで、地元の方々と一緒にオールディーズを楽しみました。観光客でも気軽に参加でき、別府の夜文化を体感できる貴重なスポットです。</p>
+
+                    <h2>別府グルメ・カフェ巡り</h2>
+
+                    <h3>3's Cafe でコーヒータイム</h3>
+
+                    <p>最終日の朝は「3's Cafe」で地元焙煎のコーヒーとスイーツを楽しみました。落ち着いた店内で、旅の疲れを癒やすのにぴったりのカフェです。</p>
+
+                    <h3>BEPPU BREWERY でクラフトビール</h3>
+
+                    <p>別府発のクラフトビールを楽しめる「BEPPU BREWERY」も訪問。特にヘイズカボスセッションは、大分特産のカボスを使った爽やかな味わいで、別府土産としても人気です。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?craft,beer,brewery,tasting" alt="BEPPU BREWERYでのビールテイスティング">
+                    <div class="caption">地元産クラフトビールの試飲体験</div>
+
+                    <h2>車なし別府旅行の移動手段まとめ</h2>
+
+                    <p>今回の旅行で利用した交通手段をまとめました。車がなくても十分に別府を楽しめることが実証できました。</p>
+
+                    <div class="info-box">
+                        <h3>車なし別府旅行 交通手段</h3>
+                        <p><strong>空港アクセス：</strong>大分空港⇔別府駅 リムジンバス（50分）<br>
+                        <strong>市内移動：</strong>路線バス（1日券600円でお得）<br>
+                        <strong>地獄めぐり：</strong>亀の井バス地獄めぐりコース<br>
+                        <strong>夜間移動：</strong>タクシー（料金は事前確認推奨）<br>
+                        <strong>徒歩：</strong>別府駅周辺は徒歩圏内にスポット多数</p>
+                    </div>
+
+                    <h2>まとめ：車なしでも満喫できる別府の魅力</h2>
+
+                    <p>2泊3日の別府旅行で、地獄めぐりから温泉、グルメ、夜の街まで幅広く楽しむことができました。公共交通機関やタクシーを上手に活用すれば、車がなくても別府の魅力を十分に満喫できます。</p>
+
+                    <p>特に印象的だったのは、地元の方々の温かさです。タクシーの運転手さんから聞いた穴場スポットの情報や、お店の方との何気ない会話が旅をより豊かにしてくれました。</p>
+
+                    <p>別府は温泉だけでなく、独特の地獄風景、美味しいグルメ、そして人情味あふれる街の雰囲気が魅力的な場所です。次回はもう少し長期滞在して、さらに深く別府の魅力を探求してみたいと思います。</p>
+
+                    <p>皆さんも別府旅行を計画されている際は、ぜひ車なし旅行にも挑戦してみてください。きっと新しい発見と出会いが待っています！</p>
+
+                    <!-- Tags -->
+                    <div class="tags">
+                        <span class="tag">#別府温泉</span>
+                        <span class="tag">#地獄めぐり</span>
+                        <span class="tag">#車なし旅行</span>
+                        <span class="tag">#大分グルメ</span>
+                        <span class="tag">#とり天</span>
+                        <span class="tag">#地獄蒸し料理</span>
+                        <span class="tag">#温泉旅行</span>
+                        <span class="tag">#九州旅行</span>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>別府おすすめスポットまとめ</h3>
+                        <p>訪れてよかったスポットや、次回挑戦したい場所などをまとめたGoogleマップリストを作成しました。別府旅行の参考にぜひご活用ください。</p>
+                        <a href="#" style="color: var(--terracotta); font-weight: bold;">📍 Googleマップでチェック</a>
+                    </div>
+                </div>
+
+                <!-- Author Box -->
+                <div class="author-box">
+                    <div class="author-avatar">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="author-info">
+                        <h3>りゅうきとあかね</h3>
+                        <p>夫婦で楽しむ贅沢旅をテーマに、車なしでも行ける全国の素敵なホテル・グルメ・観光スポットをご紹介しています。旅先での体験をVlog形式でお届け中！</p>
+                    </div>
+                </div>
+
+                <!-- Related Posts -->
+                <div class="related-posts">
+                    <h2>関連記事</h2>
+                    <div class="related-grid">
+                        <div class="related-item">
+                            <div class="related-img">
+                                <img src="https://source.unsplash.com/400x300/?galleria,art,hotel" alt="ガレリア御堂原">
+                            </div>
+                            <div class="related-info">
+                                <h3>【ガレリア御堂原】まるで泊まれる美術館！アート×温泉が融合した絶景ホテル</h3>
+                                <p>別府の高台に位置するアートホテルでの極上ステイをご紹介</p>
+                            </div>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-img">
+                                <img src="https://source.unsplash.com/400x300/?miyakojima,resort" alt="宮古島イラフSUI">
+                            </div>
+                            <div class="related-info">
+                                <h3>【車無し】宮古島イラフSUIで味わう大人の贅沢と近隣観光1泊2日</h3>
+                                <p>ラグジュアリーホテル「イラフSUI」での滞在と周辺観光の魅力をご紹介</p>
+                            </div>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-img">
+                                <img src="https://source.unsplash.com/400x300/?okinawa,ana,resort" alt="ANAインターコンチネンタル万座ビーチリゾート">
+                            </div>
+                            <div class="related-info">
+                                <h3>【沖縄・車なし】ANAインターコンチネンタル万座ビーチリゾート</h3>
+                                <p>沖縄屈指のリゾートホテルでの2泊3日の滞在記</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>ブログカテゴリー</h4>
+                    <ul>
+                        <li><a href="#">沖縄旅行</a></li>
+                        <li><a href="#">温泉旅館</a></li>
+                        <li><a href="#">ラグジュアリーホテル</a></li>
+                        <li><a href="#">グルメ</a></li>
+                        <li><a href="#">おすすめスポット</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>人気の記事</h4>
+                    <ul>
+                        <li><a href="#">宮古島イラフSUI滞在記</a></li>
+                        <li><a href="#">車なしで行く伊良部島観光</a></li>
+                        <li><a href="#">沖縄万座ビーチリゾート</a></li>
+                        <li><a href="#">別府温泉2泊3日の旅</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>リンク</h4>
+                    <ul>
+                        <li><a href="#home">ホーム</a></li>
+                        <li><a href="#blog">ブログ</a></li>
+                        <li><a href="#youtube">Youtube</a></li>
+                        <li><a href="#instagram">Instagram</a></li>
+                        <li><a href="#contact">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>フォロー</h4>
+                    <ul>
+                        <li><a href="https://www.youtube.com/@ryuki_akane" target="_blank">Youtube</a></li>
+                        <li><a href="https://www.instagram.com/akn_523" target="_blank">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 りゅうきとあかね | Travel Without a Car:Hidden Gems</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDoKAhB8PsUaZe21lvqr7d2CiloXSPAG1kSitM9iLK%2FzE9LumLmMyPC4gJu9DE%2BcGheflz045Ucv466eSvUNzVQfy3dlwvwWBPIW14SIlnrZvSdcvN5zPJoDThsBipN9n7RoOyXuPsVzcTXFgU0VzPFnJxKjfiEYiybH8wAw0Njc8xO9a5UMh7kQh0D%2B4dEE3l6AxYYYSnfoR433Do25K%2B9z7pqYdZDOR6JhEk%2Bga0C0AebqcviG1jU7UWwftn%2BYa5%2BpAutu9fiQnUK4H8T5l5z7BLDnQWd5hDfo6VCzV%2FRsjFH56NlA6a%2FMEgkaCt6e7ixz3KsVb002d6pcpbiHKjB%2F0%2BASQ4044bfbI2awfZuV3EwWMGoGrCvHPneFAOmF8wHkOHiTYWMbWOFz7vSAGP4fgqEM6HZh62IzgIUKyfjIyB0TvuaAvnrfojzTNpPVmN%2F5zmYagFQVKn31JkEEb2cOnPRM3p9BFaBgf4%2F3O7LXsX3aDfD2vIse%2BgoXk%2BYA%2FUh0xzo5diafO9mbxFIFJ0Gw%3D";
+        window.__genspark_locale = "ja-JP";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDoKAhB8PsUaZe21lvqr7d2CiloXSPAG1kSitM9iLK/zE9LumLmMyPC4gJu9DE+cGheflz045Ucv466eSvUNzVQfy3dlwvwWBPIW14SIlnrZvSdcvN5zPJoDThsBipN9n7RoOyXuPsVzcTXFgU0VzPFnJxKjfiEYiybH8wAw0Njc8xO9a5UMh7kQh0D+4dEE3l6AxYYYSnfoR433Do25K+9z7pqYdZDOR6JhEk+ga0C0AebqcviG1jU7UWwftn+Ya5+pAutu9fiQnUK4H8T5l5z7BLDnQWd5hDfo6VCzV/RsjFH56NlA6a/MEgkaCt6e7ixz3KsVb002d6pcpbiHKjB/0+ASQ4044bfbI2awfZuV3EwWMGoGrCvHPneFAOmF8wHkOHiTYWMbWOFz7vSAGP4fgqEM6HZh62IzgIUKyfjIyB0TvuaAvnrfojzTNpPVmN/5zmYagFQVKn31JkEEb2cOnPRM3p9BFaBgf4/3O7LXsX3aDfD2vIse+goXk+YA/Uh0xzo5diafO9mbxFIFJ0Gw=";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    
