@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【宮古島・イラフSUI】車なしで味わう大人の贅沢と絶景ステイ | りゅうきとあかねの旅行記</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --ivory: #F2F2EB;
+            --beige: #D9C49C;
+            --terracotta: #BF6A39;
+            --salmon: #F2A7A0;
+            --black: #0D0D0D;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--ivory);
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--terracotta);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--salmon);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--ivory);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--terracotta);
+        }
+
+        .logo span {
+            color: var(--black);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--black);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        nav ul li a:hover {
+            color: var(--terracotta);
+        }
+
+        /* Blog Post Section */
+        .blog-post {
+            padding: 80px 0;
+        }
+
+        .blog-post-content {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .blog-post-header {
+            margin-bottom: 30px;
+        }
+
+        .blog-post-header h1 {
+            font-size: 2.5rem;
+            color: var(--terracotta);
+            margin-bottom: 20px;
+        }
+
+        .blog-post-meta {
+            display: flex;
+            align-items: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .blog-post-meta span {
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .blog-post-meta i {
+            margin-right: 5px;
+            color: var(--beige);
+        }
+
+        .blog-post-image {
+            width: 100%;
+            height: 400px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .blog-post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-post-body {
+            line-height: 1.8;
+        }
+
+        .blog-post-body p {
+            margin-bottom: 20px;
+        }
+
+        .blog-post-body h2 {
+            font-size: 1.8rem;
+            color: var(--terracotta);
+            margin: 40px 0 20px;
+        }
+
+        .blog-post-body h3 {
+            font-size: 1.4rem;
+            color: var(--black);
+            margin: 30px 0 15px;
+        }
+
+        .blog-post-body img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .blog-post-body .caption {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .youtube-section {
+            background-color: var(--beige);
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .youtube-section h3 {
+            color: var(--terracotta);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .youtube-section p {
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+
+        .info-box {
+            background-color: var(--ivory);
+            padding: 20px;
+            border-left: 4px solid var(--terracotta);
+            margin: 20px 0;
+        }
+
+        .info-box h4 {
+            color: var(--terracotta);
+            margin-bottom: 10px;
+        }
+
+        .tags {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .tags span {
+            display: inline-block;
+            background-color: var(--beige);
+            color: var(--black);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .related-posts {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid var(--beige);
+        }
+
+        .related-posts h3 {
+            color: var(--terracotta);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .related-card {
+            background: var(--ivory);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .related-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .related-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .related-card-content {
+            padding: 15px;
+        }
+
+        .related-card h4 {
+            color: var(--black);
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .related-card p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        /* Author Box */
+        .author-box {
+            background-color: var(--ivory);
+            padding: 30px;
+            border-radius: 8px;
+            margin: 40px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 20px;
+            background-color: var(--beige);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--terracotta);
+        }
+
+        .author-info h4 {
+            color: var(--terracotta);
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--black);
+            padding: 40px 0;
+            color: white;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-content p {
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            .logo {
+                margin-bottom: 20px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+                margin-left: 0;
+            }
+            
+            .blog-post-header h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-post-content {
+                padding: 20px;
+            }
+            
+            .author-box {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .author-avatar {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .blog-post-meta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .blog-post-meta span {
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <h1 class="logo">Ryuki<span> & </span>Akane</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">ホーム</a></li>
+                    <li><a href="#blog">ブログ</a></li>
+                    <li><a href="#youtube">YOUTUBE</a></li>
+                    <li><a href="#instagram">インスタグラム</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post">
+        <div class="container">
+            <div class="blog-post-content">
+                <div class="blog-post-header">
+                    <h1>【車無し】宮古島イラフSUIで味わう大人の贅沢と近隣観光1泊2日</h1>
+                    <div class="blog-post-meta">
+                        <span><i class="far fa-calendar"></i> 2024.12.27</span>
+                        <span><i class="far fa-user"></i> りゅうきとあかね</span>
+                        <span><i class="far fa-folder"></i> 沖縄旅行</span>
+                        <span><i class="far fa-clock"></i> 読了時間: 約10分</span>
+                    </div>
+                </div>
+                <div class="blog-post-image">
+                    <img src="https://source.unsplash.com/900x400/?miyakojima,resort,pool" alt="宮古島イラフSUIのインフィニティプール">
+                </div>
+                <div class="blog-post-body">
+                    <p>宮古島1泊2日旅行Vlogをお届けします🌺 今回は、ラグジュアリーホテル「イラフSUI ラグジュアリーコレクションホテル 沖縄宮古」に宿泊してきました！「車がないと楽しむのが難しい」と言われる宮古島ですが、車なしでも十分に楽しむことができる贅沢な時間を過ごすことができました✨</p>
+
+                    <div class="youtube-section">
+                        <h3>📺 動画で見たい方はこちら</h3>
+                        <p>この記事の内容はYouTubeでも公開しています。動画で雰囲気を感じながらご覧になりたい方は、ぜひこちらからご視聴ください。</p>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/Nr02LYD_CaE" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <h2>イラフSUIの魅力とアクセス</h2>
+                    <p>「イラフSUI ラグジュアリーコレクションホテル 沖縄宮古」は、宮古島を代表するラグジュアリーリゾートホテルです。車なしでのアクセスも心配ありません。宮古空港や下地島空港からの無料送迎サービスが利用でき、気軽にアクセスできるのが嬉しいポイントです。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?hotel,lobby,luxury" alt="イラフSUIのエントランス">
+                    <div class="caption">洗練されたエントランスでお出迎え</div>
+
+                    <h2>チェックインから客室まで</h2>
+                    <p>チェックインはエントランスすぐのソファーで行います。ウェルカムドリンクのハーブウォーターがとても美味しく、旅の疲れを癒してくれました。エントランスには可愛いアクセサリーやグッズも販売されており、お土産選びも楽しめます。</p>
+
+                    <p>エントランスにタオルやお水が置いてあるのも嬉しい配慮です。これらの細やかなサービスが、このホテルの質の高さを物語っています。</p>
+
+                    <h3>アッパーオーシャンビューの客室</h3>
+                    <p>今回宿泊するのは海を一望できるバルコニー付きのお部屋で、なんと高層階にアップグレードしていただきました！イラフSUIのお部屋はどのお部屋からも絶景のオーシャンビューが楽しめます。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?hotel,room,ocean,view" alt="オーシャンビューの客室">
+                    <div class="caption">宮古ブルーを一望できる客室からの眺め</div>
+
+                    <p>宮古島の砂浜をイメージした白を基調としたデザインで統一された室内は、広々として落ち着いた雰囲気。インテリアも洗練されていて、とても素敵な空間です。バルコニーからは宮古ブルーの美しい海が広がり、時間を忘れて眺めていられます。</p>
+
+                    <div class="info-box">
+                        <h4>イラフSUI 基本情報</h4>
+                        <p><strong>住所:</strong> 沖縄県宮古島市伊良部字伊良部818-5<br>
+                        <strong>アクセス:</strong> 宮古空港・下地島空港から無料送迎サービス利用<br>
+                        <strong>特徴:</strong> 全室オーシャンビュー、インフィニティプール、レストラン「TIN'IN」</p>
+                    </div>
+
+                    <h2>渡口の浜への無料シャトルサービス</h2>
+                    <p>2024年4月からホテル近隣の絶景ビーチ「渡口の浜」への送迎サービスがスタートしたということで、早速利用してみました。ビーチまでは車でわずか2分、気軽にアクセスできるのが嬉しいポイントです。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?okinawa,beach,white,sand" alt="渡口の浜">
+                    <div class="caption">約800mに渡る美しい弓状のビーチ「渡口の浜」</div>
+
+                    <p>渡口の浜は約800mに渡る緩やかな弓状の白い砂のビーチが特徴で、さらさらな砂と透明度の高い海水は沖縄県内でも特に評価されています。裸足で歩くとふわふわの砂の感触が本当に気持ちよく、宮古島ならではの絶景を満喫できました。</p>
+
+                    <h2>Blue Turtleでのランチタイム</h2>
+                    <p>「Blue Turtle」は渡口の浜の目の前にあるおしゃれなレストランです。ランチやディナーはもちろん、カフェ利用にもぴったりで、チェックインやチェックアウトの前後にも便利です。</p>
+
+                    <p>今回は牛ハンバーグカレーと牛ハンバーグのおろし玉ねぎソースを注文。生マンゴージュースも絶品で、南国らしい味わいを楽しめました。海を眺めながらの食事は格別です。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?restaurant,ocean,view,lunch" alt="Blue Turtleでのランチ">
+                    <div class="caption">海を眺めながら楽しむランチタイム</div>
+
+                    <h2>バスソルト作り体験</h2>
+                    <p>ホテルに戻った後は、バスソルト作り体験に参加しました。ハーブやエッセンシャルオイルを使って、自分だけのオリジナルバスソルトを作ることができます。作った後は軽いおつまみも提供され、リラックスした時間を過ごせました。</p>
+
+                    <h2>サンセットディライト - 宿泊者限定の特別な時間</h2>
+                    <p>夕日が沈む時間帯に合わせて始まる「サンセットディライト」は、宿泊者だけが楽しめる特別なイベントです。インフィニティプール越しに広がる美しい宮古ブルーを眺めながら、なんとシャンパンが飲み放題！美味しいおつまみやカクテルもいただけます。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?infinity,pool,sunset,champagne" alt="サンセットディライトの様子">
+                    <div class="caption">インフィニティプールでのサンセットディライト</div>
+
+                    <p>まさに大人の贅沢な時間で、日常を忘れて特別な一時を過ごすことができました。シャンパンを飲みながら眺める夕日は、一生忘れられない美しい思い出になりました。</p>
+
+                    <h2>地元グルメ「居酒屋でんみ」での夕食</h2>
+                    <p>夜は地元で人気の「居酒屋でんみ」へ。タクシーでのアクセスも便利で、地元の雰囲気を味わえるお店です。特にジーマーミー豆腐が絶品で、クリーミーな舌触りと濃厚な味わいがたまりませんでした。</p>
+
+                    <p>沖縄の郷土料理を中心としたメニューで、地元の食材を活かした料理を楽しむことができます。地元の方との交流も楽しく、宮古島の温かい人柄に触れることができました。</p>
+
+                    <h2>サンライズヨガで迎える朝</h2>
+                    <p>2日目の朝は、サンライズヨガで一日をスタート。朝の清々しい空気の中でのヨガは、心も体もリフレッシュできる特別な体験でした。海からの朝日を眺めながらのヨガは、まさに至福の時間です。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?yoga,sunrise,beach,morning" alt="サンライズヨガの様子">
+                    <div class="caption">朝日を浴びながらのサンライズヨガ</div>
+
+                    <h2>充実の朝食ビュッフェ「TIN'IN」</h2>
+                    <p>朝食は「TIN'IN」レストランでのビュッフェをいただきました。今回はプラチナエリート特典で無料になり、本当にありがたいサービスです。和食か洋食を選ぶことができ、和食の場合はお肉料理かお魚料理を選択できます。</p>
+
+                    <p>ビュッフェでは沖縄ならではの新鮮な食材を生かしたメニューが並び、朝からついついお腹いっぱい食べてしまいました。特に地元の野菜や果物は新鮮で、南国らしい味わいを楽しめます。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?breakfast,buffet,restaurant,tropical" alt="朝食ビュッフェの様子">
+                    <div class="caption">沖縄食材を活かした充実の朝食ビュッフェ</div>
+
+                    <h2>車なしでも十分楽しめる宮古島ステイ</h2>
+                    <p>今回の宮古島旅行を通して、車がなくても十分に島の魅力を堪能できることを実感しました。イラフSUIの充実したサービスと立地の良さがあってこそですが、無料送迎やシャトルサービスを上手に活用すれば、車なしでも快適に過ごせます。</p>
+
+                    <p>特に、ホテル内での時間を重視する大人の旅行スタイルには最適で、プールやスパでリラックスしながら、必要に応じて周辺の観光スポットを楽しむというバランスが取れた滞在ができました。</p>
+
+                    <div class="info-box">
+                        <h4>車なしアクセスのポイント</h4>
+                        <p>• 空港からの無料送迎サービス利用<br>
+                        • 渡口の浜への無料シャトルサービス<br>
+                        • 近隣レストランへはタクシー利用<br>
+                        • ホテル内施設の充実度を活用</p>
+                    </div>
+
+                    <h2>まとめ：極上のリゾート体験</h2>
+                    <p>イラフSUIでの1泊2日は、まさに大人の贅沢を味わえる素晴らしい滞在でした。車なしでも十分に楽しめる環境が整っており、特別な記念日や大切な人との時間を過ごすのに最適なホテルです。</p>
+
+                    <p>インフィニティプールでのサンセットディライト、美しい渡口の浜、充実した朝食ビュッフェなど、どの瞬間も特別な思い出となりました。次回は宮古島・伊良部島での2日目の様子をお届けする予定です。</p>
+
+                    <p>宮古島への旅行を計画されている方、特にラグジュアリーなリゾートステイを求める方にはぜひおすすめしたいホテルです。車なしでの旅行を考えている方の参考になれば嬉しいです！</p>
+
+                    <div class="tags">
+                        <span>#宮古島旅行</span>
+                        <span>#イラフSUI</span>
+                        <span>#車なし旅行</span>
+                        <span>#ラグジュアリーホテル</span>
+                        <span>#インフィニティプール</span>
+                        <span>#沖縄旅行</span>
+                    </div>
+                </div>
+
+                <div class="author-box">
+                    <div class="author-avatar">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="author-info">
+                        <h4>りゅうきとあかね</h4>
+                        <p>夫婦で楽しむ贅沢旅をテーマに、車なしでも行ける全国の素敵なホテル・グルメ・観光スポットをご紹介しています。旅先での体験をVlog形式でお届け中！</p>
+                    </div>
+                </div>
+
+                <div class="related-posts">
+                    <h3>関連記事</h3>
+                    <div class="related-grid">
+                        <div class="related-card">
+                            <img src="https://source.unsplash.com/300x150/?miyakojima,villa" alt="Canggu Irab">
+                            <div class="related-card-content">
+                                <h4>【宮古島】車なしで行く！絶品グルメ＆観光プラン【贅沢ヴィラ・Canggu Irab滞在】</h4>
+                                <p>伊良部島の贅沢ヴィラと地元グルメを満喫する旅</p>
+                            </div>
+                        </div>
+                        <div class="related-card">
+                            <img src="https://source.unsplash.com/300x150/?okinawa,resort" alt="ANAインターコンチネンタル">
+                            <div class="related-card-content">
+                                <h4>【沖縄・車なし】ANAインターコンチネンタル万座ビーチリゾート【2泊3日滞在記】</h4>
+                                <p>沖縄屈指のリゾートホテルでの2泊3日の滞在記</p>
+                            </div>
+                        </div>
+                        <div class="related-card">
+                            <img src="https://source.unsplash.com/300x150/?beppu,onsen" alt="別府温泉">
+                            <div class="related-card-content">
+                                <h4>【車なし・別府温泉】2泊3日で完全制覇！観光・グルメ・温泉の究極ガイド</h4>
+                                <p>別府の地獄めぐりと温泉を車なしで楽しむ旅</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2025 りゅうきとあかね | Travel Without a Car: Hidden Gems</p>
+            </div>
+        </div>
+    </footer>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"96cf4b541a6a19e0","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.7.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDk6ezV%2FqHd5j5eWEumiPJgV8%2FfjPuP9RqlghMMr04nTatFuCqoVWnafo%2BWPZQmC1s13sdpgtoMhHqReEHwXEwdspqTK0ltJHZnxC3kRk5WuxUQWj4SmnF%2FcN2aU7rmEJn1wakvAy2cBSkqNZXVMV3IngfBS84mEMXxb8%2FI9AFIT%2BRgxSegqTUDp2p5bJBEDd8g%2F1VayJye%2BB4vXp5AM64w1HoU0YUE9LEw9kOTkQ8xiwWwKxrCOUTpFx0DX89gVBIRieQzWQjOKbND10BOXqi62s3fkRTVMHdxq9QAZ4cCr1upvgKNiARuK%2Ff4AQAXQZEwLHuF%2BtcWrIE3IeEpp6iEaR%2BJb%2FTpOnEo1tJlOYb4DYtXapNXDXyFMGVJmCAptVqq2lh5p3Tnixa0ag22RlPGIDoQGxOaKDarazBXLOQKExBuQ%2B8Svg3C3sTOFq1w9YMuds2bhcRAHyJlDZtp34aJfFwdUFBBB4lDuPPvfQJMUM%2FudKca7ADMcXWitgHENlPJFMOuOkjI56tv5qjPmtMq4%3D";
+        window.__genspark_locale = "ja-JP";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDk6ezV/qHd5j5eWEumiPJgV8/fjPuP9RqlghMMr04nTatFuCqoVWnafo+WPZQmC1s13sdpgtoMhHqReEHwXEwdspqTK0ltJHZnxC3kRk5WuxUQWj4SmnF/cN2aU7rmEJn1wakvAy2cBSkqNZXVMV3IngfBS84mEMXxb8/I9AFIT+RgxSegqTUDp2p5bJBEDd8g/1VayJye+B4vXp5AM64w1HoU0YUE9LEw9kOTkQ8xiwWwKxrCOUTpFx0DX89gVBIRieQzWQjOKbND10BOXqi62s3fkRTVMHdxq9QAZ4cCr1upvgKNiARuK/f4AQAXQZEwLHuF+tcWrIE3IeEpp6iEaR+Jb/TpOnEo1tJlOYb4DYtXapNXDXyFMGVJmCAptVqq2lh5p3Tnixa0ag22RlPGIDoQGxOaKDarazBXLOQKExBuQ+8Svg3C3sTOFq1w9YMuds2bhcRAHyJlDZtp34aJfFwdUFBBB4lDuPPvfQJMUM/udKca7ADMcXWitgHENlPJFMOuOkjI56tv5qjPmtMq4=";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    
