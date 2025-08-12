@@ -833,47 +833,57 @@
             <div class="section-title">
                 <h2>最新動画</h2>
             </div>
-            <div class="youtube-videos">
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <img src="https://i.ytimg.com/vi/Nr02LYD_CaE/maxresdefault.jpg" alt="宮古島イラフSUI">
-                        <a href="https://www.youtube.com/watch?v=Nr02LYD_CaE" class="play-icon" target="_blank"></a>
-                    </div>
-                    <div class="video-info">
-                        <h3>【車無し】宮古島イラフSUIで味わう大人の贅沢と近隣観光1泊2日</h3>
-                        <p>季節外れの台風で曇りでしたが、贅沢なひとときと周辺観光を楽しんだ1泊2日の様子をお届けします。</p>
-                        <div class="video-meta">
-                            <span><i class="far fa-calendar"></i> 2024.12.27</span>
-                            <span><i class="far fa-eye"></i> 3,631回視聴</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <img src="https://i.ytimg.com/vi/N29SMe4lJgk/maxresdefault.jpg" alt="宮古島・伊良部島">
-                        <a href="https://www.youtube.com/watch?v=N29SMe4lJgk" class="play-icon" target="_blank"></a>
-                    </div>
-                    <div class="video-info">
-                        <h3>【宮古島】車なしで行く！絶品グルメ＆観光プラン【贅沢ヴィラ・Canggu Irab滞在】</h3>
-                        <p>あいにくの天気で観光には不向きなこともありましたが、そんな状況でも大満喫した旅の様子をお届けします。</p>
-                        <div class="video-meta">
-                            <span><i class="far fa-calendar"></i> 2025.01.11</span>
-                            <span><i class="far fa-eye"></i> 4,693回視聴</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <img src="https://i.ytimg.com/vi/yKi94fVJ6fs/maxresdefault.jpg" alt="ANAインターコンチネンタル万座ビーチリゾート">
-                        <a href="https://www.youtube.com/watch?v=yKi94fVJ6fs" class="play-icon" target="_blank"></a>
-                    </div>
-                    <div class="video-info">
-                        <h3>【沖縄・車なし】ANAインターコンチネンタル万座ビーチリゾート【2泊3日滞在記】</h3>
-                        <p>冬でも台風でも、マリンアクティビティを楽しめました！絶景オーシャンビューのお部屋とプライベートビーチの魅力。</p>
-                        <div class="video-meta">
-                            <span><i class="far fa-calendar"></i> 2025.01.19</span>
-                            <span><i class="far fa-eye"></i> 10,693回視聴</span>
-                        </div>
+            <div class="youtube-videos">id="yt-videos"></div>
+               <script>
+/** ▼設定：ここだけ置き換え ▼ */
+const CHANNEL_ID  = "UC74qoTRqB1cvyFSU8sjdHUw"; // ←UCで始まるIDをペースト
+const VIDEO_COUNT = 6; // 表示する件数（お好みで）
+/** ▲設定ここまで ▲ */
+
+async function fetchRSSVideos(){
+  const rss = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
+  const url = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rss)}`;
+
+  try {
+    const res = await fetch(url);
+    if(!res.ok) throw new Error("RSS fetch failed");
+    const data = await res.json();
+    const items = (data.items || []).slice(0, VIDEO_COUNT);
+
+    const wrap = document.getElementById("yt-videos");
+    if (!wrap) return;
+
+    wrap.innerHTML = items.map(it=>{
+      const videoId = (it.link.split("v=")[1] || "").split("&")[0];
+      const title   = it.title;
+      const date    = new Date(it.pubDate);
+      const ymd     = `${date.getFullYear()}.${String(date.getMonth()+1).padStart(2,"0")}.${String(date.getDate()).padStart(2,"0")}`;
+      const url     = `https://www.youtube.com/watch?v=${videoId}`;
+      const thumb   = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+      return `
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <img src="${thumb}" alt="${title}" loading="lazy"
+                 onerror="this.onerror=null;this.src='https://img.youtube.com/vi/${videoId}/hqdefault.jpg';">
+            <a href="${url}" class="play-icon" target="_blank" rel="noopener"></a>
+          </div>
+          <div class="video-info">
+            <h3>${title}</h3>
+            <div class="video-meta">
+              <span><i class="far fa-calendar"></i> ${ymd}</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join("");
+  } catch (e) {
+    console.error(e);
+    const wrap = document.getElementById("yt-videos");
+    if (wrap) wrap.innerHTML = `<p>最新動画を読み込めませんでした。</p>`;
+  }
+}
+fetchRSSVideos();
+</script>
                     </div>
                 </div>
             </div>
