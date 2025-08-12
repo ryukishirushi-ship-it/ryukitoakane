@@ -758,15 +758,21 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <h1 class="logo">Ryuki<span> & </span>Akane</h1>
-            <nav>
-                <ul>
-                    <li><a href="#home">ホーム</a></li>
-                    <li><a href="#blog">ブログ</a></li>
-                    <li><a href="#youtube">Youtube</a></li>
-                    <li><a href="#instagram">インスタグラム</a></li>
-                    <li><a href="#contact">お問い合わせ</a></li>
-                </ul>
+        <h1 class="logo">Ryuki<span> & </span>Akane</h1>
+
+        <!-- ハンバーガー（スマホで開閉） -->
+        <button class="menu-toggle" id="menuToggle" aria-label="メニューを開閉">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <nav id="mainNav">
+            <ul>
+                <li><a href="#home" aria-label="ホーム" title="ホーム"><i class="fas fa-home"></i></a></li>
+                <li><a href="#blog" aria-label="ブログ" title="ブログ"><i class="fas fa-book-open"></i></a></li>
+                <li><a href="#youtube" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="#instagram" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#contact" aria-label="お問い合わせ" title="お問い合わせ"><i class="far fa-envelope"></i></a></li>
+            </ul>
             </nav>
         </div>
     </header>
