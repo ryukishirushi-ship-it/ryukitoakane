@@ -834,33 +834,44 @@
                 <h2>最新動画</h2>
             </div>
             <div class="youtube-videos"id="yt-videos"></div>
-             <script>
-/** ▼設定ここだけ ▼ */
-const CHANNEL_ID      = "UC74qoTRqB1cvyFSU8sjdHUw"; // あなたのUC ID
-const VIDEO_COUNT     = 6;       // 表示件数
-const EXCLUDE_SHORTS  = true;    // ショートを除外するなら true
-/** ▲設定ここまで ▲ */
+<script>
+/** ▼設定 */
+const CHANNEL_ID  = "UC74qoTRqB1cvyFSU8sjdHUw";
+const VIDEO_COUNT = 6;           // 表示したい本数
+const EXCLUDE_SHORTS = true;     // ショートを除外する
+/** ▲設定 */
 
-function isShortItem(item) {
-  const t = (item.title || "") + " " + (item.description || "") + " " + (item.link || "");
-  return /(^|[\s#/])shorts?/i.test(t);
+/* ショート判定を強化 */
+function isShortItem(it){
+  const inLink = it.link && it.link.includes("/shorts/");
+  const inCats = (it.categories || []).some(c => /shorts?/i.test(c));
+  const inText = /(^|[#\s/])shorts?/i.test(
+    ((it.title||"") + " " + (it.description||"") + " " + (it.link||""))
+  );
+  return inLink || inCats || inText;
 }
 
-function buildThumbHTML(videoId, rssThumb) {
-  // 1) RSSが出してくれるサムネを最優先（ショートでも安定）
+/* 動画ID取り出し（/watch?v=... と /shorts/... 両対応） */
+function extractVideoId(link){
+  if (!link) return "";
+  if (link.includes("/shorts/")) {
+    return link.split("/shorts/")[1]?.split(/[?&]/)[0] || "";
+  }
+  return link.split("v=")[1]?.split("&")[0] || "";
+}
+
+/* サムネ（RSSサムネ優先＋段階フォールバック） */
+function thumbHTML(videoId, rssThumb){
   const first = rssThumb || `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
   const fallbacks = [
     `https://img.youtube.com/vi/${videoId}/sddefault.jpg`,
     `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
     `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
   ];
-  // onerrorで順番に切り替え
-  let handler = "";
-  fallbacks.forEach((u, i) => {
-    handler += `this.onerror=null;this.src='${u}';`;
-    if (i < fallbacks.length - 1) handler += `this.onerror=function(){${handler}};`;
-  });
-  return `<img src="${first}" loading="lazy" onerror="${handler}" alt="">`;
+  return `<img src="${first}" loading="lazy" alt=""
+            onerror="this.onerror=null;this.src='${fallbacks[0]}';
+              this.onerror=function(){this.src='${fallbacks[1]}';
+                this.onerror=function(){this.src='${fallbacks[2]}';};};">`;
 }
 
 async function fetchRSSVideos(){
@@ -869,30 +880,31 @@ async function fetchRSSVideos(){
 
   try {
     const res = await fetch(url);
-    if(!res.ok) throw new Error("RSS fetch failed");
+    if (!res.ok) throw new Error("RSS fetch failed");
     const data = await res.json();
+    let items = data.items || [];
 
-    // ★ショート動画を除外
-    const filtered = (data.items || []).filter(it => !it.link.includes("shorts"));
+    // ショート除外（必要なら）
+    if (EXCLUDE_SHORTS) items = items.filter(it => !isShortItem(it));
 
-    // ★ここで件数カット（除外後）
-    const items = filtered.slice(0, VIDEO_COUNT);
+    // 件数カット（除外後）
+    items = items.slice(0, VIDEO_COUNT);
 
     const wrap = document.getElementById("yt-videos");
     if (!wrap) return;
 
-    wrap.innerHTML = items.map(it=>{
-      const videoId = (it.link.split("v=")[1] || "").split("&")[0];
-      const title   = it.title;
-      const date    = new Date(it.pubDate);
-      const ymd     = `${date.getFullYear()}.${String(date.getMonth()+1).padStart(2,"0")}.${String(date.getDate()).padStart(2,"0")}`;
+    wrap.innerHTML = items.map(it => {
+      const videoId = extractVideoId(it.link);
+      const title   = it.title || "";
+      const d       = new Date(it.pubDate);
+      const ymd     = `${d.getFullYear()}.${String(d.getMonth()+1).padStart(2,"0")}.${String(d.getDate()).padStart(2,"0")}`;
       const url     = `https://www.youtube.com/watch?v=${videoId}`;
-      const thumb   = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+      const thumb   = thumbHTML(videoId, it.thumbnail);
+
       return `
         <div class="video-card">
           <div class="video-thumbnail">
-            <img src="${thumb}" alt="${title}" loading="lazy"
-                 onerror="this.onerror=null;this.src='https://img.youtube.com/vi/${videoId}/hqdefault.jpg';">
+            ${thumb}
             <a href="${url}" class="play-icon" target="_blank" rel="noopener"></a>
           </div>
           <div class="video-info">
@@ -904,14 +916,14 @@ async function fetchRSSVideos(){
         </div>
       `;
     }).join("");
+
   } catch (e) {
     console.error(e);
     const wrap = document.getElementById("yt-videos");
     if (wrap) wrap.innerHTML = `<p>最新動画を読み込めませんでした。</p>`;
   }
 }
-  }
-}
+
 fetchRSSVideos();
 </script>
                     </div>
