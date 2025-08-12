@@ -834,37 +834,76 @@
                 <h2>最新動画</h2>
             </div>
             <div class="youtube-videos"id="yt-videos"></div>
-               <script>
-/** ▼設定：ここだけ置き換え ▼ */
-const CHANNEL_ID  = "UC74qoTRqB1cvyFSU8sjdHUw"; // ←UCで始まるIDをペースト
-const VIDEO_COUNT = 6; // 表示する件数（お好みで）
+             <script>
+/** ▼設定ここだけ ▼ */
+const CHANNEL_ID      = "UC74qoTRqB1cvyFSU8sjdHUw"; // あなたのUC ID
+const VIDEO_COUNT     = 6;       // 表示件数
+const EXCLUDE_SHORTS  = true;    // ショートを除外するなら true
 /** ▲設定ここまで ▲ */
+
+function isShortItem(item) {
+  const t = (item.title || "") + " " + (item.description || "") + " " + (item.link || "");
+  return /(^|[\s#/])shorts?/i.test(t);
+}
+
+function buildThumbHTML(videoId, rssThumb) {
+  // 1) RSSが出してくれるサムネを最優先（ショートでも安定）
+  const first = rssThumb || `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+  const fallbacks = [
+    `https://img.youtube.com/vi/${videoId}/sddefault.jpg`,
+    `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
+    `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
+  ];
+  // onerrorで順番に切り替え
+  let handler = "";
+  fallbacks.forEach((u, i) => {
+    handler += `this.onerror=null;this.src='${u}';`;
+    if (i < fallbacks.length - 1) handler += `this.onerror=function(){${handler}};`;
+  });
+  return `<img src="${first}" loading="lazy" onerror="${handler}" alt="">`;
+}
 
 async function fetchRSSVideos(){
   const rss = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
   const url = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rss)}`;
 
   try {
-    const res = await fetch(url);
+    const res  = await fetch(url);
     if(!res.ok) throw new Error("RSS fetch failed");
     const data = await res.json();
-    const items = (data.items || []).slice(0, VIDEO_COUNT);
+    let items  = data.items || [];
+
+    // ショート除外（タイトル/説明/URLに shorts が含まれるもの）
+    if (EXCLUDE_SHORTS) {
+      items = items.filter(it => !isShortItem(it));
+    }
+
+    // 最新から表示数を絞る
+    items = items.slice(0, VIDEO_COUNT);
 
     const wrap = document.getElementById("yt-videos");
     if (!wrap) return;
 
     wrap.innerHTML = items.map(it=>{
-      const videoId = (it.link.split("v=")[1] || "").split("&")[0];
-      const title   = it.title;
-      const date    = new Date(it.pubDate);
-      const ymd     = `${date.getFullYear()}.${String(date.getMonth()+1).padStart(2,"0")}.${String(date.getDate()).padStart(2,"0")}`;
-      const url     = `https://www.youtube.com/watch?v=${videoId}`;
-      const thumb   = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+      // 動画IDの抽出（/watch?v=ID or /shorts/ID の両対応）
+      let videoId = "";
+      if (it.link.includes("/shorts/")) {
+        videoId = it.link.split("/shorts/")[1].split(/[?&]/)[0];
+      } else {
+        videoId = (it.link.split("v=")[1] || "").split("&")[0];
+      }
+
+      const title = it.title;
+      const date  = new Date(it.pubDate);
+      const ymd   = `${date.getFullYear()}.${String(date.getMonth()+1).padStart(2,"0")}.${String(date.getDate()).padStart(2,"0")}`;
+      const url   = `https://www.youtube.com/watch?v=${videoId}`;
+
+      const thumbHTML = buildThumbHTML(videoId, it.thumbnail);
+
       return `
         <div class="video-card">
           <div class="video-thumbnail">
-            <img src="${thumb}" alt="${title}" loading="lazy"
-                 onerror="this.onerror=null;this.src='https://img.youtube.com/vi/${videoId}/hqdefault.jpg';">
+            ${thumbHTML}
             <a href="${url}" class="play-icon" target="_blank" rel="noopener"></a>
           </div>
           <div class="video-info">
