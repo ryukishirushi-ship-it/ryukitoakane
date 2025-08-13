@@ -832,17 +832,17 @@
     <section class="youtube" id="youtube">
         <div class="container">
             <div class="section-title">
-                <h2>最新動画</h2>
-            </div>
-            <div class="youtube-videos"id="yt-videos"></div>
+<h2>最新動画</h2>
+<div class="youtube-videos" id="yt-videos"></div>
+
 <script>
 /** ▼設定 */
-const CHANNEL_ID  = "UC74qoTRqB1cvyFSU8sjdHUw";
-const VIDEO_COUNT = 6;           // 表示したい本数
-const EXCLUDE_SHORTS = true;     // ショートを除外する
+const CHANNEL_ID  = "UC74qoTRqB1cvyFSU8sjdHUw"; // チャンネルID
+const VIDEO_COUNT = 6;           // 表示本数
+const EXCLUDE_SHORTS = true;     // ショート除外
 /** ▲設定 */
 
-/* ショート判定を強化 */
+/* ショート判定 */
 function isShortItem(it){
   const inLink = it.link && it.link.includes("/shorts/");
   const inCats = (it.categories || []).some(c => /shorts?/i.test(c));
@@ -852,7 +852,7 @@ function isShortItem(it){
   return inLink || inCats || inText;
 }
 
-/* 動画ID取り出し（/watch?v=... と /shorts/... 両対応） */
+/* 動画ID取得（/watch と /shorts 両対応） */
 function extractVideoId(link){
   if (!link) return "";
   if (link.includes("/shorts/")) {
@@ -861,9 +861,9 @@ function extractVideoId(link){
   return link.split("v=")[1]?.split("&")[0] || "";
 }
 
-/* サムネ（RSSサムネ優先＋段階フォールバック） */
-function thumbHTML(videoId, rssThumb){
-  const first = rssThumb || `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+/* サムネHTML生成（フォールバック付き） */
+function thumbHTML(videoId){
+  const first = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
   const fallbacks = [
     `https://img.youtube.com/vi/${videoId}/sddefault.jpg`,
     `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
@@ -884,38 +884,22 @@ async function fetchRSSVideos(){
     if(!res.ok) throw new Error("RSS fetch failed");
     const data = await res.json();
 
-    // ★ショート動画を除外
-    let filtered = (data.items || []).filter(it => !it.link.includes("shorts"));
-
-    // ★必要な件数になるまで追加取得（必要なら）
-    let nextPageToken = data.nextPageToken;
-    while (filtered.length < VIDEO_COUNT && nextPageToken) {
-      const nextUrl = `${url}&pageToken=${nextPageToken}`;
-      const resNext = await fetch(nextUrl);
-      const nextData = await resNext.json();
-      const more = (nextData.items || []).filter(it => !it.link.includes("shorts"));
-      filtered = filtered.concat(more);
-      nextPageToken = nextData.nextPageToken;
-    }
-
-    // ★件数カット
+    let filtered = (data.items || []).filter(it => !EXCLUDE_SHORTS || !isShortItem(it));
     const items = filtered.slice(0, VIDEO_COUNT);
 
     const wrap = document.getElementById("yt-videos");
     if (!wrap) return;
 
     wrap.innerHTML = items.map(it=>{
-      const videoId = (it.link.split("v=")[1] || "").split("&")[0];
+      const videoId = extractVideoId(it.link);
       const title   = it.title;
       const date    = new Date(it.pubDate);
       const ymd     = `${date.getFullYear()}.${String(date.getMonth()+1).padStart(2,"0")}.${String(date.getDate()).padStart(2,"0")}`;
       const url     = `https://www.youtube.com/watch?v=${videoId}`;
-      const thumb   = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
       return `
         <div class="video-card">
           <div class="video-thumbnail">
-            <img src="${thumb}" alt="${title}" loading="lazy"
-                 onerror="this.onerror=null;this.src='https://img.youtube.com/vi/${videoId}/hqdefault.jpg';">
+            ${thumbHTML(videoId)}
             <a href="${url}" class="play-icon" target="_blank" rel="noopener"></a>
           </div>
           <div class="video-info">
@@ -935,12 +919,30 @@ async function fetchRSSVideos(){
 }
 fetchRSSVideos();
 </script>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
+<style>
+.youtube-videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+  gap: 20px;
+}
+.video-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.video-thumbnail {
+  position: relative;
+}
+.video-thumbnail img {
+  width: 100%;
+  display: block;
+}
+.video-info {
+  padding: 10px;
+}
+</style>
     <!-- About Us Section -->
     <section class="about">
         <div class="container">
