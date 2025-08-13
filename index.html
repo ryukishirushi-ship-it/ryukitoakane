@@ -481,64 +481,70 @@
             background-color: var(--beige);
         }
 
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
+    /* 配置：左 < 右（フォームを広く） */
+.contact-content {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(420px, 1.6fr);
+  gap: 48px;
+  align-items: start;
+}
 
-        .contact-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--terracotta);
-        }
+/* 左カラムを少し浮かせて読みやすく */
+.contact-info {
+  padding: 28px 24px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
 
-        .contact-info p {
-            margin-bottom: 30px;
-        }
+.contact-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 18px;
+  color: var(--terracotta);
+}
 
-        .contact-details {
-            margin-bottom: 30px;
-        }
+.contact-info p {
+  margin-bottom: 22px;
+  line-height: 1.8;
+}
 
-        .contact-details div {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
+.contact-details {
+  margin-bottom: 0;
+}
+.contact-details div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.contact-details i {
+  width: 30px;
+  color: var(--terracotta);
+  font-size: 1.2rem;
+}
 
-        .contact-details i {
-            width: 30px;
-            color: var(--terracotta);
-            font-size: 1.2rem;
-        }
+/* 右カラム：フォームiframeをフル幅で */
+.contact-form iframe {
+  width: 100%;
+  height: 900px;   /* 必要に応じて調整可 */
+  border: 0;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
 
-        .contact-form .form-group {
-            margin-bottom: 20px;
-        }
-
-        .contact-form label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
-            color: var(--black);
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: 'Noto Sans JP', sans-serif;
-            font-size: 0.9rem;
-        }
-
-        .contact-form textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
+/* スマホで1カラムに */
+@media (max-width: 992px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .contact-info {
+    padding: 22px 18px;
+  }
+  .contact-form iframe {
+    height: 1000px; /* 縦長端末向けに少し余裕を持たせるなら */
+  }
+}
         /* Footer */
         footer {
             background-color: var(--black);
@@ -1003,40 +1009,35 @@ fetchRSSVideos();
       <h2>お問い合わせ</h2>
     </div>
 
-    <div class="contact-content" style="display: flex; flex-wrap: wrap; gap: 20px;">
-      <!-- 左カラム -->
-      <div class="contact-info" style="flex: 1; min-width: 280px;">
-        <h3>お仕事のご依頼</h3>
-        <p>旅行コンテンツの制作、ホテルや観光施設のレビュー、タイアップ企画など、お気軽にご相談ください。</p>
+ <div class="contact-content">
+  <!-- 左カラム -->
+  <div class="contact-info">
+    <h3>お仕事のご依頼</h3>
+    <p>旅行コンテンツの制作、ホテルや観光施設のレビュー、タイアップ企画など、お気軽にご相談ください。</p>
 
-        <div class="contact-details" style="margin-top: 20px;">
-          <div style="margin-bottom: 10px;">
-            <i class="far fa-envelope"></i>
-            <span>ryukitoakane@gmail.com</span>
-          </div>
-          <div>
-            <i class="fab fa-instagram"></i>
-            <span>@akn_523</span>
-          </div>
-        </div>
+    <div class="contact-details">
+      <div>
+        <i class="far fa-envelope"></i>
+        <span>ryukitoakane@gmail.com</span>
       </div>
-
-      <!-- 右カラム（Googleフォーム） -->
-      <div class="contact-form" style="flex: 2; min-width: 300px;">
-        <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSevHAnbpeD3ABOrU-_cnM23BvRaNyJcn71JZcFXwYdPfA9Dww/viewform?embedded=true"
-          width="100%"
-          height="900"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          style="border: none;">
-          読み込んでいます…
-        </iframe>
+      <div>
+        <i class="fab fa-instagram"></i>
+        <span>@akn_523</span>
       </div>
     </div>
   </div>
-</section>
+
+  <!-- 右カラム -->
+  <div class="contact-form">
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSevHAnbpeD3ABOrU-_cnM23BvRaNyJcn71JZcFXwYdPfA9Dww/viewform?embedded=true"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0">
+      読み込んでいます…
+    </iframe>
+  </div>
+</div>
     <!-- Footer -->
     <footer>
         <div class="container">
