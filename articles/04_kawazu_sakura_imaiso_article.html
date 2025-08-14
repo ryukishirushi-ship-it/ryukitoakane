@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【伊豆・河津桜まつり】春の絶景オールインクルーシブ温泉宿「今井荘」で車なし夫婦旅 | りゅうきとあかねの旅行記</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --ivory: #F2F2EB;
+            --beige: #D9C49C;
+            --terracotta: #BF6A39;
+            --salmon: #F2A7A0;
+            --black: #0D0D0D;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--ivory);
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--terracotta);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--salmon);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--ivory);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--terracotta);
+        }
+
+        .logo span {
+            color: var(--black);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--black);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        nav ul li a:hover {
+            color: var(--terracotta);
+        }
+
+        /* Article Styles */
+        .article-header {
+            background: linear-gradient(135deg, var(--salmon) 0%, var(--beige) 100%);
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            color: var(--black);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .article-subtitle {
+            font-size: 1.2rem;
+            color: var(--terracotta);
+            margin-bottom: 20px;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--black);
+            font-size: 0.9rem;
+        }
+
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .intro-section {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--black);
+            margin-bottom: 30px;
+        }
+
+        .featured-image {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin: 30px auto;
+            display: block;
+        }
+
+        .content-section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--terracotta);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .section-content {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--beige) 0%, var(--ivory) 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 5px solid var(--terracotta);
+        }
+
+        .highlight-title {
+            font-size: 1.3rem;
+            color: var(--terracotta);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .info-card {
+            background: var(--ivory);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--beige);
+        }
+
+        .info-card-title {
+            font-size: 1.2rem;
+            color: var(--terracotta);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-card-content {
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        .transport-timeline {
+            background: var(--ivory);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .timeline-icon {
+            background: var(--terracotta);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .timeline-content {
+            flex: 1;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            color: var(--terracotta);
+            margin-bottom: 5px;
+        }
+
+        .timeline-desc {
+            color: var(--black);
+            font-size: 0.9rem;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .video-section {
+            text-align: center;
+            margin: 50px 0;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--salmon) 0%, var(--beige) 100%);
+            border-radius: 20px;
+        }
+
+        .video-title {
+            font-size: 1.8rem;
+            color: var(--black);
+            margin-bottom: 20px;
+        }
+
+        .youtube-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--terracotta);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .youtube-link:hover {
+            background: var(--black);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 15px;
+            }
+
+            .article-title {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .timeline-icon {
+                margin-bottom: 10px;
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <div class="logo">
+                    Ryuki <span>&</span> Akane
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#destinations">Destinations</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="article-header">
+            <div class="container">
+                <h1 class="article-title">河津桜まつり×絶景オールインクルーシブ温泉宿</h1>
+                <p class="article-subtitle">春の伊豆で車なし夫婦旅を満喫！今井荘のオーシャンビューと桜のコラボレーション</p>
+                <div class="article-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>静岡県・伊豆半島</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>2月〜3月</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-train"></i>
+                        <span>車なし旅行</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="article-content">
+            <section class="intro-section">
+                <p class="intro-text">
+                    一足早い春の訪れを感じられる河津桜まつり。車を使わずに電車とバスだけで、
+                    絶景オーシャンビューの今井荘に宿泊しながら、ピンク色に染まる伊豆の春を満喫してきました。
+                    オールインクルーシブの宿で贅沢なひとときを過ごしながら、河津桜の絶景スポットを巡る
+                    車なし夫婦旅の魅力をお伝えします。
+                </p>
+                <img src="https://img.cooljapan-videos.com/files/articles/3qurnhv4/thumbnail/0c935d0404c83444cdbadb65e411581f.jpg.webp" 
+                     alt="河津桜まつりの美しい桜並木" class="featured-image">
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">河津桜まつりの魅力</h2>
+                <div class="section-content">
+                    <p>
+                        河津桜は本州で一番早咲きの桜として知られ、毎年2月上旬から3月上旬にかけて見頃を迎えます。
+                        ソメイヨシノよりも濃いピンク色が特徴的で、河津川沿いに約800本の桜が咲き誇る光景は圧巻です。
+                        桜と菜の花の黄色いコントラストも美しく、まさに春の絶景が楽しめます。
+                    </p>
+                </div>
+
+                <div class="highlight-box">
+                    <h3 class="highlight-title">河津桜まつり 2025年開催情報</h3>
+                    <p><strong>期間：</strong>2025年2月1日（月）〜2月28日（日）</p>
+                    <p><strong>場所：</strong>河津川沿い（河津駅周辺）</p>
+                    <p><strong>見どころ：</strong>河津川沿いの桜並木、桜と菜の花のコラボレーション</p>
+                    <p><strong>アクセス：</strong>JR伊東線・伊豆急行線「河津駅」下車すぐ</p>
+                </div>
+
+                <div class="image-gallery">
+                    <div class="gallery-item">
+                        <img src="https://www.tabirai.net/localinfo/cms/wp-content/uploads/2023/03/unnamed-6-1.jpg" 
+                             alt="河津桜のピンクのトンネル" class="gallery-image">
+                        <div class="gallery-caption">河津川沿いの桜のトンネル</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://image.co-trip.jp/content/14renewal_images_l/681806/main_image_20250214111426053.jpg" 
+                             alt="河津桜と菜の花のコラボレーション" class="gallery-image">
+                        <div class="gallery-caption">桜と菜の花の美しいコントラスト</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">今井荘での贅沢なオールインクルーシブ体験</h2>
+                <div class="section-content">
+                    <p>
+                        今回宿泊した「今井荘」は、伊豆今井浜温泉にある絶景オーシャンビューの温泉宿。
+                        2024年にリニューアルされ、オールインクルーシブシステムを導入しています。
+                        お食事からお飲み物まで、宿泊料金に含まれているので、心配なくゆったりと過ごすことができます。
+                    </p>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3 class="info-card-title">
+                            <i class="fas fa-bed"></i>
+                            お部屋
+                        </h3>
+                        <div class="info-card-content">
+                            オーシャンビューの和洋室で、窓からは今井浜海岸の絶景が一望できます。
+                            リニューアルされたばかりの清潔で快適な空間です。
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="info-card-title">
+                            <i class="fas fa-hot-tub"></i>
+                            温泉
+                        </h3>
+                        <div class="info-card-content">
+                            今井浜温泉の源泉かけ流し。露天風呂からは海を眺めながら
+                            温泉を楽しむことができ、特に夕日の時間帯は絶景です。
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="info-card-title">
+                            <i class="fas fa-utensils"></i>
+                            オールインクルーシブ
+                        </h3>
+                        <div class="info-card-content">
+                            地元の新鮮な海の幸を中心とした会席料理、アルコール類、
+                            ソフトドリンクまで、すべて宿泊料金に含まれています。
+                        </div>
+                    </div>
+                </div>
+
+                <img src="https://sakuranomori-hotels.com/imaiso/assets/images/top/mainvisual_06.jpg" 
+                     alt="今井荘のオーシャンビュー" class="featured-image">
+
+                <div class="highlight-box">
+                    <h3 class="highlight-title">今井荘 宿泊情報</h3>
+                    <p><strong>住所：</strong>静岡県賀茂郡河津町見高今井35-1</p>
+                    <p><strong>アクセス：</strong>伊豆急行線「今井浜海岸駅」から徒歩3分</p>
+                    <p><strong>特徴：</strong>オールインクルーシブ、オーシャンビュー、源泉かけ流し温泉</p>
+                    <p><strong>河津桜会場まで：</strong>電車で約10分（今井浜海岸駅→河津駅）</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">車なしアクセス完全ガイド</h2>
+                <div class="section-content">
+                    <p>
+                        東京から伊豆・河津まで、電車だけで快適にアクセスできます。
+                        JR東海道線とJR伊東線、伊豆急行線を乗り継いで、約3時間で到着。
+                        車の運転を気にすることなく、景色を楽しみながらの旅路も魅力の一つです。
+                    </p>
+                </div>
+
+                <div class="transport-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-train"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-title">東京駅 → 熱海駅</div>
+                            <div class="timeline-desc">JR東海道線で約45分（快速アクティー利用）</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-title">熱海駅で乗り換え</div>
+                            <div class="timeline-desc">JR伊東線に乗り換え（同じホーム）</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-train"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-title">熱海駅 → 伊東駅</div>
+                            <div class="timeline-desc">JR伊東線で約25分</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-title">伊東駅で乗り換え</div>
+                            <div class="timeline-desc">伊豆急行線に乗り換え</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-title">今井浜海岸駅 / 河津駅</div>
+                            <div class="timeline-desc">今井荘なら今井浜海岸駅、河津桜なら河津駅で下車</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-gallery">
+                    <div class="gallery-item">
+                        <img src="https://images.microcms-assets.io/assets/14d13bd618dc45c7b684223c0ca9d033/b3a0ee559b2941a5bc640731d6ce84c0/Izukyu_Series3000-Y2.jpg" 
+                             alt="伊豆急行線の電車" class="gallery-image">
+                        <div class="gallery-caption">伊豆急行線で海岸線の絶景を楽しみながら</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.microcms-assets.io/assets/14d13bd618dc45c7b684223c0ca9d033/d68045ab35084cb4b146bd2060a39b81/Kawazu_Station_ac_(1).jpg" 
+                             alt="河津駅" class="gallery-image">
+                        <div class="gallery-caption">河津桜まつりの玄関口・河津駅</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">おすすめ河津桜スポット</h2>
+                <div class="section-content">
+                    <p>
+                        河津桜まつり期間中は、河津川沿いがメインの見どころとなりますが、
+                        いくつかの特に美しいスポットをご紹介します。どこも河津駅から徒歩圏内で、
+                        車がなくても十分に楽しめます。
+                    </p>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3 class="info-card-title">
+                            <i class="fas fa-camera"></i>
+                            河津川沿い桜並木
+                        </h3>
+                        <div class="info-card-content">
+                            約4kmにわたる桜並木。河津駅から徒歩3分。
+                            桜と菜の花のコントラストが美しく、写真撮影にも最適です。
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="info-card-title">
+                            <i class="fas fa-mountain"></i>
+                            河津桜原木
+                        </h3>
+                        <div class="info-card-content">
+                            河津桜発祥の地にある原木。樹齢60年以上の見事な桜で、
+                            河津駅から徒歩7分ほどの場所にあります。
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="info-card-title">
+                            <i class="fas fa-bridge"></i>
+                            豊泉橋周辺
+                        </h3>
+                        <div class="info-card-content">
+                            橋の上から見る桜の眺めが絶景。特に川面に映る桜が美しく、
+                            多くの写真愛好家が訪れる人気スポットです。
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">旅行のポイント・予算</h2>
+                <div class="section-content">
+                    <p>
+                        車なし伊豆旅行を成功させるための重要なポイントと、
+                        実際にかかった費用をご紹介します。事前の計画が快適な旅の鍵です。
+                    </p>
+                </div>
+
+                <div class="highlight-box">
+                    <h3 class="highlight-title">1泊2日 車なし伊豆旅行の予算（2名分）</h3>
+                    <p><strong>交通費：</strong>約8,000円（東京⇔河津 往復）</p>
+                    <p><strong>宿泊費：</strong>約40,000円（今井荘1泊2食・オールインクルーシブ）</p>
+                    <p><strong>観光・その他：</strong>約5,000円（お土産、軽食など）</p>
+                    <p><strong>合計：</strong>約53,000円</p>
+                    <small>※料金は時期により変動します</small>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3 class="info-card-title">
+                            <i class="fas fa-lightbulb"></i>
+                            事前準備のコツ
+                        </h3>
+                        <div class="info-card-content">
+                            河津桜まつり期間中は混雑するため、宿泊予約は早めに。
+                            電車の時刻表も事前にチェックしておくと安心です。
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="info-card-title">
+                            <i class="fas fa-umbrella"></i>
+                            持参すると便利
+                        </h3>
+                        <div class="info-card-content">
+                            歩きやすい靴、防寒着、カメラ、充電器。
+                            2月の伊豆はまだ肌寒いので、温度調節のできる服装がおすすめ。
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="info-card-title">
+                            <i class="fas fa-clock"></i>
+                            時間配分
+                        </h3>
+                        <div class="info-card-content">
+                            河津桜散策は午前中、今井荘でのんびり過ごすのは午後から夕食後。
+                            温泉と夕日のコンビネーションは絶対に見逃せません。
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="video-section">
+                <h2 class="video-title">YouTube動画で詳しくチェック！</h2>
+                <p>実際の旅の様子は、りゅうきとあかねのYouTubeチャンネルでご覧いただけます。
+                河津桜の美しさや今井荘での贅沢な時間を動画でお楽しみください。</p>
+                <a href="https://www.youtube.com/watch?v=hn5nZP8BeUA" target="_blank" class="youtube-link">
+                    <i class="fab fa-youtube"></i>
+                    動画を見る
+                </a>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">まとめ</h2>
+                <div class="section-content">
+                    <p>
+                        車がなくても十分に楽しめる伊豆・河津桜旅行。電車でのアクセスの良さ、
+                        今井荘でのオールインクルーシブの贅沢な時間、そして一足早い春の絶景。
+                        すべてが揃った完璧な春のご褒美旅でした。
+                    </p>
+                    <p>
+                        特に今井荘のオーシャンビューと温泉は格別で、河津桜散策で歩き疲れた体を
+                        しっかりと癒してくれます。車の運転を気にすることなく、お酒も楽しめるのは
+                        車なし旅行ならではの魅力です。
+                    </p>
+                    <p>
+                        2月下旬から3月上旬の河津桜まつりは、本州で一番早い桜の季節。
+                        一足先に春を感じたい方は、ぜひ車なし伊豆旅行にチャレンジしてみてください。
+                        きっと素敵な思い出になるはずです。
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer style="background-color: var(--black); color: var(--ivory); text-align: center; padding: 40px 0; margin-top: 60px;">
+        <div class="container">
+            <p>&copy; 2024 Ryuki & Akane Travel Blog. All rights reserved.</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">車なし旅行で新しい発見を。</p>
+        </div>
+    </footer>
+</body>
+</html>
