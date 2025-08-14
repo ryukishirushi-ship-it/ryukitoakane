@@ -1,1144 +1,479 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ryuki and Akane | Travel Without a Car</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --ivory: #F2F2EB;
-            --beige: #D9C49C;
-            --terracotta: #BF6A39;
-            --salmon: #F2A7A0;
-            --black: #0D0D0D;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Noto Sans JP', sans-serif;
-            background-color: var(--ivory);
-            color: var(--black);
-            line-height: 1.6;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 500;
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--terracotta);
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--salmon);
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header Styles */
-        header {
-            background-color: var(--ivory);
-            padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: var(--terracotta);
-        }
-
-        .logo span {
-            color: var(--black);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 30px;
-        }
-
-        nav ul li a {
-            color: var(--black);
-            font-size: 0.9rem;
-            font-weight: 500;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        nav ul li a:hover {
-            color: var(--terracotta);
-        }
-
-        /* Hero Section */
-        .hero {
-            height:  auto;
-            padding: 60px 0;
-            background-image: url('https://source.unsplash.com/random/1200x800/?miyakojima');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            position: relative;
-            justify-content: center;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(13, 13, 13, 0.4);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            color: #fff;
-            max-width: 1200px;
-            text-align: center;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--terracotta);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-weight: 500;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: var(--salmon);
-            color: white;
-        }
-
-        /* Featured Section */
-        .featured {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-            position: relative;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--terracotta);
-            margin-bottom: 20px;
-            font-weight: 400;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--beige);
-        }
-
-        .featured-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .featured-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .featured-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .featured-img {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .featured-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .featured-card:hover .featured-img img {
-            transform: scale(1.1);
-        }
-
-        .featured-info {
-            padding: 20px;
-        }
-
-        .featured-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: var(--black);
-        }
-
-        .featured-info p {
-            color: #666;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-        }
-
-        .read-more {
-            font-weight: 500;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .read-more i {
-            margin-left: 5px;
-            font-size: 0.8rem;
-        }
-
-        /* YouTube Section */
-        .youtube {
-            padding: 80px 0;
-            background-color: var(--beige);
-        }
-
-        .youtube-videos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .video-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .video-thumbnail {
-            position: relative;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
-        }
-
-        .video-thumbnail img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .play-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60px;
-            height: 60px;
-            background-color: rgba(191, 106, 57, 0.8);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .play-icon::before {
-            content: '';
-            width: 0;
-            height: 0;
-            border-top: 10px solid transparent;
-            border-left: 15px solid white;
-            border-bottom: 10px solid transparent;
-            margin-left: 5px;
-        }
-
-        .video-info {
-            padding: 20px;
-        }
-
-        .video-info h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        .video-info p {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-        }
-
-        .video-meta {
-            display: flex;
-            font-size: 0.8rem;
-            color: #888;
-        }
-
-        .video-meta span {
-            margin-right: 15px;
-            display: flex;
-            align-items: center;
-        }
-
-        .video-meta i {
-            margin-right: 5px;
-        }
-
-        /* About Section */
-        .about {
-            padding: 80px 0;
-            background-color: white;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-img {
-            position: relative;
-        }
-
-        .about-img img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        .about-img::before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            width: 100%;
-            height: 100%;
-            border: 3px solid var(--beige);
-            border-radius: 8px;
-            z-index: -1;
-        }
-
-        .about-info h2 {
-            font-size: 2.5rem;
-            color: var(--terracotta);
-            margin-bottom: 20px;
-        }
-
-        .about-info p {
-            margin-bottom: 20px;
-            font-size: 1rem;
-            line-height: 1.7;
-        }
-
-        .social-links {
-            display: flex;
-            margin-top: 30px;
-        }
-
-        .social-links a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 40px;
-            height: 40px;
-            background-color: var(--beige);
-            color: var(--black);
-            border-radius: 50%;
-            margin-right: 15px;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background-color: var(--terracotta);
-            color: white;
-        }
-
-/* Instagram Section */
-.instagram {
-    padding: 80px 0;
-    background-color: var(--ivory);
-}
-
-.instagram-grid {
-    display: flex;
-    justify-content: center; /* 真ん中に寄せる */
-    gap: 20px; /* カードの間隔 */
-    flex-wrap: wrap; /* スマホやタブレットで折り返し */
-}
-
-.instagram-item {
-    position: relative;
-    width: 320px; /* 埋め込みカードの幅 */
-    max-width: 100%;
-    overflow: hidden;
-}
-
-.instagram-item img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.instagram-item:hover img {
-    transform: scale(1.1);
-}
-
-.instagram-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(191, 106, 57, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.instagram-item:hover .instagram-overlay {
-    opacity: 1;
-}
-
-.instagram-overlay i {
-    color: white;
-    font-size: 1.5rem;
-}
-
-.instagram-follow {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.instagram-follow p {
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-}
-        /* Contact Section */
-        .contact {
-            padding: 80px 0;
-            background-color: var(--beige);
-        }
-
-    /* 配置：左 < 右（フォームを広く） */
-.contact-content {
-  display: grid;
-  grid-template-columns: minmax(280px, 1fr) minmax(420px, 1.6fr);
-  gap: 48px;
-  align-items: start;
-}
-
-/* 左カラムを少し浮かせて読みやすく */
-.contact-info {
-  padding: 28px 24px;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-}
-
-.contact-info h3 {
-  font-size: 1.8rem;
-  margin-bottom: 18px;
-  color: var(--terracotta);
-}
-
-.contact-info p {
-  margin-bottom: 22px;
-  line-height: 1.8;
-}
-
-.contact-details {
-  margin-bottom: 0;
-}
-.contact-details div {
-  display: flex;
-  align-items: center;
-  margin-bottom: 12px;
-}
-.contact-details i {
-  width: 30px;
-  color: var(--terracotta);
-  font-size: 1.2rem;
-}
-
-/* 右カラム：フォームiframeをフル幅で */
-.contact-form iframe {
-  width: 100%;
-  height: 900px;   /* 必要に応じて調整可 */
-  border: 0;
-  border-radius: 12px;
-  background: #fff;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-}
-
-/* スマホで1カラムに */
-@media (max-width: 992px) {
-  .contact-content {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-  .contact-info {
-    padding: 22px 18px;
-  }
-  .contact-form iframe {
-    height: 1000px; /* 縦長端末向けに少し余裕を持たせるなら */
-  }
-}
-        /* Footer */
-        footer {
-            background-color: var(--black);
-            padding: 40px 0;
-            color: white;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-        }
-
-        .footer-column h4 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: var(--beige);
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-column ul li a {
-            color: #ccc;
-            transition: color 0.3s ease;
-        }
-
-        .footer-column ul li a:hover {
-            color: var(--salmon);
-        }
-
-        .footer-bottom {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-        }
-
-        .footer-bottom p {
-            font-size: 0.9rem;
-            color: #999;
-        }
-
-        /* Blog Post Section */
-        .blog-post {
-            padding: 80px 0;
-        }
-
-        .blog-post-content {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            padding: 40px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .blog-post-header {
-            margin-bottom: 30px;
-        }
-
-        .blog-post-header h1 {
-            font-size: 2.5rem;
-            color: var(--terracotta);
-            margin-bottom: 20px;
-        }
-
-        .blog-post-meta {
-            display: flex;
-            align-items: center;
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
-
-        .blog-post-meta span {
-            margin-right: 20px;
-            display: flex;
-            align-items: center;
-        }
-
-        .blog-post-meta i {
-            margin-right: 5px;
-            color: var(--beige);
-        }
-
-        .blog-post-image {
-            width: 100%;
-            height: 400px;
-            margin-bottom: 30px;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .blog-post-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .blog-post-body {
-            line-height: 1.8;
-        }
-
-        .blog-post-body p {
-            margin-bottom: 20px;
-        }
-
-        .blog-post-body h2 {
-            font-size: 1.8rem;
-            color: var(--terracotta);
-            margin: 40px 0 20px;
-        }
-
-        .blog-post-body h3 {
-            font-size: 1.4rem;
-            color: var(--black);
-            margin: 30px 0 15px;
-        }
-
-        .blog-post-body img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-
-        .blog-post-body .caption {
-            text-align: center;
-            color: #666;
-            font-style: italic;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .hero-content h1 {
-                font-size: 3rem;
-            }
-            
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .instagram-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-            }
-            
-            .logo {
-                margin-bottom: 20px;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            nav ul li {
-                margin: 10px 0;
-                margin-left: 0;
-            }
-            
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .instagram-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-            
-            .featured-content,
-            .youtube-videos {
-                grid-template-columns: 1fr;
-            }
-            
-            .instagram-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            
-            .blog-post-content {
-                padding: 20px;
-            }
-            
-            .blog-post-header h1 {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ryuki and Akane | Travel Without a Car</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"/>
+
+  <style>
+    :root{
+      --ivory:#F2F2EB;
+      --beige:#D9C49C;
+      --terracotta:#BF6A39;
+      --salmon:#F2A7A0;
+      --black:#0D0D0D;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    body{
+      font-family:'Noto Sans JP',sans-serif;
+      background:var(--ivory);
+      color:var(--black);
+      line-height:1.6;
+    }
+
+    h1,h2,h3,h4,h5,h6{
+      font-family:'Cormorant Garamond',serif;
+      font-weight:500;
+    }
+
+    a{
+      color:var(--terracotta);
+      text-decoration:none;
+      transition:color .3s ease;
+    }
+    a:hover{color:var(--salmon);}
+
+    .container{
+      width:100%;
+      max-width:1200px;
+      margin:0 auto;
+      padding:0 20px;
+    }
+
+    /* ===== Header ===== */
+    header{
+      background:var(--ivory);
+      padding:20px 0;
+      box-shadow:0 2px 10px rgba(0,0,0,.05);
+      position:sticky; top:0; z-index:1000;
+    }
+    .header-container{
+      display:flex; justify-content:space-between; align-items:center;
+    }
+    .logo{font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:600; color:var(--terracotta);}
+    .logo span{color:var(--black);}
+    nav ul{display:flex; list-style:none;}
+    nav li{margin-left:30px;}
+    nav a{color:var(--black); font-size:.9rem; font-weight:500; letter-spacing:1px; text-transform:uppercase;}
+    nav a:hover{color:var(--terracotta);}
+
+    /* ===== Hero ===== */
+    .hero{
+      padding:60px 0;
+      background:url('https://source.unsplash.com/random/1200x800/?miyakojima') center/cover no-repeat;
+      display:flex; align-items:center; justify-content:center; position:relative;
+    }
+    .hero::before{
+      content:""; position:absolute; inset:0; background:rgba(13,13,13,.4);
+    }
+    .hero-content{position:relative; z-index:1; color:#fff; text-align:center;}
+    .hero-content h1{font-size:3.5rem; margin-bottom:20px; line-height:1.2;}
+    .hero-content p{font-size:1.2rem; margin-bottom:30px;}
+    .btn{
+      display:inline-block; padding:12px 30px; background:var(--terracotta); color:#fff;
+      border:none; border-radius:4px; font-weight:500; font-size:1rem; cursor:pointer; transition:.3s;
+    }
+    .btn:hover{background:var(--salmon);}
+
+    /* ===== Featured ===== */
+    .featured{padding:80px 0;}
+    .section-title{text-align:center; margin-bottom:60px; position:relative;}
+    .section-title h2{font-size:2.5rem; color:var(--terracotta); margin-bottom:20px; font-weight:400;}
+    .section-title::after{
+      content:""; position:absolute; bottom:-15px; left:50%; transform:translateX(-50%);
+      width:80px; height:3px; background:var(--beige);
+    }
+    .featured-content{
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px;
+    }
+    .featured-card{
+      background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,.1);
+      transition:transform .3s ease;
+    }
+    .featured-card:hover{transform:translateY(-10px);}
+    .featured-img{height:200px; overflow:hidden;}
+    .featured-img img{width:100%; height:100%; object-fit:cover; transition:transform .5s ease;}
+    .featured-card:hover .featured-img img{transform:scale(1.1);}
+    .featured-info{padding:20px;}
+    .featured-info h3{font-size:1.5rem; margin-bottom:10px; color:var(--black);}
+    .featured-info p{color:#666; margin-bottom:15px; font-size:.9rem;}
+    .read-more{font-weight:500; font-size:.9rem; display:inline-flex; align-items:center;}
+    .read-more i{margin-left:6px; font-size:.85rem;}
+
+    /* ===== YouTube ===== */
+    .youtube{padding:80px 0; background:var(--beige);}
+    .youtube-videos{
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px;
+    }
+    .video-card{background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,.1);}
+    .video-thumbnail{position:relative; padding-top:56.25%;}
+    .video-thumbnail img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
+    .play-icon{
+      position:absolute; inset:0; margin:auto; width:60px; height:60px; border-radius:50%;
+      background:rgba(191,106,57,.8);
+    }
+    .play-icon::before{
+      content:""; position:absolute; top:50%; left:50%; transform:translate(-40%,-50%);
+      border-top:10px solid transparent; border-left:15px solid #fff; border-bottom:10px solid transparent;
+    }
+    .video-info{padding:20px;}
+    .video-info h3{font-size:1.2rem; margin-bottom:10px;}
+    .video-meta{display:flex; gap:16px; font-size:.85rem; color:#888;}
+
+    /* ===== About ===== */
+    .about{padding:80px 0; background:#fff;}
+    .about-content{display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center;}
+    .about-img{position:relative;}
+    .about-img img{width:100%; border-radius:8px;}
+    .about-img::before{content:""; position:absolute; top:-20px; left:-20px; right:0; bottom:0; border:3px solid var(--beige); border-radius:8px; z-index:-1;}
+    .about-info h2{font-size:2.5rem; color:var(--terracotta); margin-bottom:20px;}
+    .about-info p{margin-bottom:20px;}
+    .social-links{display:flex; gap:12px; margin-top:30px;}
+    .social-links a{display:grid; place-items:center; width:40px; height:40px; background:var(--beige); color:var(--black); border-radius:50%; transition:.3s;}
+    .social-links a:hover{background:var(--terracotta); color:#fff;}
+
+    /* ===== Instagram ===== */
+    .instagram{padding:80px 0; background:var(--ivory);}
+    .instagram-grid{display:flex; justify-content:center; gap:20px; flex-wrap:wrap;}
+
+    /* ===== Contact ===== */
+    .contact{padding:80px 0; background:var(--beige);}
+    .contact-content{display:grid; grid-template-columns:minmax(280px,1fr) minmax(420px,1.6fr); gap:48px; align-items:start;}
+    .contact-info{
+      padding:28px 24px; background:rgba(255,255,255,.15); border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,.06);
+    }
+    .contact-info h3{font-size:1.8rem; margin-bottom:18px; color:var(--terracotta);}
+    .contact-info p{margin-bottom:22px; line-height:1.8;}
+    .contact-details div{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+    .contact-details i{width:30px; color:var(--terracotta); font-size:1.2rem;}
+    .contact-form iframe{
+      width:100%; height:900px; border:0; border-radius:12px; background:#fff; box-shadow:0 8px 24px rgba(0,0,0,.08);
+    }
+
+    /* ===== Footer（修正版） ===== */
+    .site-footer{width:100%; background:var(--black); color:#fff;}
+    .site-footer .footer-inner{max-width:1200px; margin:0 auto; padding:48px 20px;}
+    .site-footer .footer-content{
+      display:grid; grid-template-columns:2fr 2fr 1.2fr 1.2fr; gap:32px; align-items:start;
+    }
+    .site-footer .footer-column h4{font-size:1.2rem; margin-bottom:20px; color:var(--beige);}
+    .site-footer .footer-column ul{list-style:none;}
+    .site-footer .footer-column li{margin-bottom:10px;}
+    .site-footer .footer-column a{color:#ccc; transition:color .3s;}
+    .site-footer .footer-column a:hover{color:var(--salmon);}
+    .site-footer .footer-bottom{margin-top:40px; padding-top:20px; border-top:1px solid rgba(255,255,255,.1); text-align:center;}
+    .site-footer .footer-bottom p{font-size:.9rem; color:#999;}
+
+    /* ===== Responsive ===== */
+    @media (max-width:992px){
+      .hero-content h1{font-size:3rem;}
+      .about-content{grid-template-columns:1fr;}
+      .contact-content{grid-template-columns:1fr; gap:28px;}
+      .contact-info{padding:22px 18px;}
+      .contact-form iframe{height:1000px;}
+      .site-footer .footer-content{grid-template-columns:1.5fr 1.5fr 1fr 1fr; gap:24px;}
+    }
+    @media (max-width:768px){
+      .header-container{flex-direction:column;}
+      .logo{margin-bottom:16px;}
+      nav ul{flex-direction:column; align-items:center; gap:10px;}
+      nav li{margin:0;}
+      .hero-content h1{font-size:2.5rem;}
+      .section-title h2{font-size:2rem;}
+      .site-footer .footer-content{grid-template-columns:1fr 1fr; gap:20px;}
+    }
+    @media (max-width:576px){
+      .featured-content,.youtube-videos{grid-template-columns:1fr;}
+      .hero-content h1{font-size:2rem;}
+      .site-footer .footer-content{grid-template-columns:1fr; gap:16px;}
+    }
+    /* Blog Post box（テンプレ用） */
+    .blog-post{padding:80px 0;}
+    .blog-post-content{background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,.1); padding:40px; max-width:900px; margin:0 auto;}
+    .blog-post-header h1{font-size:2.5rem; color:var(--terracotta); margin-bottom:20px;}
+    .blog-post-meta{display:flex; align-items:center; gap:20px; color:#666; font-size:.9rem; margin-bottom:20px;}
+    .blog-post-meta i{margin-right:6px; color:var(--beige);}
+    .blog-post-image{width:100%; height:400px; overflow:hidden; border-radius:8px; margin-bottom:30px;}
+    .blog-post-image img{width:100%; height:100%; object-fit:cover;}
+    .blog-post-body p{margin-bottom:20px;}
+    .blog-post-body h2{font-size:1.8rem; color:var(--terracotta); margin:40px 0 20px;}
+    .blog-post-body h3{font-size:1.4rem; color:var(--black); margin:30px 0 15px;}
+    .blog-post-body img{width:100%; border-radius:8px; margin:20px 0;}
+    .blog-post-body .caption{text-align:center; color:#666; font-style:italic; font-size:.9rem; margin-bottom:20px;}
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-        <h1 class="logo">Ryuki<span> & </span>Akane</h1>
-
-        <!-- ハンバーガー（スマホで開閉） -->
-        <button class="menu-toggle" id="menuToggle" aria-label="メニューを開閉">
-          <i class="fas fa-bars"></i>
-        </button>
-
-        <nav id="mainNav">
-            <ul>
-                <li><a href="#home" aria-label="ホーム" title="ホーム"><i class="fas fa-home"></i></a></li>
-                <li><a href="#blog" aria-label="ブログ" title="ブログ"><i class="fas fa-book-open"></i></a></li>
-                <li><a href="#youtube" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a></li>
-                <li><a href="#instagram" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="#contact" aria-label="お問い合わせ" title="お問い合わせ"><i class="far fa-envelope"></i></a></li>
-            </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container hero-content">
-            <h1>りゅうきとあかねの車なし旅日記　</h1>
-            <p>私たちと一緒に、車がなくても行ける日本全国の素敵なホテル・グルメ・観光スポットを探検しましょう</p>
-            <a href="#blog" class="btn">ブログを読む</a>
-        </div>
-    </section>
-
-    <!-- Featured Posts Section -->
-    <section class="featured" id="blog">
-        <div class="container">
-            <div class="section-title">
-                <h2>記事</h2>
-            </div>
-            <div class="featured-content">
-                <div class="featured-card">
-                    <div class="featured-img">
-                        <img src="https://img.youtube.com/vi/Nr02LYD_CaE/maxresdefault.jpg" alt="宮古島イラフSUI">
-                    </div>
-                    <div class="featured-info">
-                        <h3>【車無し】宮古島イラフSUIで味わう大人の贅沢と近隣観光1泊2日</h3>
-                        <p>車がないと難しいと言われる宮古島を、車なしで満喫する旅。ラグジュアリーホテル「イラフSUI」に滞在して、極上のリゾートステイと近隣観光を楽しみます。</p>
-                        <a href="articles/05_miyakojima_iraph_sui_article.html" class="read-more">記事を読む <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="featured-card">
-                    <div class="featured-img">
-                        <img src="https://source.unsplash.com/random/600x400/?irabujima" alt="伊良部島">
-                    </div>
-                    <div class="featured-info">
-                        <h3>【宮古島】車なしで行く！絶品グルメ＆観光プラン</h3>
-                        <p>宮古島・伊良部島での2日目の様子をお届け。地元グルメ巡りと観光スポット訪問を中心に、車なしでも楽しめる宮古島旅行の魅力に迫ります。</p>
-                        <a href="irabujima-blog.html" class="read-more">記事を読む <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="featured-card">
-                    <div class="featured-img">
-                        <img src="https://img.youtube.com/vi/yKi94fVJ6fs/maxresdefault.jpg" alt="ANAインターコンチネンタル万座ビーチリゾート">
-                    </div>
-                    <div class="featured-info">
-                        <h3>【沖縄・車なし】ANAインターコンチネンタル万座ビーチリゾート</h3>
-                        <p>沖縄屈指のリゾートホテル「ANAインターコンチネンタル万座ビーチリゾート」での2泊3日の滞在記。青い海と空に囲まれた極上のリゾート体験。</p>
-                        <a href="articles/06_ana_manza_article.html" class="read-more">記事を読む <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<!-- YouTube Section -->
-<section class="youtube" id="youtube">
-  <div class="container">
-    <div class="section-title">
-      <h2>最新動画</h2>
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="container header-container">
+      <h1 class="logo">Ryuki<span> & </span>Akane</h1>
+      <nav id="mainNav">
+        <ul>
+          <li><a href="#home" title="ホーム"><i class="fas fa-home"></i></a></li>
+          <li><a href="#blog" title="ブログ"><i class="fas fa-book-open"></i></a></li>
+          <li><a href="#youtube" title="YouTube"><i class="fab fa-youtube"></i></a></li>
+          <li><a href="#instagram" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="#contact" title="お問い合わせ"><i class="far fa-envelope"></i></a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <div class="youtube-videos" id="yt-videos"></div>
-  </div>
-</section>
+  <!-- ===== Hero ===== -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <h1>りゅうきとあかねの車なし旅日記</h1>
+      <p>車がなくても行ける日本全国の素敵なホテル・グルメ・観光スポットを探検しよう</p>
+      <a href="#blog" class="btn">ブログを読む</a>
+    </div>
+  </section>
 
-<script>
-/** ▼設定 */
-const CHANNEL_ID  = "UC74qoTRqB1cvyFSU8sjdHUw"; // チャンネルID
-const VIDEO_COUNT = 6;           // 表示本数
-const EXCLUDE_SHORTS = true;     // ショート除外
-/** ▲設定 */
-
-/* ショート判定 */
-function isShortItem(it){
-  const inLink = it.link && it.link.includes("/shorts/");
-  const inCats = (it.categories || []).some(c => /shorts?/i.test(c));
-  const inText = /(^|[#\s/])shorts?/i.test(
-    ((it.title||"") + " " + (it.description||"") + " " + (it.link||""))
-  );
-  return inLink || inCats || inText;
-}
-
-/* 動画ID取得（/watch と /shorts 両対応） */
-function extractVideoId(link){
-  if (!link) return "";
-  if (link.includes("/shorts/")) {
-    return link.split("/shorts/")[1]?.split(/[?&]/)[0] || "";
-  }
-  return link.split("v=")[1]?.split("&")[0] || "";
-}
-
-/* サムネHTML（フォールバック付き） */
-function thumbHTML(videoId){
-  const first = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
-  const fallbacks = [
-    `https://img.youtube.com/vi/${videoId}/sddefault.jpg`,
-    `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
-    `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
-  ];
-  return `<img src="${first}" loading="lazy" alt=""
-            onerror="this.onerror=null;this.src='${fallbacks[0]}';
-              this.onerror=function(){this.src='${fallbacks[1]}';
-                this.onerror=function(){this.src='${fallbacks[2]}';};};">`;
-}
-
-async function fetchRSSVideos(){
-  const rss = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
-  const url = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rss)}`;
-
-  try {
-    const res = await fetch(url);
-    if(!res.ok) throw new Error("RSS fetch failed");
-    const data = await res.json();
-
-    const items = (data.items || [])
-      .filter(it => !EXCLUDE_SHORTS || !isShortItem(it))
-      .slice(0, VIDEO_COUNT);
-
-    const wrap = document.getElementById("yt-videos");
-    if (!wrap) return;
-
-    wrap.innerHTML = items.map(it=>{
-      const videoId = extractVideoId(it.link);
-      const title   = it.title;
-      const date    = new Date(it.pubDate);
-      const ymd     = `${date.getFullYear()}.${String(date.getMonth()+1).padStart(2,"0")}.${String(date.getDate()).padStart(2,"0")}`;
-      const url     = `https://www.youtube.com/watch?v=${videoId}`;
-      return `
-        <div class="video-card">
-          <div class="video-thumbnail">
-            ${thumbHTML(videoId)}
-            <a href="${url}" class="play-icon" target="_blank" rel="noopener"></a>
+  <!-- ===== Featured ===== -->
+  <section class="featured" id="blog">
+    <div class="container">
+      <div class="section-title"><h2>記事</h2></div>
+      <div class="featured-content">
+        <div class="featured-card">
+          <div class="featured-img">
+            <img src="https://img.youtube.com/vi/Nr02LYD_CaE/maxresdefault.jpg" alt="宮古島イラフSUI">
           </div>
-          <div class="video-info">
-            <h3>${title}</h3>
-            <div class="video-meta">
-              <span><i class="far fa-calendar"></i> ${ymd}</span>
-            </div>
+          <div class="featured-info">
+            <h3>【車無し】宮古島イラフSUIで味わう大人の贅沢と近隣観光1泊2日</h3>
+            <p>ラグジュアリーな「イラフSUI」に滞在し、車なしでも楽しめる宮古旅。</p>
+            <a class="read-more" href="articles/05_miyakojima_iraph_sui_article.html">記事を読む <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
-      `;
-    }).join("");
-  } catch (e) {
-    console.error(e);
-    const wrap = document.getElementById("yt-videos");
-    if (wrap) wrap.innerHTML = `<p>最新動画を読み込めませんでした。</p>`;
-  }
-}
-fetchRSSVideos();
-</script>
 
-<style>
-.youtube-videos {
-  display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
-  gap: 20px;
-}
-.video-card {
-  background: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-.video-thumbnail { position: relative; }
-.video-thumbnail img { width: 100%; display: block; }
-.video-info { padding: 10px; }
-</style>
-    <!-- About Us Section -->
-    <section class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-img">
-                    <img src="https://source.unsplash.com/random/600x800/?japanese,couple,travel" alt="りゅうきとあかね">
-                </div>
-                <div class="about-info">
-                    <h2>りゅうきとあかね</h2>
-                    <p>私たちは、夫婦で楽しむ贅沢旅をテーマに活動しているトラベルクリエイターです。</p>
-                    <p>「車なしでも行ける全国の素敵なホテル・グルメ・観光スポット」を発掘し、旅先での体験をVlog形式でお届けしています。</p>
-                    <p>日本全国の隠れた名所や、車がなくても楽しめる旅行プランを紹介しながら、皆さんの旅の参考になるような情報をお届けすることが私たちの喜びです。</p>
-                    <div class="social-links">
-                        <a href="https://www.youtube.com/@ryuki_akane" target="_blank"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.instagram.com/akn_523" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="#contact"><i class="far fa-envelope"></i></a>
-                    </div>
-                </div>
-            </div>
+        <div class="featured-card">
+          <div class="featured-img">
+            <img src="https://source.unsplash.com/random/600x400/?irabujima" alt="伊良部島">
+          </div>
+          <div class="featured-info">
+            <h3>【宮古島】車なしで行く！絶品グルメ＆観光プラン</h3>
+            <p>地元グルメ巡りと観光スポット。車がなくても楽しめる2日目の記録。</p>
+            <a class="read-more" href="irabujima-blog.html">記事を読む <i class="fas fa-arrow-right"></i></a>
+          </div>
         </div>
-    </section>
 
-<!-- Instagram Section -->
-<section class="instagram" id="instagram">
-  <div class="container">
-    <div class="section-title">
-      <h2>Instagram</h2>
-    </div>
-
-    <div class="instagram-grid">
-      <!-- 投稿1 -->
-      <blockquote class="instagram-media" 
-        data-instgrm-permalink="https://www.instagram.com/p/Cv4rKHKp-EY/" 
-        data-instgrm-version="14"></blockquote>
-
-      <!-- 投稿2 -->
-      <blockquote class="instagram-media" 
-        data-instgrm-permalink="https://www.instagram.com/p/DBa7KeGvj0L/" 
-        data-instgrm-version="14"></blockquote>
-
-      <!-- 投稿3 -->
-      <blockquote class="instagram-media" 
-        data-instgrm-permalink="https://www.instagram.com/p/DCghdQ9vp_s/" 
-        data-instgrm-version="14"></blockquote>
-    </div>
-
-    <div class="instagram-follow">
-      <p>旅の裏側やおすすめまとめはInstagramで！</p>
-      <a href="https://www.instagram.com/akn_523" target="_blank" class="btn">フォローする</a>
-    </div>
-  </div>
-</section>
-
-<!-- Instagram公式スクリプト（ページ内に1回だけ） -->
-<script async src="https://www.instagram.com/embed.js"></script>
-<!-- Contact Section -->
-<section class="contact" id="contact">
-  <div class="container">
-    <div class="section-title">
-      <h2>お問い合わせ</h2>
-    </div>
-
- <div class="contact-content">
-  <!-- 左カラム -->
-  <div class="contact-info">
-    <h3>お仕事のご依頼</h3>
-    <p>旅行コンテンツの制作、ホテルや観光施設のレビュー、タイアップ企画など、お気軽にご相談ください。</p>
-
-    <div class="contact-details">
-      <div>
-        <i class="far fa-envelope"></i>
-        <span>ryukitoakane@gmail.com</span>
-      </div>
-      <div>
-        <i class="fab fa-instagram"></i>
-        <span>@akn_523</span>
+        <div class="featured-card">
+          <div class="featured-img">
+            <img src="https://img.youtube.com/vi/yKi94fVJ6fs/maxresdefault.jpg" alt="ANAインターコンチネンタル万座">
+          </div>
+          <div class="featured-info">
+            <h3>【沖縄・車なし】ANAインターコンチネンタル万座ビーチリゾート</h3>
+            <p>青い海と空に囲まれた極上リゾートでの2泊3日。</p>
+            <a class="read-more" href="articles/06_ana_manza_article.html">記事を読む <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- 右カラム -->
-  <div class="contact-form">
-    <iframe
-      src="https://docs.google.com/forms/d/e/1FAIpQLSevHAnbpeD3ABOrU-_cnM23BvRaNyJcn71JZcFXwYdPfA9Dww/viewform?embedded=true"
-      frameborder="0"
-      marginheight="0"
-      marginwidth="0">
-      読み込んでいます…
-    </iframe>
-  </div>
-</div>
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h4>ブログカテゴリー</h4>
-                    <ul>
-                        <li><a href="#">沖縄旅行</a></li>
-                        <li><a href="#">温泉旅館</a></li>
-                        <li><a href="#">ラグジュアリーホテル</a></li>
-                        <li><a href="#">グルメ</a></li>
-                        <li><a href="#">おすすめスポット</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>人気の記事</h4>
-                    <ul>
-                        <li><a href="#">宮古島イラフSUI滞在記</a></li>
-                        <li><a href="#">車なしで行く伊良部島観光</a></li>
-                        <li><a href="#">沖縄万座ビーチリゾート</a></li>
-                        <li><a href="#">別府温泉2泊3日の旅</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>リンク</h4>
-                    <ul>
-                        <li><a href="#home">ホーム</a></li>
-                        <li><a href="#blog">ブログ</a></li>
-                        <li><a href="#youtube">Youtube</a></li>
-                        <li><a href="#instagram">Instagram</a></li>
-                        <li><a href="#contact">お問い合わせ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>フォロー</h4>
-                    <ul>
-                        <li><a href="https://www.youtube.com/@ryuki_akane" target="_blank">Youtube</a></li>
-                        <li><a href="https://www.instagram.com/akn_523" target="_blank">Instagram</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2025 りゅうきとあかね | Travel Without a Car</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Blog Post Template -->
-    <div style="display: none;">
-        <section class="blog-post">
-            <div class="container">
-                <div class="blog-post-content">
-                    <div class="blog-post-header">
-                        <h1>【車無し】宮古島イラフSUIで味わう大人の贅沢と近隣観光1泊2日</h1>
-                        <div class="blog-post-meta">
-                            <span><i class="far fa-calendar"></i> 2024.12.27</span>
-                            <span><i class="far fa-user"></i> りゅうきとあかね</span>
-                            <span><i class="far fa-folder"></i> 沖縄旅行</span>
-                        </div>
-                    </div>
-                    <div class="blog-post-image">
-                        <img src="https://source.unsplash.com/random/1200x800/?miyakojima,resort" alt="宮古島イラフSUI">
-                    </div>
-                    <div class="blog-post-body">
-                        <p>「車がないと難しい」と言われる宮古島を、車なしで満喫する旅に挑戦しました。今回宿泊したのは、宮古島の絶景とラグジュアリーな滞在を満喫できる『イラフ SUI』。季節外れの台風で天候には恵まれませんでしたが、贅沢なひとときと周辺観光を楽しんだ1泊2日の様子をお届けします！</p>
-                        
-                        <h2>イラフSUIへのアクセス</h2>
-                        <p>イラフSUIでは、宮古空港や下地島空港からの無料送迎サービスが利用できます。車なしの旅行でも安心して到着できるのが嬉しいポイントです。</p>
-                        
-                        <h2>チェックイン：優雅なウェルカム体験</h2>
-                        <p>エントランスでチェックインを済ませると、ウェルカムドリンクとしてさわやかなハーブウォーターが提供されました。ソファーでくつろぎながらいただいたハーブウォーターは、とても美味しかったです。</p>
-                        <p>エントランスにはタオルやお水が置いてあるなど、細やかなおもてなしが感じられました。また、可愛いアクセサリーやグッズも販売されていて、チェックインの時間からリゾート気分が高まります。</p>
-                        
-                        <h2>客室紹介：海を一望するアップグレードルーム</h2>
-                        <p>今回宿泊したのは、海を一望できるバルコニー付きのお部屋。なんと高層階にアップグレードしていただき、嬉しい驚きでした！</p>
-                        <p>イラフSUIのお部屋は、前面がガラス張りで、どのお部屋からも絶景のオーシャンビューが楽しめます。宮古島の砂浜をイメージした白を基調としたデザインで統一された室内は、広々として落ち着いた雰囲気。インテリアも洗練されていて、とっても素敵な空間でした。</p>
-                        <img src="https://source.unsplash.com/random/800x600/?hotel,room,ocean" alt="オーシャンビュールーム">
-                        <div class="caption">高層階から見渡す絶景オーシャンビューの客室</div>
-                        
-                        <!-- 以下、ブログ記事の内容が続きます -->
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- ===== YouTube ===== -->
+  <section class="youtube" id="youtube">
+    <div class="container">
+      <div class="section-title"><h2>最新動画</h2></div>
+      <div class="youtube-videos" id="yt-videos"></div>
     </div>
+  </section>
 
-    <script>
-        // Simple script for sticky header effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            header.classList.toggle('sticky', window.scrollY > 0);
-        });
-    </script>
+  <!-- ===== About ===== -->
+  <section class="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-img">
+          <img src="https://source.unsplash.com/random/600x800/?japanese,couple,travel" alt="りゅうきとあかね">
+        </div>
+        <div class="about-info">
+          <h2>りゅうきとあかね</h2>
+          <p>夫婦で楽しむ贅沢旅をテーマに、車なしでも行けるホテル・グルメ・観光スポットを紹介しています。</p>
+          <p>旅のVlogとブログで、次の旅のヒントになる情報をお届け中。</p>
+          <div class="social-links">
+            <a href="https://www.youtube.com/@ryuki_akane" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/akn_523" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+            <a href="#contact"><i class="far fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Instagram ===== -->
+  <section class="instagram" id="instagram">
+    <div class="container">
+      <div class="section-title"><h2>Instagram</h2></div>
+
+      <div class="instagram-grid">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cv4rKHKp-EY/" data-instgrm-version="14"></blockquote>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DBa7KeGvj0L/" data-instgrm-version="14"></blockquote>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DCghdQ9vp_s/" data-instgrm-version="14"></blockquote>
+      </div>
+
+      <div class="instagram-follow" style="text-align:center; margin-top:40px;">
+        <p>旅の裏側やおすすめまとめはInstagramで！</p>
+        <a href="https://www.instagram.com/akn_523" target="_blank" class="btn" rel="noopener">フォローする</a>
+      </div>
+    </div>
+  </section>
+  <script async src="https://www.instagram.com/embed.js"></script>
+
+  <!-- ===== Contact ===== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-title"><h2>お問い合わせ</h2></div>
+
+      <div class="contact-content">
+        <div class="contact-info">
+          <h3>お仕事のご依頼</h3>
+          <p>旅行コンテンツ制作、ホテル・観光施設レビュー、タイアップ企画などお気軽にご相談ください。</p>
+          <div class="contact-details">
+            <div><i class="far fa-envelope"></i><span>ryukitoakane@gmail.com</span></div>
+            <div><i class="fab fa-instagram"></i><span>@akn_523</span></div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSevHAnbpeD3ABOrU-_cnM23BvRaNyJcn71JZcFXwYdPfA9Dww/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">
+            読み込んでいます…
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer（修正版） ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h4>ブログカテゴリー</h4>
+          <ul>
+            <li><a href="#">沖縄旅行</a></li>
+            <li><a href="#">温泉旅館</a></li>
+            <li><a href="#">ラグジュアリーホテル</a></li>
+            <li><a href="#">グルメ</a></li>
+            <li><a href="#">おすすめスポット</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>人気の記事</h4>
+          <ul>
+            <li><a href="#">宮古島イラフSUI滞在記</a></li>
+            <li><a href="#">車なしで行く伊良部島観光</a></li>
+            <li><a href="#">沖縄万座ビーチリゾート</a></li>
+            <li><a href="#">別府温泉2泊3日の旅</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>リンク</h4>
+          <ul>
+            <li><a href="#home">ホーム</a></li>
+            <li><a href="#blog">ブログ</a></li>
+            <li><a href="#youtube">Youtube</a></li>
+            <li><a href="#instagram">Instagram</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>フォロー</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@ryuki_akane" target="_blank" rel="noopener">Youtube</a></li>
+            <li><a href="https://www.instagram.com/akn_523" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 りゅうきとあかね | Travel Without a Car</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== YouTube feed (RSS2JSON) ===== -->
+  <script>
+    const CHANNEL_ID  = "UC74qoTRqB1cvyFSU8sjdHUw";
+    const VIDEO_COUNT = 6;
+    const EXCLUDE_SHORTS = true;
+
+    function isShortItem(it){
+      const inLink = it.link && it.link.includes("/shorts/");
+      const inCats = (it.categories || []).some(c => /shorts?/i.test(c));
+      const inText = /(^|[#\s/])shorts?/i.test(((it.title||"") + " " + (it.description||"") + " " + (it.link||"")));
+      return inLink || inCats || inText;
+    }
+    function extractVideoId(link){
+      if(!link) return "";
+      if(link.includes("/shorts/")) return link.split("/shorts/")[1]?.split(/[?&]/)[0] || "";
+      return link.split("v=")[1]?.split("&")[0] || "";
+    }
+    function thumbHTML(videoId){
+      const first = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+      const fb = [
+        `https://img.youtube.com/vi/${videoId}/sddefault.jpg`,
+        `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
+        `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
+      ];
+      return `<img src="${first}" loading="lazy" alt=""
+        onerror="this.onerror=null;this.src='${fb[0]}';
+          this.onerror=function(){this.src='${fb[1]}';
+            this.onerror=function(){this.src='${fb[2]}';};};">`;
+    }
+    async function fetchRSSVideos(){
+      const rss = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
+      const url = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rss)}`;
+      try{
+        const res = await fetch(url);
+        if(!res.ok) throw new Error("RSS fetch failed");
+        const data = await res.json();
+        const items = (data.items || [])
+          .filter(it => !EXCLUDE_SHORTS || !isShortItem(it))
+          .slice(0, VIDEO_COUNT);
+        const wrap = document.getElementById("yt-videos");
+        if(!wrap) return;
+        wrap.innerHTML = items.map(it=>{
+          const videoId = extractVideoId(it.link);
+          const title = it.title;
+          const date = new Date(it.pubDate);
+          const ymd  = `${date.getFullYear()}.${String(date.getMonth()+1).padStart(2,"0")}.${String(date.getDate()).padStart(2,"0")}`;
+          const url  = `https://www.youtube.com/watch?v=${videoId}`;
+          return `
+            <div class="video-card">
+              <div class="video-thumbnail">
+                ${thumbHTML(videoId)}
+                <a href="${url}" class="play-icon" target="_blank" rel="noopener"></a>
+              </div>
+              <div class="video-info">
+                <h3>${title}</h3>
+                <div class="video-meta"><span><i class="far fa-calendar"></i> ${ymd}</span></div>
+              </div>
+            </div>`;
+        }).join("");
+      }catch(e){
+        console.error(e);
+        const wrap = document.getElementById("yt-videos");
+        if(wrap) wrap.innerHTML = `<p>最新動画を読み込めませんでした。</p>`;
+      }
+    }
+    fetchRSSVideos();
+  </script>
+
+  <script>
+    // Sticky header small effect
+    window.addEventListener('scroll',()=> {
+      const header=document.querySelector('header');
+      header.classList.toggle('sticky', window.scrollY>0);
+    });
+  </script>
 </body>
 </html>
-    <script id="html_badge_script1">
-        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
-            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDgcdYS5CLzAr5CH%2FDPYsjg%2FmI1QVDySEq2cTQeTCeuj9HdKCCYXwawc6OQr5qdXPcG2HIG6xWBvz9ceNquCXDzWbKIU3%2FcFE4f4mojtYvzIwsUPimeLHqxKdfmqkdnkBX6ocJapOllc3%2BgEGh%2B1oF4IbLQRDGjN6XXHa2DIBPt8iwEK2HUKSwk8fPeJICciPf8gIw6jZN2jmCQP4lY5J3F%2B1MmJIcK%2Bqp%2BoQIGh5fh11muo%2BhSQ45z7KOdd1af2V84Xz7LBO11oGUsCgK5tgOcUDEJVU%2B1e4gxhYyARAPZqkr7%2FcNbYLhSCjGVMpH3de9%2BLD0wPUcyHMnYQ5fYS31acC2wq4%2FalA9QmX9nC7o1SRvMCHuUpuMn0wleiEwM8pufqXpTSETtv6JgOGCiARWKuXHHlyL2BWecmgwV5oQsMQQzTsBNJr5G2ILJhCQsFooAS4FhgTNMg0yDfPpvY03%2Fx%2FVJaRyrGU%2FPiybEFFOpNZid2YHIcZPWuhpJsFJBGyaQ%3D%3D";
-        window.__genspark_locale = "ja-JP";
-        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDgcdYS5CLzAr5CH/DPYsjg/mI1QVDySEq2cTQeTCeuj9HdKCCYXwawc6OQr5qdXPcG2HIG6xWBvz9ceNquCXDzWbKIU3/cFE4f4mojtYvzIwsUPimeLHqxKdfmqkdnkBX6ocJapOllc3+gEGh+1oF4IbLQRDGjN6XXHa2DIBPt8iwEK2HUKSwk8fPeJICciPf8gIw6jZN2jmCQP4lY5J3F+1MmJIcK+qp+oQIGh5fh11muo+hSQ45z7KOdd1af2V84Xz7LBO11oGUsCgK5tgOcUDEJVU+1e4gxhYyARAPZqkr7/cNbYLhSCjGVMpH3de9+LD0wPUcyHMnYQ5fYS31acC2wq4/alA9QmX9nC7o1SRvMCHuUpuMn0wleiEwM8pufqXpTSETtv6JgOGCiARWKuXHHlyL2BWecmgwV5oQsMQQzTsBNJr5G2ILJhCQsFooAS4FhgTNMg0yDfPpvY03/x/VJaRyrGU/PiybEFFOpNZid2YHIcZPWuhpJsFJBGyaQ==";
-    </script>
-    
-    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
-    
