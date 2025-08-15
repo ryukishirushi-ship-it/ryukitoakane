@@ -140,13 +140,24 @@ function lazyLoadImages() {
 function standardizeRelatedArticles() {
     const relatedImages = document.querySelectorAll('.related-img img, .related-card img');
     
-    relatedImages.forEach(img => {
+    relatedImages.forEach((img, index) => {
         img.style.cssText = `
             width: 100%;
             height: 200px;
             object-fit: cover;
             border-radius: 8px 8px 0 0;
+            background: var(--beige);
         `;
+        
+        // 画像読み込みエラーのハンドリング
+        img.addEventListener('error', function() {
+            this.src = `https://via.placeholder.com/400x200/D9C49C/FFFFFF?text=関連記事${index + 1}`;
+        });
+        
+        // 読み込み完了の確認
+        if (img.complete && img.naturalHeight === 0) {
+            img.src = `https://via.placeholder.com/400x200/D9C49C/FFFFFF?text=関連記事${index + 1}`;
+        }
     });
     
     const relatedItems = document.querySelectorAll('.related-item, .related-card');
@@ -159,6 +170,8 @@ function standardizeRelatedArticles() {
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
+            visibility: visible;
+            opacity: 1;
         `;
         
         item.addEventListener('mouseenter', function() {

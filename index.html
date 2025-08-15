@@ -129,9 +129,19 @@
       transition:transform .3s ease;
     }
     .featured-card:hover{transform:translateY(-10px);}
-    .featured-img{height:200px; overflow:hidden;}
+    .featured-img{height:200px; overflow:hidden; background:var(--beige);}
     .featured-img img{width:100%; height:100%; object-fit:cover; transition:transform .5s ease;}
     .featured-card:hover .featured-img img{transform:scale(1.1);}
+    
+    /* 画像読み込みエラー時のスタイル */
+    .featured-img img[src*="placeholder"] {
+      background: var(--beige);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--terracotta);
+      font-weight: 500;
+    }
     .featured-info{padding:20px;}
     .featured-info h3{font-size:1.5rem; margin-bottom:10px; color:var(--black);}
     .featured-info p{color:#666; margin-bottom:15px; font-size:.9rem;}
@@ -317,7 +327,7 @@
 
         <div class="featured-card">
           <div class="featured-img">
-            <img src="https://img.youtube.com/vi/XYZ123456/maxresdefault.jpg" alt="ガレリア美土原">
+            <img src="https://img.youtube.com/vi/placeholder1/maxresdefault.jpg" alt="ガレリア美土原" onerror="this.src='https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=ガレリア美土原'"
           </div>
           <div class="featured-info">
             <h3>【車なし】ガレリア美土原でアートと自然に囲まれた特別なステイ</h3>
@@ -328,7 +338,7 @@
 
         <div class="featured-card">
           <div class="featured-img">
-            <img src="https://img.youtube.com/vi/ABC789012/maxresdefault.jpg" alt="西表島・由布島">
+            <img src="https://img.youtube.com/vi/placeholder2/maxresdefault.jpg" alt="西表島・由布島" onerror="this.src='https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=西表島・由布島'"
           </div>
           <div class="featured-info">
             <h3>【西表島・由布島】車なし日帰りで満喫！水牛車と絶景ビーチの冒険旅</h3>
@@ -541,5 +551,34 @@
   
   <!-- タグ機能とカードクリック機能 -->
   <script src="js/article-tags.js"></script>
+  
+  <!-- レイアウト修正用スクリプト -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 記事カードの表示を確実にする
+    const featuredCards = document.querySelectorAll('.featured-card');
+    featuredCards.forEach((card, index) => {
+      card.style.display = 'block';
+      card.style.visibility = 'visible';
+      card.style.opacity = '1';
+      
+      // 画像の読み込みエラーハンドリング
+      const img = card.querySelector('.featured-img img');
+      if (img) {
+        img.addEventListener('error', function() {
+          this.src = `https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=記事${index + 1}`;
+        });
+      }
+    });
+    
+    // グリッドレイアウトの強制リセット
+    const featuredContent = document.querySelector('.featured-content');
+    if (featuredContent) {
+      featuredContent.style.display = 'grid';
+      featuredContent.style.gridTemplateColumns = 'repeat(auto-fit, minmax(300px, 1fr))';
+      featuredContent.style.gap = '30px';
+    }
+  });
+  </script>
 </body>
 </html>

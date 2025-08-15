@@ -40,8 +40,7 @@ if (window.location.pathname.includes('index.html') || window.location.pathname 
         // 記事カード全体をクリック可能にする
         makeCardsClickable();
         
-        // フィルタリング後のレイアウト調整
-        adjustFilteredLayout();
+        // フィルタリング後のレイアウト調整は既存CSSクラスで対応
     });
     
     function filterArticlesByTag(tag) {
@@ -173,39 +172,7 @@ if (window.location.pathname.includes('index.html') || window.location.pathname 
         });
     }
     
-    function adjustFilteredLayout() {
-        const featuredContent = document.querySelector('.featured-content');
-        if (featuredContent) {
-            // グリッドレイアウト調整用のCSSを追加
-            const style = document.createElement('style');
-            style.textContent = `
-                .featured-content {
-                    display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-                    gap: 30px;
-                    align-items: start;
-                }
-                
-                .featured-content .featured-card {
-                    max-width: none;
-                    width: 100%;
-                }
-                
-                /* 1つの記事しか表示されない場合のレイアウト調整 */
-                .featured-content:has(.featured-card:only-child) {
-                    grid-template-columns: minmax(350px, 600px);
-                    justify-content: center;
-                }
-                
-                @media (max-width: 768px) {
-                    .featured-content {
-                        grid-template-columns: 1fr;
-                    }
-                }
-            `;
-            document.head.appendChild(style);
-        }
-    }
+    // adjustFilteredLayout関数は削除（既存CSSで対応）
     
     // フィルタクリア関数をグローバルスコープに
     window.clearFilter = function() {
