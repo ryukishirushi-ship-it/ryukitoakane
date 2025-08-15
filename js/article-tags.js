@@ -39,10 +39,14 @@ if (window.location.pathname.includes('index.html') || window.location.pathname 
         
         // 記事カード全体をクリック可能にする
         makeCardsClickable();
+        
+        // フィルタリング後のレイアウト調整
+        adjustFilteredLayout();
     });
     
     function filterArticlesByTag(tag) {
         const articles = document.querySelectorAll('.featured-card');
+        const featuredContent = document.querySelector('.featured-content');
         let visibleCount = 0;
         
         articles.forEach(card => {
@@ -54,6 +58,16 @@ if (window.location.pathname.includes('index.html') || window.location.pathname 
                 card.style.display = 'none';
             }
         });
+        
+        // フィルタリング結果に応じてレイアウトクラスを適用
+        if (featuredContent) {
+            featuredContent.classList.add('filtered');
+            if (visibleCount === 1) {
+                featuredContent.classList.add('single-item');
+            } else {
+                featuredContent.classList.remove('single-item');
+            }
+        }
         
         // 結果が0件の場合の処理
         if (visibleCount === 0) {
@@ -159,8 +173,46 @@ if (window.location.pathname.includes('index.html') || window.location.pathname 
         });
     }
     
+    function adjustFilteredLayout() {
+        const featuredContent = document.querySelector('.featured-content');
+        if (featuredContent) {
+            // グリッドレイアウト調整用のCSSを追加
+            const style = document.createElement('style');
+            style.textContent = `
+                .featured-content {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                    gap: 30px;
+                    align-items: start;
+                }
+                
+                .featured-content .featured-card {
+                    max-width: none;
+                    width: 100%;
+                }
+                
+                /* 1つの記事しか表示されない場合のレイアウト調整 */
+                .featured-content:has(.featured-card:only-child) {
+                    grid-template-columns: minmax(350px, 600px);
+                    justify-content: center;
+                }
+                
+                @media (max-width: 768px) {
+                    .featured-content {
+                        grid-template-columns: 1fr;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+    }
+    
     // フィルタクリア関数をグローバルスコープに
     window.clearFilter = function() {
+        const featuredContent = document.querySelector('.featured-content');
+        if (featuredContent) {
+            featuredContent.classList.remove('filtered', 'single-item');
+        }
         window.location.href = '#blog';
         location.reload();
     }
