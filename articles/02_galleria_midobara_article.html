@@ -217,21 +217,7 @@
             color: var(--terracotta);
         }
 
-        .youtube-embed {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 8px;
-        }
-
-        .youtube-embed iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
+        /* YouTube動画セクションのスタイルは article-common.js で統一管理 */
 
         .hotel-info-box {
             background-color: var(--ivory);
@@ -424,15 +410,15 @@
                     </div>
                 </div>
                 <div class="blog-post-image">
-                    <img src="https://source.unsplash.com/1200x800/?beppu,art,hotel,luxury" alt="ガレリア御堂原の外観">
+                    <img src="https://img.youtube.com/vi/_0ufPu9mxkY/maxresdefault.jpg" alt="ガレリア御堂原での滞在体験" onerror="this.src='https://via.placeholder.com/1200x800/D9C49C/FFFFFF?text=ガレリア御堂原'">
                 </div>
                 <div class="blog-post-body">
                     <p>大分県別府市の高台に佇む唯一無二のアートホテル「ガレリア御堂原」。まるで「泊まれる美術館」のような幻想的な空間で、絶景温泉×アートが融合したラグジュアリー体験を満喫してきました🎨✨</p>
 
                     <div class="youtube-section">
-                        <h2><i class="fab fa-youtube"></i> 動画で見たい方はこちら</h2>
+                        <h3>📺 動画で見たい方はこちら</h3>
                         <p>この記事の内容はYouTubeでも公開しています。動画で雰囲気を感じながらご覧になりたい方は、ぜひこちらからご視聴ください。</p>
-                        <div class="youtube-embed">
+                        <div class="video-container">
                             <iframe src="https://www.youtube.com/embed/_0ufPu9mxkY" title="ガレリア御堂原滞在記" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                     </div>
@@ -442,7 +428,7 @@
                     <h2>別府湾を見下ろす絶景ロケーション</h2>
                     <p>ガレリア御堂原の最大の魅力は、その立地にあります。別府市内を見下ろす高台に位置し、全35室の客室は全てオーシャンビュー。パノラマビューで広がる別府湾の絶景は、まさに息をのむ美しさです。</p>
                     
-                    <img src="https://source.unsplash.com/800x600/?beppu,bay,view,panorama" alt="別府湾のパノラマビュー">
+                    <img src="https://img.youtube.com/vi/_0ufPu9mxkY/hqdefault.jpg" alt="別府湾のパノラマビュー" onerror="this.src='https://via.placeholder.com/800x600/D9C49C/FFFFFF?text=別府湾パノラマビュー'">
                     <div class="caption">客室から望む別府湾の絶景パノラマ</div>
 
                     <p>特に夕暮れ時には、湯けむりが立ち上る別府の街並みと海が夕日に照らされ、まさに絵画のような光景が広がります。これだけでも訪れる価値のある景色です。</p>
@@ -450,7 +436,7 @@
                     <h2>全室に源泉かけ流しの半露天風呂</h2>
                     <p>ガレリア御堂原の客室には、すべてに源泉かけ流しの半露天風呂が完備されています。プライベート空間で別府の名湯を独り占めできる贅沢は、他では味わえない特別な体験です。</p>
 
-                    <img src="https://source.unsplash.com/800x600/?onsen,private,bath,luxury" alt="客室の半露天風呂">
+                    <img src="https://via.placeholder.com/800x600/BF6A39/FFFFFF?text=源泉かけ流し半露天風呂" alt="客室の半露天風呂">
                     <div class="caption">全室完備の源泉かけ流し半露天風呂</div>
 
                     <p>お湯は別府の豊富な源泉から引いており、肌当たりが柔らかく、湯上がりの肌がしっとりとします。絶景を眺めながらの温泉入浴は、日頃の疲れを忘れさせてくれる至福の時間でした。</p>
@@ -458,7 +444,7 @@
                     <h2>現代アートに囲まれた幻想的な空間</h2>
                     <p>ホテル館内は、まさに現代美術館のような雰囲気。WEBの風景や別府の文化からインスピレーションを受けた特別な現代アート作品が随所に展示されており、滞在中は常に芸術に囲まれた非日常的な時間を過ごすことができます。</p>
 
-                    <img src="https://source.unsplash.com/800x600/?modern,art,installation,museum" alt="館内のアート作品">
+                    <img src="https://via.placeholder.com/800x600/F2A7A0/FFFFFF?text=現代アート作品" alt="館内のアート作品">
                     <div class="caption">館内に展示された現代アート作品</div>
 
                     <h3>宿泊者限定のアートツアー</h3>
@@ -469,7 +455,7 @@
                     <h2>グリルダイニング「The Peak」での極上ディナー</h2>
                     <p>夕食は、ホテル内のグリルダイニング「The Peak」で。大分県産の新鮮な食材を活かした創作料理は、見た目の美しさも味も一級品でした。</p>
 
-                    <img src="https://source.unsplash.com/800x600/?gourmet,dinner,fine,dining" alt="The Peakでのディナー">
+                    <img src="https://via.placeholder.com/800x600/BF6A39/FFFFFF?text=The Peak創作料理" alt="The Peakでのディナー">
                     <div class="caption">地元食材を活かした創作料理</div>
 
                     <p>特に印象的だったのは、大分の海の幸を使った前菜と、九州唯一の薪窯で調理されたメイン料理。別府湾の絶景を眺めながらいただく食事は、五感すべてで楽しめる贅沢な体験でした。</p>
@@ -479,7 +465,7 @@
                     <h2>バーでのウェルカムドリンク</h2>
                     <p>アートツアー終了後は、別府のレトロな繁華街をイメージした華やかなバー空間でウェルカムドリンクをいただきました。地元産の温州みかんを使ったオリジナルカクテルは、別府らしさを感じられる特別な一杯でした。</p>
 
-                    <img src="https://source.unsplash.com/800x600/?cocktail,bar,luxury,hotel" alt="バーでのカクテル">
+                    <img src="https://via.placeholder.com/800x600/F2A7A0/FFFFFF?text=オリジナルカクテル" alt="バーでのカクテル">
                     <div class="caption">地元食材を使ったオリジナルカクテル</div>
 
                     <h2>客室でのくつろぎ時間</h2>
@@ -490,7 +476,7 @@
                     <h2>朝の散歩で楽しむ日の出鑑賞</h2>
                     <p>翌朝は早起きして、ホテル外で日の出鑑賞を楽しみました。高台からの眺めは格別で、朝日が別府湾を照らす瞬間は神秘的な美しさでした。</p>
 
-                    <img src="https://source.unsplash.com/800x600/?sunrise,beppu,mountain,view" alt="朝の別府湾">
+                    <img src="https://via.placeholder.com/800x600/D9C49C/FFFFFF?text=別府湾の日の出" alt="朝の別府湾">
                     <div class="caption">高台から望む朝の別府湾と日の出</div>
 
                     <div class="hotel-info-box">
