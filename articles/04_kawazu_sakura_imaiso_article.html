@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【河津桜まつり×今井荘】オールインクルーシブで春のごほうび旅！絶景オーシャンビュー温泉宿1泊2日 | りゅうきとあかねの旅行記</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --ivory: #F2F2EB;
+            --beige: #D9C49C;
+            --terracotta: #BF6A39;
+            --salmon: #F2A7A0;
+            --black: #0D0D0D;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--ivory);
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--terracotta);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--salmon);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--ivory);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--terracotta);
+        }
+
+        .logo span {
+            color: var(--black);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--black);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        nav ul li a:hover {
+            color: var(--terracotta);
+        }
+
+        /* Blog Post Section */
+        .blog-post {
+            padding: 80px 0;
+        }
+
+        .blog-post-content {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .blog-post-header {
+            margin-bottom: 30px;
+        }
+
+        .blog-post-header h1 {
+            font-size: 2.5rem;
+            color: var(--terracotta);
+            margin-bottom: 20px;
+        }
+
+        .blog-post-meta {
+            display: flex;
+            align-items: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .blog-post-meta span {
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .blog-post-meta i {
+            margin-right: 5px;
+            color: var(--beige);
+        }
+
+        .blog-post-image {
+            width: 100%;
+            height: 400px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .blog-post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-post-body {
+            line-height: 1.8;
+        }
+
+        .blog-post-body p {
+            margin-bottom: 20px;
+        }
+
+        .blog-post-body h2 {
+            font-size: 1.8rem;
+            color: var(--terracotta);
+            margin: 40px 0 20px;
+        }
+
+        .blog-post-body h3 {
+            font-size: 1.4rem;
+            color: var(--black);
+            margin: 30px 0 15px;
+        }
+
+        .blog-post-body img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .blog-post-body .caption {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        /* YouTube Section */
+        .youtube-section {
+            background-color: var(--beige);
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .youtube-section h2 {
+            color: var(--terracotta);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .video-embed {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Info Box */
+        .info-box {
+            background-color: var(--ivory);
+            border-left: 4px solid var(--terracotta);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .info-box h3 {
+            color: var(--terracotta);
+            margin-bottom: 10px;
+        }
+
+        /* Tags */
+        .tags {
+            margin: 30px 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--beige);
+            color: var(--black);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 5px 5px 5px 0;
+        }
+
+        /* Related Posts */
+        .related-posts {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid var(--beige);
+        }
+
+        .related-posts h2 {
+            color: var(--terracotta);
+            margin-bottom: 30px;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .related-item {
+            background-color: var(--ivory);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .related-item:hover {
+            transform: translateY(-5px);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .related-img {
+            height: 150px;
+            overflow: hidden;
+        }
+
+        .related-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .related-info {
+            padding: 15px;
+        }
+
+        .related-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .related-info p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Author Box */
+        .author-box {
+            background-color: var(--ivory);
+            padding: 30px;
+            border-radius: 8px;
+            margin: 40px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 20px;
+            background-color: var(--beige);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--terracotta);
+        }
+
+        .author-info h3 {
+            color: var(--terracotta);
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--black);
+            padding: 40px 0;
+            color: white;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-column h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--beige);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--salmon);
+        }
+
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            .logo {
+                margin-bottom: 20px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+                margin-left: 0;
+            }
+            
+            .blog-post-content {
+                padding: 20px;
+            }
+            
+            .blog-post-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .author-box {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .author-avatar {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <h1 class="logo">Ryuki<span> & </span>Akane</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html#home">ホーム</a></li>
+                    <li><a href="../index.html#blog">ブログ</a></li>
+                    <li><a href="../index.html#youtube">Youtube</a></li>
+                    <li><a href="../index.html#instagram">インスタグラム</a></li>
+                    <li><a href="../index.html#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post">
+        <div class="container">
+            <div class="blog-post-content">
+                <div class="blog-post-header">
+                    <h1>【河津桜まつり×今井荘】オールインクルーシブで春のごほうび旅！絶景オーシャンビュー温泉宿1泊2日</h1>
+                    <div class="blog-post-meta">
+                        <span><i class="far fa-calendar"></i> 2025.04.07</span>
+                        <span><i class="far fa-user"></i> りゅうきとあかね</span>
+                        <span><i class="far fa-folder"></i> 春旅行</span>
+                        <span><i class="far fa-clock"></i> 読了時間: 約12分</span>
+                    </div>
+                </div>
+                <div class="blog-post-image">
+                    <img src="https://source.unsplash.com/1200x800/?kawazu,cherry,blossom,spring" alt="河津桜まつりの桜並木">
+                </div>
+                <div class="blog-post-body">
+                    <p>静岡県伊豆の河津桜まつりと、全室オーシャンビューの温泉宿「今井荘」で過ごす、オールインクルーシブの贅沢な春のごほうび旅1泊2日をお届けします🌸 踊り子号に揺られて向かう桜の名所で、早咲きの河津桜に心癒され、海を眺めながらの温泉とグルメに包まれる至福のひとときを満喫してきました✨</p>
+
+                    <!-- YouTube Section -->
+                    <div class="youtube-section">
+                        <h2>📺 動画で見たい方はこちら</h2>
+                        <p>この記事の内容はYouTubeでも公開しています。実際の桜の美しさや今井荘の魅力を動画で感じながらご覧になりたい方は、ぜひこちらからご視聴ください。</p>
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/hn5nZP8BeUA" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <p>2月から3月にかけて楽しめる河津桜まつりは、本州で一番早く桜を楽しめるイベント。今年は開花が少し遅めでしたが、薄紅色に染まる並木道と温泉街ののんびりとした空気に心から癒されました。そして今回の宿泊先「今井荘」は、チェックイン後からチェックアウトまでオールインクルーシブで、温泉と美食を心ゆくまで堪能できる大人のためのリゾート体験でした！</p>
+
+                    <h2>踊り子号で河津駅へ！車なしで行く春旅スタート</h2>
+                    
+                    <p>今回の旅は踊り子号を利用した車なし旅行。東京駅から河津駅まで約2時間30分の快適な電車旅です。踊り子号の車窓からは伊豆の美しい自然を楽しむことができ、旅情気分も盛り上がります。</p>
+
+                    <div class="info-box">
+                        <h3>河津桜まつりへのアクセス情報</h3>
+                        <p><strong>電車：</strong>踊り子号 東京駅→河津駅 約2時間30分<br>
+                        <strong>料金：</strong>特急券込み片道約4,000円<br>
+                        <strong>桜まつり期間：</strong>例年2月上旬〜3月上旬<br>
+                        <strong>見頃：</strong>2月中旬〜下旬（年により変動）</p>
+                    </div>
+
+                    <p>河津駅に到着すると、駅前から桜まつりの賑やかな雰囲気が伝わってきます。屋台が立ち並び、地元の特産品や美味しい食べ物の香りが漂っています。まずは桜並木を散策しながら、お祭り気分を満喫しましょう。</p>
+
+                    <h2>河津桜まつりを満喫！屋台グルメと桜並木散策</h2>
+
+                    <h3>桜並木で春の訪れを感じて</h3>
+
+                    <p>河津桜の魅力は、何といっても濃いピンク色の美しさです。ソメイヨシノよりも色が濃く、青空との対比が非常に美しい桜として人気を集めています。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?cherry,blossom,pink,tree" alt="河津桜の濃いピンク色の花">
+                    <div class="caption">濃いピンク色が美しい河津桜</div>
+
+                    <p>河津川沿いの桜並木は約4kmにわたって続き、散策するだけで春の気分を満喫できます。今回は開花が少し遅めでしたが、部分的に見事に咲いているエリアもあり、桜色に染まる風景に心が躍りました。菜の花も同時期に咲くため、ピンクと黄色のコントラストも楽しめます。</p>
+
+                    <h3>屋台グルメで地元の味を堪能</h3>
+
+                    <p>桜まつりの楽しみの一つは、豊富な屋台グルメです。地元の特産品から定番のお祭りフードまで、様々な美味しいものに出会えます。</p>
+
+                    <p>特に印象的だったのは「はるか」と「青島みかん」のジュース。地元伊豆で栽培された柑橘類で作られた100%ジュースは、甘さと酸味のバランスが絶妙で、桜散策の疲れを癒してくれました。また、イチゴや甘夏などの新鮮なフルーツも豊富で、春の味覚を存分に楽しむことができます。</p>
+
+                    <h2>峰温泉噴湯公園で温泉卵作り体験</h2>
+
+                    <p>桜散策の途中で立ち寄ったのが「峰温泉噴湯公園」。ここでは100度の温泉を利用した温泉卵作り体験ができます。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?hot,spring,geyser,steam" alt="峰温泉噴湯公園の間欠泉">
+                    <div class="caption">迫力満点の間欠泉と温泉卵作り体験</div>
+
+                    <p>13分間かけてゆっくりと茹で上がる温泉卵は、普通の茹で卵とは一味違う滑らかな食感。温泉の成分によって自然に塩味が付いているので、そのままで美味しくいただけます。間欠泉の噴出も定期的に見ることができ、自然の力強さを間近で感じられる貴重な体験でした。</p>
+
+                    <h3>河津桜の原木を見学</h3>
+
+                    <p>河津桜まつりで欠かせないのが、河津桜の「原木」の見学です。この桜は1955年に地元の方が偶然発見したもので、大島桜と寒緋桜の自然交配によって生まれた品種だとされています。</p>
+
+                    <p>原木は現在も大切に保護されており、河津桜の歴史を物語る貴重な存在です。この1本の木から始まった河津桜が、今では町全体を彩る名物になったと思うと、とても感慨深いものがあります。</p>
+
+                    <h2>今井荘チェックイン！オーシャンビューの贅沢空間</h2>
+
+                    <p>河津桜まつりを満喫した後は、今回の宿泊先「伊豆今井浜温泉 今井荘」へ。河津駅から宿の送迎バスで約15分、目の前に海が広がる絶景ロケーションに位置しています。</p>
+
+                    <div class="info-box">
+                        <h3>今井荘 基本情報</h3>
+                        <p><strong>正式名称：</strong>伊豆今井浜温泉 今井荘<br>
+                        <strong>住所：</strong>静岡県賀茂郡河津町見高127<br>
+                        <strong>アクセス：</strong>河津駅から送迎バス約15分<br>
+                        <strong>特徴：</strong>全室オーシャンビュー、オールインクルーシブ</p>
+                    </div>
+
+                    <img src="https://source.unsplash.com/800x600/?ocean,view,hotel,luxury" alt="今井荘のオーシャンビュー">
+                    <div class="caption">目の前に広がる雄大な太平洋</div>
+
+                    <h3>和モダンな客室でくつろぎのひととき</h3>
+
+                    <p>今回宿泊したお部屋は、和室とリビングスペースを備えた広々とした造り。全室オーシャンビューの名に恥じない、目の前に広がる太平洋の絶景が自慢です。</p>
+
+                    <p>畳の香りが心地よい和室は、都会の喧騒を忘れてリラックスできる空間。大きな窓からは海と空のグラデーションが楽しめ、時間の経過とともに変わる景色を眺めているだけで心が癒されます。アメニティも充実しており、リファのドライヤーなど上質な設備も嬉しいポイントでした。</p>
+
+                    <h2>オールインクルーシブで極上のリゾート体験</h2>
+
+                    <h3>潮彩テラスで海を眺めながらドリンクタイム</h3>
+
+                    <p>今井荘の魅力の一つが、オールインクルーシブシステム。チェックイン後は、ラウンジや潮彩テラスで好きなだけドリンクを楽しむことができます。</p>
+
+                    <p>特に印象的だったのが「潮彩テラス」。海の目の前に設置されたテラススペースで、波の音を聞きながら贅沢なひとときを過ごせます。地元産のオリジナルスイーツや、わさび酒などの地酒も用意されており、伊豆の味覚を存分に楽しめました。</p>
+
+                    <h3>生演奏ライブで優雅な夜を</h3>
+
+                    <p>夜にはロビーラウンジでピアノとマリンバの生演奏ライブが開催されました。海の見えるラウンジで聴く生の音楽は、旅の特別感をさらに高めてくれる素敵な演出でした。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?piano,performance,lobby,elegant" alt="ロビーでの生演奏">
+                    <div class="caption">優雅なロビーでの生演奏ライブ</div>
+
+                    <h2>ビュッフェ夕食で海の幸を満喫</h2>
+
+                    <p>今井荘の夕食は、新鮮な海の幸をふんだんに使ったビュッフェスタイル。オールインクルーシブなので、アルコール類も含めて時間を気にせず楽しめます。</p>
+
+                    <h3>活きたアワビと黒毛和牛のステーキ</h3>
+
+                    <p>特に印象的だったのは、生きたアワビをその場でバター焼きにしてくれるライブキッチンと、黒毛和牛のステーキです。アワビはコリコリとした食感と海の旨味が凝縮されており、贅沢そのもの。ステーキも柔らかく、特製ソースとの相性も抜群でした。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?abalone,steak,luxury,buffet" alt="活アワビと黒毛和牛ステーキ">
+                    <div class="caption">活きたアワビのバター焼きと黒毛和牛ステーキ</div>
+
+                    <h3>新鮮な刺身とニューサマーオレンジデザート</h3>
+
+                    <p>伊豆ならではの新鮮な刺身も充実していました。特に地元で獲れた魚の刺身は、時間が経ってもプリプリの食感で、海の近さを実感させてくれます。</p>
+
+                    <p>デザートには地元特産のニューサマーオレンジを使ったゼリーやメロンなど、フルーツ系のスイーツが豊富。春らしい爽やかな味わいで、満腹になったお腹にも優しい後味でした。</p>
+
+                    <h2>温泉と湯上がりラウンジでリラックス</h2>
+
+                    <p>食事の後は、今井荘自慢の温泉へ。源泉かけ流しの湯に浸かりながら、星空を眺める露天風呂は格別です。</p>
+
+                    <h3>24時間利用可能な湯上がりラウンジ</h3>
+
+                    <p>温泉の後に嬉しいのが、湯上がりラウンジ。なんと24時30分まで利用可能で、ビールサーバーやアイスクリームなども自由に楽しめます。温泉で火照った体に冷たいビールやアイスが染み渡り、至福の時間を過ごすことができました。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?hot,spring,lounge,relax" alt="湯上がりラウンジ">
+                    <div class="caption">充実した湯上がりラウンジ</div>
+
+                    <h2>朝食ビュッフェで1日の始まり</h2>
+
+                    <p>翌朝は、今井荘の朝食ビュッフェでスタート。夕食とはまた違った充実のラインナップで、朝から贅沢な気分を味わえます。</p>
+
+                    <p>特に印象的だったのは、マグロの刺身やサバの味噌煮などの和食、そして地元産の新鮮なフルーツです。パインやメロンなどの甘いフルーツで朝からビタミンをたっぷり補給し、元気に2日目をスタートできました。</p>
+
+                    <h3>お部屋から見える海の絶景</h3>
+
+                    <p>朝食前にお部屋から眺める朝の海は格別でした。太平洋の水平線から昇る朝日は見ることができませんでしたが、朝霧に包まれた幻想的な海の景色も十分に美しく、心が洗われるような気持ちになりました。</p>
+
+                    <h2>河津桜まつり再訪問と温泉街散策</h2>
+
+                    <p>チェックアウト後は、再び河津桜まつりへ。前日とは違った時間帯で、また新たな発見がありました。</p>
+
+                    <h3>栖足寺で足湯体験</h3>
+
+                    <p>今度は「栖足寺」での足湯体験にチャレンジ。お寺の境内にある足湯は、桜を眺めながらゆっくりと足を温めることができる贅沢なスポット。最初は熱く感じましたが、慣れてくると心地よい温かさに包まれ、散策の疲れも癒されました。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?foot,bath,temple,cherry" alt="栖足寺の足湯">
+                    <div class="caption">お寺の境内で楽しむ足湯体験</div>
+
+                    <h3>大川屋で関西風お好み焼きランチ</h3>
+
+                    <p>最後のランチは「大川屋」で関西風お好み焼きをいただきました。ふわふわの生地と特製ソースの絶妙な組み合わせで、思わず笑顔になる美味しさ。河津の思い出を味とともに記憶に刻む、素敵な締めくくりとなりました。</p>
+
+                    <h2>車なし河津旅行の移動手段まとめ</h2>
+
+                    <p>今回の旅行で利用した交通手段をまとめました。車がなくても十分に河津桜まつりと今井荘を楽しむことができます。</p>
+
+                    <div class="info-box">
+                        <h3>車なし河津旅行 交通手段</h3>
+                        <p><strong>往復交通：</strong>踊り子号 東京駅⇔河津駅（約2時間30分）<br>
+                        <strong>宿泊先送迎：</strong>今井荘送迎バス（河津駅⇔ホテル 約15分）<br>
+                        <strong>桜まつり散策：</strong>徒歩（河津駅から桜並木まで徒歩圏内）<br>
+                        <strong>温泉巡り：</strong>徒歩・路線バス利用</p>
+                    </div>
+
+                    <h2>まとめ：春のごほうび旅で心も満たされる贅沢ステイ</h2>
+
+                    <p>河津桜まつりと今井荘での1泊2日の旅は、まさに「春のごほうび旅」と呼ぶにふさわしい贅沢な体験でした。早咲きの桜に心癒され、オーシャンビューの温泉宿でオールインクルーシブの極上ステイを満喫する。このような特別な時間は、日頃の疲れを癒し、新しい季節への活力を与えてくれます。</p>
+
+                    <p>特に今井荘のオールインクルーシブシステムは、時間を気にせずリラックスできる点が素晴らしく、まさに「何もしない贅沢」を味わうことができました。海の音に包まれながら過ごす時間は、都会では得られない貴重な体験です。</p>
+
+                    <p>河津桜は年によって開花時期が変わりますが、満開でなくても十分に美しく、桜まつりの雰囲気や地元グルメも含めて楽しめるイベントです。車がなくても踊り子号でアクセスしやすく、カップルや夫婦での春旅にぴったりの目的地だと思います。</p>
+
+                    <p>皆さんも春の訪れを感じたくなったら、ぜひ河津桜まつりと今井荘での贅沢ステイを検討してみてください。きっと心に残る素敵な思い出になることでしょう！</p>
+
+                    <!-- Tags -->
+                    <div class="tags">
+                        <span class="tag">#河津桜</span>
+                        <span class="tag">#河津桜まつり</span>
+                        <span class="tag">#今井荘</span>
+                        <span class="tag">#伊豆旅行</span>
+                        <span class="tag">#春旅行</span>
+                        <span class="tag">#オールインクルーシブ</span>
+                        <span class="tag">#オーシャンビュー</span>
+                        <span class="tag">#温泉旅行</span>
+                        <span class="tag">#車なし旅行</span>
+                        <span class="tag">#踊り子号</span>
+                        <span class="tag">#夫婦旅</span>
+                        <span class="tag">#静岡旅行</span>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>河津桜まつり＆今井荘 おすすめ情報</h3>
+                        <p>今回訪れた河津桜まつりの見どころや今井荘の魅力をまとめたGoogleマップリストを作成しました。春の伊豆旅行の参考にぜひご活用ください。</p>
+                        <a href="https://sakuranomori-hotels.com/imaiso/" style="color: var(--terracotta); font-weight: bold;" target="_blank">🏨 今井荘公式サイトをチェック</a>
+                    </div>
+                </div>
+
+                <!-- Author Box -->
+                <div class="author-box">
+                    <div class="author-avatar">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="author-info">
+                        <h3>りゅうきとあかね</h3>
+                        <p>夫婦で楽しむ贅沢旅をテーマに、車なしでも行ける全国の素敵なホテル・グルメ・観光スポットをご紹介しています。旅先での体験をVlog形式でお届け中！</p>
+                    </div>
+                </div>
+
+                <!-- Related Posts -->
+                <div class="related-posts">
+                    <h2>関連記事</h2>
+                    <div class="related-grid">
+                        <a href="03_beppu_onsen_article.html" class="related-item">
+                            <div class="related-img">
+                                <img src="https://img.youtube.com/vi/JOCHCjqjm54/maxresdefault.jpg" alt="別府温泉旅行">
+                            </div>
+                            <div class="related-info">
+                                <h3>【車なし】別府温泉で究極の癒し旅2泊3日</h3>
+                                <p>別府の名湯めぐりと温泉街散策。車なしでも楽しめる温泉三昧の旅。</p>
+                            </div>
+                        </a>
+                        <a href="05_miyakojima_iraph_sui_article.html" class="related-item">
+                            <div class="related-img">
+                                <img src="https://img.youtube.com/vi/Nr02LYD_CaE/maxresdefault.jpg" alt="宮古島イラフSUI">
+                            </div>
+                            <div class="related-info">
+                                <h3>【車無し】宮古島イラフSUIで味わう大人の贅沢と近隣観光1泊2日</h3>
+                                <p>ラグジュアリーな「イラフSUI」に滞在し、車なしでも楽しめる宮古旅。</p>
+                            </div>
+                        </a>
+                        <a href="06_ana_manza_article.html" class="related-item">
+                            <div class="related-img">
+                                <img src="https://img.youtube.com/vi/yKi94fVJ6fs/maxresdefault.jpg" alt="ANAインターコンチネンタル万座">
+                            </div>
+                            <div class="related-info">
+                                <h3>【沖縄・車なし】ANAインターコンチネンタル万座ビーチリゾート</h3>
+                                <p>青い海と空に囲まれた極上リゾートでの2泊3日。</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>ブログカテゴリー</h4>
+                    <ul>
+                        <li><a href="#">春旅行</a></li>
+                        <li><a href="#">温泉旅館</a></li>
+                        <li><a href="#">オールインクルーシブ</a></li>
+                        <li><a href="#">伊豆旅行</a></li>
+                        <li><a href="#">桜の名所</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>人気の記事</h4>
+                    <ul>
+                        <li><a href="#">河津桜まつり×今井荘滞在記</a></li>
+                        <li><a href="#">車なしで行く別府温泉</a></li>
+                        <li><a href="#">宮古島イラフSUI体験</a></li>
+                        <li><a href="#">沖縄万座ビーチリゾート</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>リンク</h4>
+                    <ul>
+                        <li><a href="../index.html#home">ホーム</a></li>
+                        <li><a href="../index.html#blog">ブログ</a></li>
+                        <li><a href="../index.html#youtube">Youtube</a></li>
+                        <li><a href="../index.html#instagram">Instagram</a></li>
+                        <li><a href="../index.html#contact">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>フォロー</h4>
+                    <ul>
+                        <li><a href="https://www.youtube.com/@ryuki_akane" target="_blank">Youtube</a></li>
+                        <li><a href="https://www.instagram.com/akn_523" target="_blank">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 りゅうきとあかね | Travel Without a Car:Hidden Gems</p>
+            </div>
+        </div>
+    </footer>
+    <!-- タグクリック機能 -->
+    <script src="../js/article-tags.js"></script>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDit9jWoH%2BM%2BBk%2B6obnE9Cvbr2CAUj6ky%2BixpSEetYjok0XaAEmy037rnl%2BEH4GoUa%2B%2F1PBlQTjJB%2BgaA6wDJ24sRysH8TP5ITShN2mG6y0C3tk5MwJk8Due3Y%2BvE62TFNDekaekqOtUa7gnsj4iQdGRF9acktL1vISbunzyHbQflzvL039CSbVbkFlKFGxn8adwGWOrux2kR4nYCst5yOV2FspHhy5wMHJbdtpaAiolw827u1ICAKtkCvJBHIKFGYRAZ96Y%2FrcmBQS6DxVVq%2FULHTTDah8ARpGbe8aaT3XtRnf8YEke%2FNvzLab4wOK8h%2FdYekZqx7PWyguoBqs2IDpqodvhjK0RFsGAOJwxDUA5mA3Ec3%2BshLCxkQuxtTkUChjA0nFLgNTNxlXLCVxL919Fsxk3zI31lG7CdyEWTlkuw0iIEQg6p0rhCdTA6mb0bp80i%2Fw5jeToEIhvq%2BK2D8wLmLc%2Fqxv6V2QzyM08ymyynKzhqUc%2B%2Bi9W2ixEBZ2K3JYesAC22%2FDrmlk0T2ZLS4N4%3D";
+        window.__genspark_locale = "ja-JP";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDit9jWoH+M+Bk+6obnE9Cvbr2CAUj6ky+ixpSEetYjok0XaAEmy037rnl+EH4GoUa+/1PBlQTjJB+gaA6wDJ24sRysH8TP5ITShN2mG6y0C3tk5MwJk8Due3Y+vE62TFNDekaekqOtUa7gnsj4iQdGRF9acktL1vISbunzyHbQflzvL039CSbVbkFlKFGxn8adwGWOrux2kR4nYCst5yOV2FspHhy5wMHJbdtpaAiolw827u1ICAKtkCvJBHIKFGYRAZ96Y/rcmBQS6DxVVq/ULHTTDah8ARpGbe8aaT3XtRnf8YEke/NvzLab4wOK8h/dYekZqx7PWyguoBqs2IDpqodvhjK0RFsGAOJwxDUA5mA3Ec3+shLCxkQuxtTkUChjA0nFLgNTNxlXLCVxL919Fsxk3zI31lG7CdyEWTlkuw0iIEQg6p0rhCdTA6mb0bp80i/w5jeToEIhvq+K2D8wLmLc/qxv6V2QzyM08ymyynKzhqUc++i9W2ixEBZ2K3JYesAC22/Drmlk0T2ZLS4N4=";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    
