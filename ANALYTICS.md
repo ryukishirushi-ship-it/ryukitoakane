@@ -90,8 +90,15 @@ Some articles already have Cloudflare Web Analytics:
 
 ### Next Steps
 
-1. Replace placeholder Measurement ID
-2. Test tracking in GA4 Real-Time reports
-3. Set up conversion goals (newsletter signup, video views)
-4. Configure custom events for better insights
-5. Create automated reports for content performance
+1. **Replace placeholder Measurement ID** - See [GOOGLE_ANALYTICS_SETUP.md](GOOGLE_ANALYTICS_SETUP.md)
+2. **Test tracking in GA4 Real-Time reports** - See [ANALYTICS_VERIFICATION.md](ANALYTICS_VERIFICATION.md)
+3. **Learn to read GA4 dashboard** - See [GA4_DASHBOARD_GUIDE.md](GA4_DASHBOARD_GUIDE.md)
+4. Set up conversion goals (newsletter signup, video views)
+5. Configure custom events for better insights
+6. Create automated reports for content performance
+
+## 📚 Complete Guide Collection
+
+- 📖 **[GOOGLE_ANALYTICS_SETUP.md](GOOGLE_ANALYTICS_SETUP.md)** - Step-by-step setup guide
+- 📊 **[GA4_DASHBOARD_GUIDE.md](GA4_DASHBOARD_GUIDE.md)** - How to read analytics data
+- ✅ **[ANALYTICS_VERIFICATION.md](ANALYTICS_VERIFICATION.md)** - Verify tracking works
