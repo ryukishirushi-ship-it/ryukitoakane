@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【OMO5沖縄那覇】星野リゾートで暮らすように泊まる！やぐらルーム×地域密着体験の魅力満載ステイ | りゅうきとあかねの旅行記</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --ivory: #F2F2EB;
+            --beige: #D9C49C;
+            --terracotta: #BF6A39;
+            --salmon: #F2A7A0;
+            --black: #0D0D0D;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--ivory);
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--terracotta);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--salmon);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--ivory);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--terracotta);
+        }
+
+        .logo span {
+            color: var(--black);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--black);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        nav ul li a:hover {
+            color: var(--terracotta);
+        }
+
+        /* Blog Post Section */
+        .blog-post {
+            padding: 80px 0;
+        }
+
+        .blog-post-content {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .blog-post-header {
+            margin-bottom: 30px;
+        }
+
+        .blog-post-header h1 {
+            font-size: 2.5rem;
+            color: var(--terracotta);
+            margin-bottom: 20px;
+        }
+
+        .blog-post-meta {
+            display: flex;
+            align-items: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .blog-post-meta span {
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .blog-post-meta i {
+            margin-right: 5px;
+            color: var(--beige);
+        }
+
+        .blog-post-image {
+            width: 100%;
+            height: 400px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .blog-post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-post-body {
+            line-height: 1.8;
+        }
+
+        .blog-post-body p {
+            margin-bottom: 20px;
+        }
+
+        .blog-post-body h2 {
+            font-size: 1.8rem;
+            color: var(--terracotta);
+            margin: 40px 0 20px;
+        }
+
+        .blog-post-body h3 {
+            font-size: 1.4rem;
+            color: var(--black);
+            margin: 30px 0 15px;
+        }
+
+        .blog-post-body img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .blog-post-body .caption {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        /* YouTube Section */
+        .youtube-section {
+            background-color: var(--beige);
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .youtube-section h2 {
+            color: var(--terracotta);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .video-embed {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Info Box */
+        .info-box {
+            background-color: var(--ivory);
+            border-left: 4px solid var(--terracotta);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .info-box h3 {
+            color: var(--terracotta);
+            margin-bottom: 10px;
+        }
+
+        /* Tags */
+        .tags {
+            margin: 30px 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--beige);
+            color: var(--black);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 5px 5px 5px 0;
+        }
+
+        /* Related Posts */
+        .related-posts {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid var(--beige);
+        }
+
+        .related-posts h2 {
+            color: var(--terracotta);
+            margin-bottom: 30px;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .related-item {
+            background-color: var(--ivory);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .related-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .related-img {
+            height: 150px;
+            overflow: hidden;
+        }
+
+        .related-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .related-info {
+            padding: 15px;
+        }
+
+        .related-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .related-info p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Author Box */
+        .author-box {
+            background-color: var(--ivory);
+            padding: 30px;
+            border-radius: 8px;
+            margin: 40px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 20px;
+            background-color: var(--beige);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--terracotta);
+        }
+
+        .author-info h3 {
+            color: var(--terracotta);
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--black);
+            padding: 40px 0;
+            color: white;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-column h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--beige);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--salmon);
+        }
+
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            .logo {
+                margin-bottom: 20px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+                margin-left: 0;
+            }
+            
+            .blog-post-content {
+                padding: 20px;
+            }
+            
+            .blog-post-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .author-box {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .author-avatar {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <h1 class="logo">Ryuki<span> & </span>Akane</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">ホーム</a></li>
+                    <li><a href="#blog">ブログ</a></li>
+                    <li><a href="#youtube">Youtube</a></li>
+                    <li><a href="#instagram">インスタグラム</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post">
+        <div class="container">
+            <div class="blog-post-content">
+                <div class="blog-post-header">
+                    <h1>【OMO5沖縄那覇】星野リゾートで暮らすように泊まる！やぐらルーム×地域密着体験の魅力満載ステイ</h1>
+                    <div class="blog-post-meta">
+                        <span><i class="far fa-calendar"></i> 2025.05.05</span>
+                        <span><i class="far fa-user"></i> りゅうきとあかね</span>
+                        <span><i class="far fa-folder"></i> 沖縄旅行</span>
+                        <span><i class="far fa-clock"></i> 読了時間: 約12分</span>
+                    </div>
+                </div>
+                <div class="blog-post-image">
+                    <img src="https://source.unsplash.com/1200x800/?okinawa,naha,hotel,modern" alt="OMO5沖縄那覇の外観">
+                </div>
+                <div class="blog-post-body">
+                    <p>星野リゾートが展開する街中ホテルブランド「OMO」の沖縄那覇店に宿泊してきました🏨 単なるホテル滞在ではなく、那覇の街を丸ごと楽しむ「暮らすように泊まる」体験が魅力的な施設です。やぐらルームでの特別な宿泊体験から、首里城講座、市場まーさんぽまで、地域密着型のアクティビティを満喫してきました✨</p>
+
+                    <!-- YouTube Section -->
+                    <div class="youtube-section">
+                        <h2>📺 動画で見たい方はこちら</h2>
+                        <p>この記事の内容はYouTubeでも公開しています。やぐらルームの雰囲気や街歩きの様子を動画で楽しみたい方は、ぜひこちらからご視聴ください。</p>
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/XGoiYviOqqY" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <p>OMOは「泊まることそのものよりも、その町での時間を楽しむことを大切にする」というコンセプトの街中ホテル。今回は那覇の国際通り近くにあるOMO5沖縄那覇で、地域の魅力を存分に味わう滞在を体験してきました。</p>
+
+                    <h2>OMO5沖縄那覇の魅力とは</h2>
+                    
+                    <p>OMOシリーズは星野リゾートが展開する都市型ホテルブランドで、観光やビジネスの拠点として最適な立地に位置しています。OMO5沖縄那覇は那覇市松山地区にあり、国際通りや牧志公設市場へのアクセスが抜群です。</p>
+
+                    <div class="info-box">
+                        <h3>OMO5沖縄那覇 基本情報</h3>
+                        <p><strong>住所：</strong>沖縄県那覇市松山1丁目3-16<br>
+                        <strong>アクセス：</strong>ゆいレール県庁前駅から徒歩約8分<br>
+                        <strong>客室数：</strong>111室<br>
+                        <strong>特徴：</strong>地域密着型アクティビティ、ご近所マップ完備</p>
+                    </div>
+
+                    <p>チェックイン前でも荷物を預けることができ、身軽になって那覇の街歩きを楽しめます。ホテルスタッフの方々も親切で、地元のおすすめスポットを詳しく教えてくれました。</p>
+
+                    <h2>チェックイン前の那覇街歩き</h2>
+
+                    <p>荷物をホテルに預けた後は、チェックインまでの時間を使って那覇の街を散策しました。国際通りのカフェで一息ついたり、気になるお店をのぞいたり、車なしでも充実した時間を過ごせます。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?naha,kokusai,street,okinawa" alt="国際通りの風景">
+                    <div class="caption">活気あふれる国際通りの街並み</div>
+
+                    <p>詳しい那覇グルメ巡りの様子は、別の動画「那覇グルメ15選｜車なし2泊3日でめぐる！30代夫婦の沖縄旅行Vlog」でご紹介していますので、ぜひそちらもご覧ください。</p>
+
+                    <h2>やぐらルーム宿泊体験</h2>
+
+                    <p>今回宿泊したのは、OMO5沖縄那覇の特徴的な「やぐらルーム」。上がベッド、下がくつろぎスペースになった2層構造で、まるで秘密基地のような楽しい造りになっています。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?hotel,room,loft,bed,modern" alt="やぐらルームのイメージ">
+                    <div class="caption">秘密基地のようなやぐらルーム</div>
+
+                    <h3>お部屋の設備とアメニティ</h3>
+
+                    <p>やぐらルームは機能性とデザイン性を両立した造りで、限られた空間を有効活用しています。ベッドスペースは程よい高さにあり、下のくつろぎスペースでは荷物を広げたり、ゆっくりと過ごしたりできます。</p>
+
+                    <p>お部屋からは那覇の街並みと海を望むことができ、特に夕方の時間帯は美しい景色を楽しめました。冷蔵庫には宿泊者へのプレゼントとしてオリオンビールが用意されており、沖縄らしいおもてなしを感じました。</p>
+
+                    <p>バスルームにはバスソルトも用意されており、旅の疲れを癒やすのにぴったりです。アメニティは必要なものを自分で選ぶセルフスタイルで、環境に配慮した取り組みも評価できます。</p>
+
+                    <h2>OMO BASEとYUNTAKU LIBRARY</h2>
+
+                    <p>ホテル1階のOMO BASEには「ご近所マップ」が用意されており、観光スポットはもちろん、地元の人しか知らないようなお店の最新メニューまで詳しく紹介されています。下調べなしでも那覇の街を存分に楽しめる工夫が凝らされています。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?library,books,reading,okinawa" alt="図書スペースのイメージ">
+                    <div class="caption">沖縄文化を学べるYUNTAKU LIBRARY</div>
+
+                    <h3>沖縄文化を深く知るライブラリー</h3>
+
+                    <p>2階のYUNTAKU LIBRARYでは、沖縄にまつわる本を読みながら歴史や文化を学ぶことができます。特に印象的だったのは、シーサーの歴史についての展示です。</p>
+
+                    <p>シーサーはスフィンクス像からシルクロードを経由して中国に渡り、ライオンを実際に見る機会がなかった沖縄の人々が独自に解釈して現在の形になったという興味深い歴史を知ることができました。このような深い文化的背景を知ることで、街歩きがより一層楽しくなります。</p>
+
+                    <h2>首里城講座で歴史を学ぶ</h2>
+
+                    <p>夕方からは「首里城講座」に参加しました。現在復興に向けて再建中の首里城について、その歴史や文化的価値を詳しく学べる貴重な機会です。</p>
+
+                    <div class="info-box">
+                        <h3>首里城講座のポイント</h3>
+                        <p><strong>内容：</strong>首里城の歴史、琉球王朝時代の文化<br>
+                        <strong>特徴：</strong>クイズやマップ作りを通じた参加型学習<br>
+                        <strong>学び：</strong>青空と赤い瓦、白い石垣のコントラストの美しさ<br>
+                        <strong>歴史：</strong>これまで5回焼失し、世界遺産登録は2000年</p>
+                    </div>
+
+                    <p>講座では首里城が過去に5回も燃えていることや、2000年に世界遺産に登録されたことなど、知られざる歴史を学びました。クイズ形式で楽しく学べるので、歴史に詳しくない方でも十分に楽しめる内容です。</p>
+
+                    <p>首里城の再建が完了したら、必ず訪れようと心に決めました。事前に歴史を学んでおくことで、実際に訪れた時の感動がより大きくなるはずです。</p>
+
+                    <h2>島の酒バータイムで沖縄の夜を堪能</h2>
+
+                    <p>夜になると、ロビーには琉球ガラスの美しい明りが灯ります。静かで幻想的な雰囲気の中で、那覇の名店がセレクトした「島の酒」を楽しむバータイムがスタートします。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?ryukyu,glass,bar,okinawa,night" alt="琉球ガラスのライティング">
+                    <div class="caption">琉球ガラスが作り出す幻想的な夜の雰囲気</div>
+
+                    <h3>地元セレクトの島の酒</h3>
+
+                    <p>バータイムでは泡盛やクラフトジンなど、沖縄ならではのお酒を楽しめます。特に印象的だったのは、青森の甘酒をベースに沖縄県産レモンなどの素材を使用したクラフトジンです。</p>
+
+                    <p>地元のリキュールショップ「リキット」がセレクトしたオリジナルのお酒は、どれも個性的で美味しく、沖縄の夜をゆっくりと楽しむのにぴったりでした。赤米を使った泡盛も、まろやかで飲みやすく、初めて泡盛を飲む方にもおすすめです。</p>
+
+                    <p>琉球ガラスの明りに包まれながら島の酒を味わう時間は、都市ホテルでは体験できない特別なひとときでした。</p>
+
+                    <h2>市場まーさんぽで地元の食文化を体験</h2>
+
+                    <p>翌朝はチェックアウト後、「市場まーさんぽ」というアクティビティに参加しました。「まーさん」は沖縄の方言で「美味しい」という意味で、ガイドさんと一緒に牧志公設市場や周辺のお店を歩いて食文化や暮らしに触れる体験です。</p>
+
+                    <img src="https://source.unsplash.com/800x600/?okinawa,market,food,traditional" alt="沖縄の市場の風景">
+                    <div class="caption">活気あふれる牧志公設市場</div>
+
+                    <h3>ジーマーミー豆腐の手作り体験</h3>
+
+                    <p>最初に訪れたのは「ジーマーミー豆腐のハマショ」。大浜さんという職人さんが毎朝手作りで作っているジーマーミー豆腐の製造工程を特別に見学させていただきました。</p>
+
+                    <p>ジーマーミー豆腐は落花生から作る沖縄の郷土料理で、琉球王朝時代に中国から伝わった後、市民に広がっていったそうです。手作りの工程を見学した後の試食は格別で、なめらかな食感と落花生の香りが印象的でした。</p>
+
+                    <h3>沖縄のカツオ節文化</h3>
+
+                    <p>続いて訪れたのはカツオ節屋さん。沖縄のカツオ節は「肌かつ節」と呼ばれ、皮つきのまま加工するのが特徴です。そのため本土のカツオ節よりも香りが豊かで、出汁の風味が濃厚になります。</p>
+
+                    <p>実際にカツオ節を削る体験もさせていただき、削りたてのカツオ節をそのまま味わうことができました。口の中で旨味が広がる感覚は、なかなか体験できない貴重なものでした。</p>
+
+                    <p>台湾にも似たようなカツオ節があるそうですが、塩分が多く、日本のカツオ節とは味が異なるという興味深い話も聞くことができました。</p>
+
+                    <h2>OMOならではの地域密着型滞在の魅力</h2>
+
+                    <p>今回のOMO5沖縄那覇での滞在を通じて感じたのは、単なるホテル宿泊を超えた「地域体験」の価値です。やぐらルームでの特別な宿泊体験はもちろん、首里城講座や市場まーさんぽなど、その土地ならではの文化に深く触れることができました。</p>
+
+                    <div class="info-box">
+                        <h3>OMO5沖縄那覇 おすすめポイント</h3>
+                        <p><strong>ユニークな客室：</strong>やぐらルームで特別な宿泊体験<br>
+                        <strong>地域密着型アクティビティ：</strong>首里城講座、市場まーさんぽ<br>
+                        <strong>文化学習：</strong>YUNTAKU LIBRARYで沖縄の歴史を学習<br>
+                        <strong>バータイム：</strong>島の酒と琉球ガラスの幻想的な夜<br>
+                        <strong>立地：</strong>国際通りや市場へのアクセス抜群</p>
+                    </div>
+
+                    <p>特に印象的だったのは、ホテルスタッフの皆さんの地域愛の深さです。ただ観光スポットを紹介するだけでなく、その背景にある歴史や文化まで丁寧に教えてくださり、那覇という街をより深く理解することができました。</p>
+
+                    <h2>車なし沖縄旅行の新しいスタイル</h2>
+
+                    <p>OMO5沖縄那覇は、車がなくても沖縄を深く楽しめる新しい旅行スタイルを提案してくれるホテルです。ゆいレールの駅からのアクセスも良く、那覇市内の主要スポットへは徒歩や公共交通機関で十分にアクセスできます。</p>
+
+                    <p>レンタカーでの移動とは違い、街をゆっくりと歩くことで地元の人々との交流も生まれ、ガイドブックには載っていない発見もたくさんありました。</p>
+
+                    <p>初めてのOMO体験でしたが、すっかり魅力にはまってしまい、他の地域のOMOにも宿泊してみたくなりました。星野リゾートが提案する「その街を丸ごと楽しむ」というコンセプトは、これからの旅行スタイルのひとつの答えかもしれません。</p>
+
+                    <h2>まとめ：暮らすように泊まる沖縄体験</h2>
+
+                    <p>OMO5沖縄那覇での滞在は、単なる宿泊を超えた特別な体験でした。やぐらルームでの楽しい宿泊、沖縄の歴史や文化を学ぶ講座、地元の食文化に触れる市場体験など、この土地ならではの魅力を存分に味わうことができました。</p>
+
+                    <p>「暮らすように泊まる」というコンセプト通り、観光客としてではなく、一時的にでも那覇の住人になったような感覚で過ごせたのが印象的でした。</p>
+
+                    <p>車なしでも楽しめる沖縄旅行を計画されている方、地域の文化に深く触れたい方、OMOシリーズに興味のある方には、ぜひおすすめしたいホテルです。きっと新しい沖縄の魅力を発見できるはずです。</p>
+
+                    <!-- Tags -->
+                    <div class="tags">
+                        <span class="tag">#OMO5沖縄那覇</span>
+                        <span class="tag">#星野リゾート</span>
+                        <span class="tag">#やぐらルーム</span>
+                        <span class="tag">#沖縄旅行</span>
+                        <span class="tag">#那覇ホテル</span>
+                        <span class="tag">#車なし旅行</span>
+                        <span class="tag">#首里城講座</span>
+                        <span class="tag">#市場まーさんぽ</span>
+                        <span class="tag">#地域密着型ホテル</span>
+                        <span class="tag">#沖縄文化</span>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>OMO5沖縄那覇 宿泊予約</h3>
+                        <p>今回宿泊した星野リゾート OMO5沖縄那覇の詳細情報と宿泊予約は以下のリンクからどうぞ。</p>
+                        <a href="https://hoshinoresorts.com/ja/hotels/omo5okinawanaha/" style="color: var(--terracotta); font-weight: bold;">🏨 公式サイトはこちら</a>
+                    </div>
+                </div>
+
+                <!-- Author Box -->
+                <div class="author-box">
+                    <div class="author-avatar">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="author-info">
+                        <h3>りゅうきとあかね</h3>
+                        <p>夫婦で楽しむ贅沢旅をテーマに、車なしでも行ける全国の素敵なホテル・グルメ・観光スポットをご紹介しています。旅先での体験をVlog形式でお届け中！</p>
+                    </div>
+                </div>
+
+                <!-- Related Posts -->
+                <div class="related-posts">
+                    <h2>関連記事</h2>
+                    <div class="related-grid">
+                        <div class="related-item">
+                            <div class="related-img">
+                                <img src="https://source.unsplash.com/400x300/?naha,food,market" alt="那覇グルメ15選">
+                            </div>
+                            <div class="related-info">
+                                <h3>【那覇グルメ15選】車なし2泊3日でめぐる！30代夫婦の沖縄旅行</h3>
+                                <p>那覇市内のおすすめグルメスポットを車なしで巡る完全ガイド</p>
+                            </div>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-img">
+                                <img src="https://source.unsplash.com/400x300/?okinawa,resort,beach" alt="沖縄リゾートホテル">
+                            </div>
+                            <div class="related-info">
+                                <h3>【沖縄・車なし】ANAインターコンチネンタル万座ビーチリゾート</h3>
+                                <p>沖縄屈指のリゾートホテルでの2泊3日の滞在記</p>
+                            </div>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-img">
+                                <img src="https://source.unsplash.com/400x300/?miyakojima,resort" alt="宮古島イラフSUI">
+                            </div>
+                            <div class="related-info">
+                                <h3>【車無し】宮古島イラフSUIで味わう大人の贅沢と近隣観光1泊2日</h3>
+                                <p>ラグジュアリーホテル「イラフSUI」での滞在と周辺観光の魅力をご紹介</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>ブログカテゴリー</h4>
+                    <ul>
+                        <li><a href="#">沖縄旅行</a></li>
+                        <li><a href="#">温泉旅館</a></li>
+                        <li><a href="#">ラグジュアリーホテル</a></li>
+                        <li><a href="#">グルメ</a></li>
+                        <li><a href="#">おすすめスポット</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>人気の記事</h4>
+                    <ul>
+                        <li><a href="#">OMO5沖縄那覇滞在記</a></li>
+                        <li><a href="#">車なしで行く那覇グルメ</a></li>
+                        <li><a href="#">沖縄万座ビーチリゾート</a></li>
+                        <li><a href="#">宮古島イラフSUI滞在記</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>リンク</h4>
+                    <ul>
+                        <li><a href="#home">ホーム</a></li>
+                        <li><a href="#blog">ブログ</a></li>
+                        <li><a href="#youtube">Youtube</a></li>
+                        <li><a href="#instagram">Instagram</a></li>
+                        <li><a href="#contact">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>フォロー</h4>
+                    <ul>
+                        <li><a href="https://www.youtube.com/@ryuki_akane" target="_blank">Youtube</a></li>
+                        <li><a href="https://www.instagram.com/akn_523" target="_blank">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 りゅうきとあかね | Travel Without a Car:Hidden Gems</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- タグクリック機能 -->
+    <script src="../js/article-tags.js"></script>
+    <!-- 記事共通機能 -->
+    <script src="../js/article-common.js"></script>
+    
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDlq4npYucvBEuh76q%2BKYQqNFuTDg76audBDEPTIhKtDKuORqJx3Tp20Li3an%2BBXAUkPrJmOgYf7UqRO8glPgOZOdsSlKk6ZKbgapRj8lENb1s8RlF%2F2f5WwLVMWyQXpqIx8oBAaGM1oCf2h3OoxUjX6pqmEX%2FpUDF1TkOlmWSB6MLh0w7KB%2B45tapNYuCBYDP%2Fq5zmtXCf9dpBrPZImgEY90TbZpDSO1HHORjGZE%2BrfQRXz2dBopCSl7z%2F%2FWM7Wpwiwv4jwzPAYjPPxYTEa5qTXGauJqle4aIrgjyEQ%2F38HrjC1kTF7behtYNHvj4UXDXDuupZ1i83xirl6iBfIIRmYYK%2B6fW1nykGQeuNJe%2BRC3sifg2BtgYhglQB8qs9hBQ%2BJQNOKxbw9ohtrT2H%2F0aVTVl%2BRqdcaCFMu5QUjp5XKr4XrYBEwaHPH0OmHrWbMT49TYRopE%2BZgmamsisy9f8y0fvlIMsj2IBJp%2BCX9rAdeL3Bbj8NY61pL5%2BB7MKLvCzPm%2FF2Iq4Ckj2xyzYrHHRGg%3D";
+        window.__genspark_locale = "ja-JP";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDlq4npYucvBEuh76q+KYQqNFuTDg76audBDEPTIhKtDKuORqJx3Tp20Li3an+BXAUkPrJmOgYf7UqRO8glPgOZOdsSlKk6ZKbgapRj8lENb1s8RlF/2f5WwLVMWyQXpqIx8oBAaGM1oCf2h3OoxUjX6pqmEX/pUDF1TkOlmWSB6MLh0w7KB+45tapNYuCBYDP/q5zmtXCf9dpBrPZImgEY90TbZpDSO1HHORjGZE+rfQRXz2dBopCSl7z//WM7Wpwiwv4jwzPAYjPPxYTEa5qTXGauJqle4aIrgjyEQ/38HrjC1kTF7behtYNHvj4UXDXDuupZ1i83xirl6iBfIIRmYYK+6fW1nykGQeuNJe+RC3sifg2BtgYhglQB8qs9hBQ+JQNOKxbw9ohtrT2H/0aVTVl+RqdcaCFMu5QUjp5XKr4XrYBEwaHPH0OmHrWbMT49TYRopE+Zgmamsisy9f8y0fvlIMsj2IBJp+CX9rAdeL3Bbj8NY61pL5+B7MKLvCzPm/F2Iq4Ckj2xyzYrHHRGg=";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+</body>
+</html>
+    

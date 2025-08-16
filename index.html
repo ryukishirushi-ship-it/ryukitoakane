@@ -79,6 +79,31 @@
     }
     .logo{font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:600; color:var(--terracotta);}
     .logo span{color:var(--black);}
+    /* Mobile Hamburger Menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      padding: 5px;
+    }
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: var(--black);
+      margin: 3px 0;
+      transition: 0.3s;
+      border-radius: 2px;
+    }
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+    
     nav ul{display:flex; list-style:none;}
     nav li{margin-left:30px;}
     nav a{color:var(--black); font-size:.9rem; font-weight:500; letter-spacing:1px; text-transform:uppercase;}
@@ -220,20 +245,48 @@
       .contact-info{padding:22px 18px;}
       .contact-form iframe{height:1000px;}
       .site-footer .footer-content{grid-template-columns:1.5fr 1.5fr 1fr 1fr; gap:24px;}
+      /* Better mobile grid layout */
+      .featured-content{grid-template-columns:repeat(2, 1fr); gap:20px;}
+      .youtube-videos{grid-template-columns:repeat(2, 1fr); gap:20px;}
     }
     @media (max-width:768px){
-      .header-container{flex-direction:column;}
-      .logo{margin-bottom:16px;}
-      nav ul{flex-direction:column; align-items:center; gap:10px;}
-      nav li{margin:0;}
+      /* Mobile Navigation */
+      .hamburger{display:flex;}
+      nav{position:relative;}
+      nav ul{
+        position:absolute; top:100%; right:0; 
+        background:var(--ivory); box-shadow:0 4px 12px rgba(0,0,0,0.1);
+        flex-direction:column; align-items:flex-start; gap:0;
+        min-width:200px; padding:20px; border-radius:8px;
+        transform:translateY(-10px); opacity:0; visibility:hidden;
+        transition:all 0.3s ease;
+      }
+      nav ul.show{transform:translateY(0); opacity:1; visibility:visible;}
+      nav li{margin:0; width:100%; border-bottom:1px solid rgba(0,0,0,0.1);}
+      nav li:last-child{border-bottom:none;}
+      nav a{display:block; padding:10px 0; width:100%;}
+      
+      .header-container{flex-direction:row;}
+      .logo{margin-bottom:0;}
       .hero-content h1{font-size:2.5rem;}
       .section-title h2{font-size:2rem;}
       .site-footer .footer-content{grid-template-columns:1fr 1fr; gap:20px;}
+      
+      /* Better mobile article cards */
+      .featured-content{grid-template-columns:1fr; gap:25px;}
+      .featured-card{max-width:400px; margin:0 auto;}
+      .featured-img{height:220px;}
+      .youtube-videos{grid-template-columns:1fr; gap:20px;}
     }
     @media (max-width:576px){
       .featured-content,.youtube-videos{grid-template-columns:1fr;}
       .hero-content h1{font-size:2rem;}
       .site-footer .footer-content{grid-template-columns:1fr; gap:16px;}
+      
+      /* Smaller mobile adjustments */
+      .featured-img{height:200px;}
+      .featured-info h3{font-size:1.1rem; line-height:1.4;}
+      .container{padding:0 15px;}
     }
     /* Blog Post box（テンプレ用） */
     .blog-post{padding:80px 0;}
@@ -256,7 +309,12 @@
     <div class="container header-container">
       <h1 class="logo">Ryuki<span> & </span>Akane</h1>
       <nav id="mainNav">
-        <ul>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul id="navMenu">
           <li><a href="#home" title="ホーム"><i class="fas fa-home"></i></a></li>
           <li><a href="#blog" title="ブログ"><i class="fas fa-book-open"></i></a></li>
           <li><a href="#youtube" title="YouTube"><i class="fab fa-youtube"></i></a></li>
@@ -281,6 +339,17 @@
     <div class="container">
       <div class="section-title"><h2>記事</h2></div>
       <div class="featured-content">
+        <div class="featured-card">
+          <div class="featured-img">
+            <img src="https://img.youtube.com/vi/XGoiYviOqqY/maxresdefault.jpg" alt="OMO5沖縄那覇" onerror="this.src='https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=OMO5沖縄那覇'">
+          </div>
+          <div class="featured-info">
+            <h3>【OMO5沖縄那覇】星野リゾートで暮らすように泊まる！やぐらルーム×地域密着体験の魅力満載ステイ</h3>
+            <p>星野リゾートの新しいスタイル「OMO」で体験する那覇の街の魅力。やぐらルームと地域体験で過ごす特別な滞在。</p>
+            <a class="read-more" href="articles/07_omo5_okinawa_naha_article.html">記事を読む <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
         <div class="featured-card">
           <div class="featured-img">
             <img src="https://img.youtube.com/vi/hn5nZP8BeUA/maxresdefault.jpg" alt="河津桜まつり">
@@ -577,6 +646,34 @@
       featuredContent.style.display = 'grid';
       featuredContent.style.gridTemplateColumns = 'repeat(auto-fit, minmax(300px, 1fr))';
       featuredContent.style.gap = '30px';
+    }
+    
+    // ハンバーガーメニューの機能
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    
+    if (hamburger && navMenu) {
+      hamburger.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navMenu.classList.toggle('show');
+      });
+      
+      // メニュー項目をクリックしたらメニューを閉じる
+      const navLinks = navMenu.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('show');
+        });
+      });
+      
+      // メニュー外をクリックしたらメニューを閉じる
+      document.addEventListener('click', function(e) {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('show');
+        }
+      });
     }
   });
   </script>
