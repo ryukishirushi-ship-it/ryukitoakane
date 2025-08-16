@@ -170,11 +170,15 @@
     /* 画像読み込みエラー時のスタイル */
     .featured-img img[src*="placeholder"] {
       background: var(--beige);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      object-fit: contain;
+      padding: 20px;
       color: var(--terracotta);
       font-weight: 500;
+    }
+    
+    /* 画像読み込み中の背景色 */
+    .featured-img {
+      background-color: var(--beige);
     }
     .featured-info{padding:20px;}
     .featured-info h3{font-size:1.5rem; margin-bottom:10px; color:var(--black);}
@@ -297,6 +301,61 @@
       .featured-info h3{font-size:1.1rem; line-height:1.4;}
       .container{padding:0 15px;}
     }
+
+    /* Tag filter styling */
+    .tag-filter-notice {
+      background: var(--beige);
+      padding: 15px 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: 500;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .tag-filter-notice button {
+      margin-left: 15px;
+      padding: 5px 15px;
+      background: var(--terracotta);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .tag-filter-notice button:hover {
+      background: #C4766C;
+    }
+
+    /* Filtered layout adjustments */
+    .featured-content.filtered {
+      justify-content: center;
+    }
+    .featured-content.filtered.single-item {
+      grid-template-columns: 1fr;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .no-results-message {
+      text-align: center;
+      padding: 40px;
+      color: var(--terracotta);
+      font-size: 1.1rem;
+      grid-column: 1 / -1;
+    }
+    .no-results-message button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: var(--terracotta);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .no-results-message button:hover {
+      background: #C4766C;
+    }
     /* Blog Post box（テンプレ用） */
     .blog-post{padding:80px 0;}
     .blog-post-content{background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,.1); padding:40px; max-width:900px; margin:0 auto;}
@@ -350,7 +409,7 @@
       <div class="featured-content">
         <div class="featured-card">
           <div class="featured-img">
-            <img src="https://img.youtube.com/vi/XGoiYviOqqY/maxresdefault.jpg" alt="OMO5沖縄那覇" onerror="this.src='https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=OMO5沖縄那覇'">
+            <img src="https://img.youtube.com/vi/XGoiYviOqqY/maxresdefault.jpg" alt="OMO5沖縄那覇" loading="lazy" onerror="this.src='https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=OMO5沖縄那覇'">
           </div>
           <div class="featured-info">
             <h3>【OMO5沖縄那覇】星野リゾートで暮らすように泊まる！やぐらルーム×地域密着体験の魅力満載ステイ</h3>
@@ -361,7 +420,7 @@
 
         <div class="featured-card">
           <div class="featured-img">
-            <img src="https://img.youtube.com/vi/hn5nZP8BeUA/maxresdefault.jpg" alt="河津桜まつり">
+            <img src="https://img.youtube.com/vi/hn5nZP8BeUA/maxresdefault.jpg" alt="河津桜まつり" loading="lazy" onerror="this.src='https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=河津桜まつり'">
           </div>
           <div class="featured-info">
             <h3>【河津桜まつり×今井荘】オールインクルーシブで春のごほうび旅！絶景オーシャンビュー温泉宿1泊2日</h3>
@@ -372,7 +431,7 @@
 
         <div class="featured-card">
           <div class="featured-img">
-            <img src="https://img.youtube.com/vi/yKi94fVJ6fs/maxresdefault.jpg" alt="ANAインターコンチネンタル万座">
+            <img src="https://img.youtube.com/vi/yKi94fVJ6fs/maxresdefault.jpg" alt="ANAインターコンチネンタル万座" loading="lazy" onerror="this.src='https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=ANA万座リゾート'">
           </div>
           <div class="featured-info">
             <h3>【沖縄・車なし】ANAインターコンチネンタル万座ビーチリゾート</h3>
@@ -383,7 +442,7 @@
 
         <div class="featured-card">
           <div class="featured-img">
-            <img src="https://img.youtube.com/vi/Nr02LYD_CaE/maxresdefault.jpg" alt="宮古島イラフSUI">
+            <img src="https://img.youtube.com/vi/Nr02LYD_CaE/maxresdefault.jpg" alt="宮古島イラフSUI" loading="lazy" onerror="this.src='https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=宮古島イラフSUI'">
           </div>
           <div class="featured-info">
             <h3>【車無し】宮古島イラフSUIで味わう大人の贅沢と近隣観光1泊2日</h3>
@@ -394,7 +453,7 @@
 
         <div class="featured-card">
           <div class="featured-img">
-            <img src="https://img.youtube.com/vi/ZhzlRxGh-gU/maxresdefault.jpg" alt="別府温泉">
+            <img src="https://img.youtube.com/vi/ZhzlRxGh-gU/maxresdefault.jpg" alt="別府温泉" loading="lazy" onerror="this.src='https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=別府温泉旅行'">
           </div>
           <div class="featured-info">
             <h3>【車なし】別府温泉で究極の癒し旅2泊3日</h3>
@@ -405,7 +464,7 @@
 
         <div class="featured-card">
           <div class="featured-img">
-            <img src="https://img.youtube.com/vi/_0ufPu9mxkY/maxresdefault.jpg" alt="ガレリア美土原" onerror="this.src='https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=ガレリア美土原'">
+            <img src="https://img.youtube.com/vi/_0ufPu9mxkY/maxresdefault.jpg" alt="ガレリア美土原" loading="lazy" onerror="this.src='https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=ガレリア美土原'">
           </div>
           <div class="featured-info">
             <h3>【車なし】ガレリア美土原でアートと自然に囲まれた特別なステイ</h3>
@@ -416,7 +475,7 @@
 
         <div class="featured-card">
           <div class="featured-img">
-            <img src="https://img.youtube.com/vi/WtvQoas5VTg/maxresdefault.jpg" alt="西表島・由布島" onerror="this.src='https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=西表島・由布島'">
+            <img src="https://img.youtube.com/vi/WtvQoas5VTg/maxresdefault.jpg" alt="西表島・由布島" loading="lazy" onerror="this.src='https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=西表島・由布島'">
           </div>
           <div class="featured-info">
             <h3>【西表島・由布島】車なし日帰りで満喫！水牛車と絶景ビーチの冒険旅</h3>
@@ -642,9 +701,21 @@
       
       // 画像の読み込みエラーハンドリング
       const img = card.querySelector('.featured-img img');
-      if (img) {
+      if (img && !img.hasAttribute('data-fallback-added')) {
+        img.setAttribute('data-fallback-added', 'true');
         img.addEventListener('error', function() {
-          this.src = `https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=記事${index + 1}`;
+          // YouTube thumbnailのフォールバック階層
+          if (this.src.includes('maxresdefault')) {
+            this.src = this.src.replace('maxresdefault', 'sddefault');
+          } else if (this.src.includes('sddefault')) {
+            this.src = this.src.replace('sddefault', 'hqdefault');
+          } else if (this.src.includes('hqdefault')) {
+            this.src = this.src.replace('hqdefault', 'mqdefault');
+          } else {
+            // 最終的なフォールバック
+            const alt = this.alt || `記事${index + 1}`;
+            this.src = `https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=${encodeURIComponent(alt)}`;
+          }
         });
       }
     });
