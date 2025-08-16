@@ -29,8 +29,16 @@ document.addEventListener('DOMContentLoaded', function() {
 if (window.location.pathname.includes('index.html') || window.location.pathname === '/') {
     document.addEventListener('DOMContentLoaded', function() {
         // URLパラメータからタグを取得
-        const urlParams = new URLSearchParams(window.location.hash.split('?')[1] || '');
-        const filterTag = urlParams.get('tag');
+        const hash = window.location.hash;
+        let filterTag = null;
+        
+        if (hash.includes('tag=')) {
+            const hashParts = hash.split('?');
+            if (hashParts.length > 1) {
+                const urlParams = new URLSearchParams(hashParts[1]);
+                filterTag = urlParams.get('tag');
+            }
+        }
         
         if (filterTag) {
             filterArticlesByTag(filterTag);
@@ -48,8 +56,9 @@ if (window.location.pathname.includes('index.html') || window.location.pathname 
         const featuredContent = document.querySelector('.featured-content');
         let visibleCount = 0;
         
-        articles.forEach(card => {
+        articles.forEach((card, index) => {
             const articleTags = getArticleTags(card);
+            
             if (articleTags.includes(tag)) {
                 card.style.display = 'block';
                 visibleCount++;
@@ -78,25 +87,34 @@ if (window.location.pathname.includes('index.html') || window.location.pathname 
         const title = card.querySelector('h3').textContent;
         const description = card.querySelector('p').textContent;
         
-        // 記事タイトルと説明からタグを推定（実際の実装では記事のメタデータを使用）
+        // 記事タイトルと説明からタグを推定
         const tagMap = {
-            '河津桜': ['河津桜', '河津桜まつり', '春旅行', '静岡旅行', '今井荘', '伊豆旅行', 'オールインクルーシブ', 'オーシャンビュー', '温泉旅行', '踊り子号'],
-            'ANA': ['オーシャンビュー', '沖縄旅行', 'リゾート', '万座'],
-            '宮古島': ['オーシャンビュー', '沖縄旅行', 'リゾート', 'イラフSUI'],
-            '別府': ['温泉旅行', '九州旅行', '大分旅行'],
-            'ガレリア': ['アート', '隠れ家', 'リゾート', '美土原'],
-            '西表島': ['離島', '沖縄旅行', '自然', '水牛車', '由布島']
+            'OMO5': ['OMO5沖縄那覇', '星野リゾート', '沖縄旅行', '那覇ホテル', 'やぐらルーム', '地域密着型ホテル', '車なし旅行', '沖縄文化', '首里城講座', '市場まーさんぽ'],
+            '星野リゾート': ['OMO5沖縄那覇', '星野リゾート', '沖縄旅行', '那覇ホテル', 'やぐらルーム', '地域密着型ホテル', '車なし旅行', '沖縄文化'],
+            '河津桜': ['河津桜', '河津桜まつり', '春旅行', '静岡旅行', '今井荘', '伊豆旅行', 'オールインクルーシブ', 'オーシャンビュー', '温泉旅行', '踊り子号', '車なし旅行'],
+            '今井荘': ['河津桜', '河津桜まつり', '春旅行', '静岡旅行', '今井荘', '伊豆旅行', 'オールインクルーシブ', 'オーシャンビュー', '温泉旅行', '踊り子号', '車なし旅行'],
+            'ANA': ['ANAインターコンチネンタル万座ビーチリゾート', 'オーシャンビュー', '沖縄旅行', 'リゾート', '万座', 'ANA', '車なし旅行'],
+            '万座': ['ANAインターコンチネンタル万座ビーチリゾート', 'オーシャンビュー', '沖縄旅行', 'リゾート', '万座', 'ANA', '車なし旅行'],
+            '宮古島': ['イラフSUI', 'オーシャンビュー', '沖縄旅行', 'リゾート', 'イラフSUI宮古島', '宮古島', '車なし旅行'],
+            'イラフ': ['イラフSUI', 'オーシャンビュー', '沖縄旅行', 'リゾート', 'イラフSUI宮古島', '宮古島', '車なし旅行'],
+            '別府': ['温泉旅行', '九州旅行', '大分旅行', '別府', '車なし旅行'],
+            'ガレリア': ['ガレリア御殿場', 'アート', '隠れ家', 'リゾート', '美土原', 'ガレリア', '車なし旅行'],
+            '美土原': ['ガレリア御殿場', 'アート', '隠れ家', 'リゾート', '美土原', 'ガレリア', '車なし旅行'],
+            '西表島': ['西表島', '離島', '沖縄旅行', '自然', '水牛車', '由布島', '車なし旅行'],
+            '由布島': ['西表島', '離島', '沖縄旅行', '自然', '水牛車', '由布島', '車なし旅行']
         };
         
         let tags = ['車なし旅行', '夫婦旅']; // 共通タグ
         
+        // より詳細なマッチング
         Object.keys(tagMap).forEach(key => {
             if (title.includes(key) || description.includes(key)) {
                 tags = tags.concat(tagMap[key]);
             }
         });
         
-        return tags;
+        // タグの重複を除去
+        return [...new Set(tags)];
     }
     
     function showTagFilterNotice(tag) {
