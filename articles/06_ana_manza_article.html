@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>【ANAインターコンチネンタル万座ビーチリゾート】沖縄本島で車なし贅沢ステイ | りゅうきとあかねの旅行記</title>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X11EYPGP4H"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-X11EYPGP4H");
+    </script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
@@ -234,6 +243,62 @@
             font-size: 0.85rem;
             margin-right: 10px;
             margin-bottom: 10px;
+        }
+
+        /* Related Posts */
+        .related-posts {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid var(--beige);
+        }
+
+        .related-posts h2 {
+            color: var(--terracotta);
+            margin-bottom: 30px;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .related-item {
+            background-color: var(--ivory);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .related-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .related-img {
+            height: 150px;
+            overflow: hidden;
+        }
+
+        .related-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .related-info {
+            padding: 15px;
+        }
+
+        .related-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .related-info p {
+            font-size: 0.9rem;
+            color: #666;
         }
 
         /* Author Section */
@@ -469,7 +534,7 @@
                         </a>
                         <a href="01_iriomote_yubujima_article.html" class="related-item">
                             <div class="related-img">
-                                <img src="https://img.youtube.com/vi/ABC789012/maxresdefault.jpg" alt="西表島・由布島">
+                                <img src="https://img.youtube.com/vi/WtvQoas5VTg/maxresdefault.jpg" alt="西表島・由布島" onerror="this.src='https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=西表島・由布島'">
                             </div>
                             <div class="related-info">
                                 <h3>【西表島・由布島】車なし日帰りで満喫！水牛車と絶景ビーチの冒険旅</h3>
@@ -483,6 +548,15 @@
                             <div class="related-info">
                                 <h3>【河津桜まつり×今井荘】オールインクルーシブで春のごほうび旅！絶景オーシャンビュー温泉宿1泊2日</h3>
                                 <p>一足早い春の訪れを感じる河津桜と絶景オーシャンビューの今井荘での贅沢なひととき。</p>
+                            </div>
+                        </a>
+                        <a href="07_omo5_okinawa_naha_article.html" class="related-item">
+                            <div class="related-img">
+                                <img src="https://img.youtube.com/vi/XGoiYviOqqY/maxresdefault.jpg" alt="OMO5沖縄那覇">
+                            </div>
+                            <div class="related-info">
+                                <h3>【OMO5沖縄那覇】星野リゾートで暮らすように泊まる！やぐらルーム×地域密着体験の魅力満載ステイ</h3>
+                                <p>星野リゾートの新しいスタイル「OMO」で体験する那覇の街の魅力。</p>
                             </div>
                         </a>
                     </div>
