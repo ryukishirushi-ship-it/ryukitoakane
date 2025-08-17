@@ -51,15 +51,33 @@
     *{margin:0;padding:0;box-sizing:border-box;}
 
     body{
-      font-family:'Noto Sans JP',sans-serif;
+      font-family:'Noto Sans JP','Roboto','Arial',sans-serif;
       background:var(--ivory);
       color:var(--black);
       line-height:1.6;
+      font-variant-numeric: lining-nums tabular-nums;
     }
 
     h1,h2,h3,h4,h5,h6{
       font-family:'Cormorant Garamond',serif;
       font-weight:500;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+
+    /* 数字を見やすくするための追加 */
+    .featured-info h3,
+    .featured-info p,
+    .video-meta,
+    .read-more,
+    .section-title h2,
+    .blog-post-header h1,
+    .blog-post-meta,
+    .blog-post-body,
+    .site-footer,
+    .container,
+    .btn {
+      font-family:'Noto Sans JP','Roboto','Arial',sans-serif;
+      font-variant-numeric: lining-nums tabular-nums;
     }
 
     a{
@@ -186,6 +204,83 @@
     .read-more{font-weight:500; font-size:.9rem; display:inline-flex; align-items:center;}
     .read-more i{margin-left:6px; font-size:.85rem;}
 
+    /* 記事カード内のフォント見やすく・おしゃれに */
+    .featured-info h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      color: var(--black);
+      font-weight: 600;
+      line-height: 1.35;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+    .featured-info p {
+      font-family: 'Noto Sans JP', 'Roboto', 'Arial', sans-serif;
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 15px;
+      letter-spacing: 0.1px;
+    }
+    .read-more {
+      font-family: 'Roboto', 'Noto Sans JP', 'Arial', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--terracotta);
+      letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    /* ブログ記事本文のフォント見やすく・おしゃれに */
+    .blog-post-content {
+      font-family: 'Noto Sans JP', 'Roboto', 'Arial', sans-serif;
+      font-size: 1.08rem;
+      color: var(--black);
+      line-height: 1.85;
+      letter-spacing: 0.1px;
+    }
+    .blog-post-header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      color: var(--terracotta);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+    .blog-post-body h2, .blog-post-body h3 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--terracotta);
+      font-weight: 600;
+      line-height: 1.3;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+    .blog-post-body h3 {
+      color: var(--black);
+      font-size: 1.4rem;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    .blog-post-body p {
+      font-family: 'Noto Sans JP', 'Roboto', 'Arial', sans-serif;
+      font-size: 1.05rem;
+      color: #444;
+      line-height: 1.85;
+      margin-bottom: 20px;
+      letter-spacing: 0.1px;
+    }
+    .blog-post-body .caption {
+      font-family: 'Roboto', 'Noto Sans JP', 'Arial', sans-serif;
+      color: #666;
+      font-style: italic;
+      font-size: .95rem;
+      margin-bottom: 20px;
+      letter-spacing: 0.2px;
+    }
+
     /* ===== YouTube ===== */
     .youtube{padding:80px 0; background:var(--beige);}
     .youtube-videos{
@@ -302,73 +397,87 @@
       .container{padding:0 15px;}
     }
 
-    /* Tag filter styling */
-    .tag-filter-notice {
-      background: var(--beige);
-      padding: 15px 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      text-align: center;
-      font-weight: 500;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    .tag-filter-notice button {
-      margin-left: 15px;
-      padding: 5px 15px;
-      background: var(--terracotta);
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .tag-filter-notice button:hover {
-      background: #C4766C;
-    }
-
-    /* Filtered layout adjustments */
-    .featured-content.filtered {
+    /* タグフィルターボタンをおしゃれに */
+    #tag-filter {
+      display: flex;
       justify-content: center;
+      gap: 14px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
     }
-    .featured-content.filtered.single-item {
-      grid-template-columns: 1fr;
-      max-width: 500px;
-      margin: 0 auto;
+    .tag-btn {
+      background: var(--beige);
+      color: var(--terracotta);
+      border: none;
+      border-radius: 22px;
+      padding: 10px 28px;
+      font-size: 1rem;
+      font-weight: 500;
+      box-shadow: 0 2px 8px rgba(191,106,57,0.08);
+      cursor: pointer;
+      transition: background 0.25s, color 0.25s, box-shadow 0.25s;
+      outline: none;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      position: relative;
+    }
+    .tag-btn.active,
+    .tag-btn:focus {
+      background: var(--terracotta);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(191,106,57,0.15);
+    }
+    .tag-btn:hover:not(.active) {
+      background: var(--salmon);
+      color: #fff;
+      box-shadow: 0 2px 12px rgba(242,167,160,0.15);
     }
 
-    .no-results-message {
+    /* 選択中タグ名と件数表示 */
+    .tag-selected-info {
       text-align: center;
-      padding: 40px;
+      margin-bottom: 18px;
+      font-size: 1.08rem;
       color: var(--terracotta);
-      font-size: 1.1rem;
-      grid-column: 1 / -1;
+      font-weight: 500;
+      letter-spacing: 1px;
+      transition: color 0.3s;
     }
+    .tag-selected-info .tag-name {
+      background: var(--beige);
+      color: var(--terracotta);
+      border-radius: 12px;
+      padding: 2px 12px;
+      margin: 0 6px;
+      font-weight: 600;
+      font-size: 1.05em;
+      display: inline-block;
+    }
+    .tag-selected-info .tag-count {
+      color: var(--black);
+      font-size: 0.98em;
+      margin-left: 8px;
+      font-weight: 400;
+    }
+
+    /* 「該当記事なし」ボタンも統一 */
     .no-results-message button {
       margin-top: 15px;
-      padding: 10px 20px;
+      padding: 10px 28px;
       background: var(--terracotta);
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 22px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      font-size: 1rem;
+      font-weight: 500;
+      box-shadow: 0 2px 8px rgba(191,106,57,0.08);
+      transition: background 0.3s, box-shadow 0.3s;
     }
     .no-results-message button:hover {
-      background: #C4766C;
+      background: var(--salmon);
+      box-shadow: 0 4px 16px rgba(242,167,160,0.15);
     }
-    /* Blog Post box（テンプレ用） */
-    .blog-post{padding:80px 0;}
-    .blog-post-content{background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,.1); padding:40px; max-width:900px; margin:0 auto;}
-    .blog-post-header h1{font-size:2.5rem; color:var(--terracotta); margin-bottom:20px;}
-    .blog-post-meta{display:flex; align-items:center; gap:20px; color:#666; font-size:.9rem; margin-bottom:20px;}
-    .blog-post-meta i{margin-right:6px; color:var(--beige);}
-    .blog-post-image{width:100%; height:400px; overflow:hidden; border-radius:8px; margin-bottom:30px;}
-    .blog-post-image img{width:100%; height:100%; object-fit:cover;}
-    .blog-post-body p{margin-bottom:20px;}
-    .blog-post-body h2{font-size:1.8rem; color:var(--terracotta); margin:40px 0 20px;}
-    .blog-post-body h3{font-size:1.4rem; color:var(--black); margin:30px 0 15px;}
-    .blog-post-body img{width:100%; border-radius:8px; margin:20px 0;}
-    .blog-post-body .caption{text-align:center; color:#666; font-style:italic; font-size:.9rem; margin-bottom:20px;}
   </style>
 </head>
 <body>
@@ -406,8 +515,19 @@
   <section class="featured" id="blog">
     <div class="container">
       <div class="section-title"><h2>記事</h2></div>
+      <!-- タグフィルターボタン -->
+      <div id="tag-filter">
+        <button class="tag-btn" data-tag="すべて">すべて</button>
+        <button class="tag-btn" data-tag="沖縄">沖縄</button>
+        <button class="tag-btn" data-tag="温泉">温泉</button>
+        <button class="tag-btn" data-tag="リゾート">リゾート</button>
+        <button class="tag-btn" data-tag="グルメ">グルメ</button>
+        <!-- 必要に応じて追加 -->
+      </div>
+      <!-- 選択中タグ名と件数表示エリア -->
+      <div id="tag-selected-info" class="tag-selected-info"></div>
       <div class="featured-content">
-        <div class="featured-card">
+        <div class="featured-card" data-tags="沖縄,リゾート">
           <div class="featured-img">
             <img src="https://img.youtube.com/vi/XGoiYviOqqY/maxresdefault.jpg" alt="OMO5沖縄那覇" loading="lazy" onerror="this.src='https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=OMO5沖縄那覇'">
           </div>
@@ -418,7 +538,7 @@
           </div>
         </div>
 
-        <div class="featured-card">
+        <div class="featured-card" data-tags="温泉,グルメ">
           <div class="featured-img">
             <img src="https://img.youtube.com/vi/hn5nZP8BeUA/maxresdefault.jpg" alt="河津桜まつり" loading="lazy" onerror="this.src='https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=河津桜まつり'">
           </div>
@@ -429,7 +549,7 @@
           </div>
         </div>
 
-        <div class="featured-card">
+        <div class="featured-card" data-tags="沖縄,リゾート">
           <div class="featured-img">
             <img src="https://img.youtube.com/vi/yKi94fVJ6fs/maxresdefault.jpg" alt="ANAインターコンチネンタル万座" loading="lazy" onerror="this.src='https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=ANA万座リゾート'">
           </div>
@@ -440,7 +560,7 @@
           </div>
         </div>
 
-        <div class="featured-card">
+        <div class="featured-card" data-tags="沖縄,リゾート">
           <div class="featured-img">
             <img src="https://img.youtube.com/vi/Nr02LYD_CaE/maxresdefault.jpg" alt="宮古島イラフSUI" loading="lazy" onerror="this.src='https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=宮古島イラフSUI'">
           </div>
@@ -451,7 +571,7 @@
           </div>
         </div>
 
-        <div class="featured-card">
+        <div class="featured-card" data-tags="温泉">
           <div class="featured-img">
             <img src="https://img.youtube.com/vi/ZhzlRxGh-gU/maxresdefault.jpg" alt="別府温泉" loading="lazy" onerror="this.src='https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=別府温泉旅行'">
           </div>
@@ -462,7 +582,7 @@
           </div>
         </div>
 
-        <div class="featured-card">
+        <div class="featured-card" data-tags="リゾート,アート">
           <div class="featured-img">
             <img src="https://img.youtube.com/vi/_0ufPu9mxkY/maxresdefault.jpg" alt="ガレリア美土原" loading="lazy" onerror="this.src='https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=ガレリア美土原'">
           </div>
@@ -473,7 +593,7 @@
           </div>
         </div>
 
-        <div class="featured-card">
+        <div class="featured-card" data-tags="沖縄,離島">
           <div class="featured-img">
             <img src="https://img.youtube.com/vi/WtvQoas5VTg/maxresdefault.jpg" alt="西表島・由布島" loading="lazy" onerror="this.src='https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=西表島・由布島'">
           </div>
@@ -689,72 +809,71 @@
   <!-- タグ機能とカードクリック機能 -->
   <script src="js/article-tags.js"></script>
   
-  <!-- レイアウト修正用スクリプト -->
+  <!-- タグフィルター機能（ここに移動＆修正） -->
   <script>
   document.addEventListener('DOMContentLoaded', function() {
-    // 記事カードの表示を確実にする
-    const featuredCards = document.querySelectorAll('.featured-card');
-    featuredCards.forEach((card, index) => {
-      card.style.display = 'block';
-      card.style.visibility = 'visible';
-      card.style.opacity = '1';
-      
-      // 画像の読み込みエラーハンドリング
-      const img = card.querySelector('.featured-img img');
-      if (img && !img.hasAttribute('data-fallback-added')) {
-        img.setAttribute('data-fallback-added', 'true');
-        img.addEventListener('error', function() {
-          // YouTube thumbnailのフォールバック階層
-          if (this.src.includes('maxresdefault')) {
-            this.src = this.src.replace('maxresdefault', 'sddefault');
-          } else if (this.src.includes('sddefault')) {
-            this.src = this.src.replace('sddefault', 'hqdefault');
-          } else if (this.src.includes('hqdefault')) {
-            this.src = this.src.replace('hqdefault', 'mqdefault');
-          } else {
-            // 最終的なフォールバック
-            const alt = this.alt || `記事${index + 1}`;
-            this.src = `https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=${encodeURIComponent(alt)}`;
-          }
-        });
-      }
-    });
-    
-    // グリッドレイアウトの強制リセット
+    const tagBtns = document.querySelectorAll('.tag-btn');
+    const cards = document.querySelectorAll('.featured-card');
     const featuredContent = document.querySelector('.featured-content');
-    if (featuredContent) {
-      featuredContent.style.display = 'grid';
-      featuredContent.style.gridTemplateColumns = 'repeat(auto-fit, minmax(300px, 1fr))';
-      featuredContent.style.gap = '30px';
-    }
-    
-    // ハンバーガーメニューの機能
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('navMenu');
-    
-    if (hamburger && navMenu) {
-      hamburger.addEventListener('click', function() {
-        this.classList.toggle('active');
-        navMenu.classList.toggle('show');
-      });
-      
-      // メニュー項目をクリックしたらメニューを閉じる
-      const navLinks = navMenu.querySelectorAll('a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          hamburger.classList.remove('active');
-          navMenu.classList.remove('show');
-        });
-      });
-      
-      // メニュー外をクリックしたらメニューを閉じる
-      document.addEventListener('click', function(e) {
-        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-          hamburger.classList.remove('active');
-          navMenu.classList.remove('show');
+    const tagInfo = document.getElementById('tag-selected-info');
+
+    function filterCards(tag) {
+      let visibleCount = 0;
+      cards.forEach(card => {
+        if (tag === 'すべて' || (card.dataset.tags && card.dataset.tags.includes(tag))) {
+          card.style.display = 'block';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
         }
       });
+
+      // レイアウト調整
+      if (featuredContent) {
+        featuredContent.classList.remove('filtered', 'single-item');
+        if (tag !== 'すべて') {
+          featuredContent.classList.add('filtered');
+          if (visibleCount === 1) {
+            featuredContent.classList.add('single-item');
+          }
+        }
+      }
+
+      // 選択中タグ名と件数表示
+      if (tagInfo) {
+        let tagLabel = tag;
+        if (tag === 'すべて') tagLabel = '全てのカテゴリ';
+        tagInfo.innerHTML = `<span class="tag-name">${tagLabel}</span> <span class="tag-count">${visibleCount}件</span>`;
+      }
+
+      // 「該当記事なし」表示
+      let noResults = document.querySelector('.no-results-message');
+      if (visibleCount === 0) {
+        if (!noResults) {
+          noResults = document.createElement('div');
+          noResults.className = 'no-results-message';
+          noResults.innerHTML = '該当する記事がありません。<br><button id="showAllBtn">すべて表示</button>';
+          featuredContent.appendChild(noResults);
+          document.getElementById('showAllBtn').onclick = () => {
+            tagBtns[0].click();
+          };
+        }
+      } else {
+        if (noResults) noResults.remove();
+      }
     }
+
+    tagBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        tagBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        const tag = this.getAttribute('data-tag');
+        filterCards(tag);
+      });
+    });
+
+    // 初期状態「すべて」表示
+    if(tagBtns[0]) tagBtns[0].click();
   });
   </script>
 </body>
