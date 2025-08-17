@@ -284,6 +284,8 @@ a:hover {
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
+            max-width: 560px; /* 最大幅を指定 */
+            margin: 0 auto;   /* 中央寄せ */
         }
 
         .video-embed iframe {
@@ -354,14 +356,19 @@ a:hover {
         .related-img {
             height: 150px;
             overflow: hidden;
-            background: var(--beige); /* 画像の余白を自然に見せる */
+            background: var(--beige);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .related-img img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* サムネ全体が見えるように */
+            object-fit: contain;
             background: var(--beige);
+            display: block;
+            margin: auto;
         }
 
         .related-info {
@@ -715,7 +722,12 @@ a:hover {
                         <a href="06_ana_manza_article.html" class="related-item">
                             <div class="related-img">
                                 <img src="https://img.youtube.com/vi/yKi94fVJ6fs/maxresdefault.jpg" alt="ANAインターコンチネンタル万座"
-                  onerror="this.onerror=null;this.src='https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=ANA万座リゾート';">
+                  onerror="
+                    if(this.src.includes('maxresdefault')){this.src=this.src.replace('maxresdefault','sddefault');}
+                    else if(this.src.includes('sddefault')){this.src=this.src.replace('sddefault','hqdefault');}
+                    else if(this.src.includes('hqdefault')){this.src=this.src.replace('hqdefault','mqdefault');}
+                    else{this.src='https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=ANA万座リゾート';}
+                  ">
                             </div>
                             <div class="related-info">
                                 <h3>【沖縄・車なし】ANAインターコンチネンタル万座ビーチリゾート</h3>
@@ -725,7 +737,12 @@ a:hover {
                         <a href="05_miyakojima_iraph_sui_article.html" class="related-item">
                             <div class="related-img">
                                 <img src="https://img.youtube.com/vi/Nr02LYD_CaE/maxresdefault.jpg" alt="宮古島イラフSUI"
-                  onerror="this.onerror=null;this.src='https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=宮古島イラフSUI';">
+                  onerror="
+                    if(this.src.includes('maxresdefault')){this.src=this.src.replace('maxresdefault','sddefault');}
+                    else if(this.src.includes('sddefault')){this.src=this.src.replace('sddefault','hqdefault');}
+                    else if(this.src.includes('hqdefault')){this.src=this.src.replace('hqdefault','mqdefault');}
+                    else{this.src='https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=宮古島イラフSUI';}
+                  ">
                             </div>
                             <div class="related-info">
                                 <h3>【車無し】宮古島イラフSUIで味わう大人の贅沢と近隣観光1泊2日</h3>
@@ -735,7 +752,12 @@ a:hover {
                         <a href="01_iriomote_yubujima_article.html" class="related-item">
                             <div class="related-img">
                                 <img src="https://img.youtube.com/vi/WtvQoas5VTg/maxresdefault.jpg" alt="西表島・由布島"
-                  onerror="this.onerror=null;this.src='https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=西表島・由布島';">
+                  onerror="
+                    if(this.src.includes('maxresdefault')){this.src=this.src.replace('maxresdefault','sddefault');}
+                    else if(this.src.includes('sddefault')){this.src=this.src.replace('sddefault','hqdefault');}
+                    else if(this.src.includes('hqdefault')){this.src=this.src.replace('hqdefault','mqdefault');}
+                    else{this.src='https://via.placeholder.com/480x360/D9C49C/FFFFFF?text=西表島・由布島';}
+                  ">
                             </div>
                             <div class="related-info">
                                 <h3>【西表島・由布島】車なし日帰りで満喫！水牛車と絶景ビーチの冒険旅</h3>
