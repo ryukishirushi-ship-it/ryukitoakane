@@ -505,13 +505,18 @@ a:hover {
     <header>
         <div class="container header-container">
             <h1 class="logo">Ryuki<span> & </span>Akane</h1>
-            <nav>
-                <ul>
-                    <li><a href="#home">ホーム</a></li>
-                    <li><a href="#blog">ブログ</a></li>
-                    <li><a href="#youtube">Youtube</a></li>
-                    <li><a href="#instagram">インスタグラム</a></li>
-                    <li><a href="#contact">お問い合わせ</a></li>
+            <nav id="mainNav">
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul id="navMenu">
+                    <li><a href="/index.html">ホーム</a></li>
+                    <li><a href="/blog.html">ブログ</a></li>
+                    <li><a href="https://www.youtube.com/@ryuki_akane" target="_blank" rel="noopener">Youtube</a></li>
+                    <li><a href="https://www.instagram.com/akn_523" target="_blank" rel="noopener">Instagram</a></li>
+                    <li><a href="/contact.html">お問い合わせ</a></li>
                 </ul>
             </nav>
         </div>
@@ -860,16 +865,16 @@ a:hover {
     </script>
     
     <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  var hamburger = document.getElementById('hamburger');
+  var navMenu = document.getElementById('navMenu');
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('show');
+  });
+});
+</script>
 </body>
-</html>
-</html>
-    </script>
-    
-    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
-</body>
-</html>
-</body>
-</html>
-</html>
-</html>
 </html>

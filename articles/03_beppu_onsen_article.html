@@ -60,6 +60,76 @@ a:hover {
   color: #F2A7A0;
 }
 
+/* ハンバーガーメニュー用追加 */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 5px;
+}
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--black);
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+.hamburger.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+@media (max-width: 768px) {
+  nav ul {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--ivory);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 200px;
+    padding: 20px;
+    border-radius: 8px;
+    transform: translateY(-10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+  }
+  nav ul.show {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .header-container {
+    flex-direction: row;
+  }
+  .logo {
+    margin-bottom: 0;
+  }
+  nav li {
+    margin: 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+  nav li:last-child {
+    border-bottom: none;
+  }
+  nav a {
+    display: block;
+    padding: 10px 0;
+    width: 100%;
+  }
+}
 /* ...existing code... */
 </style><!DOCTYPE html>
 <html lang="ja">
@@ -498,13 +568,18 @@ a:hover {
     <header>
         <div class="container header-container">
             <h1 class="logo">Ryuki<span> & </span>Akane</h1>
-            <nav>
-                <ul>
-                    <li><a href="../index.html#home">ホーム</a></li>
-                    <li><a href="../index.html#blog">ブログ</a></li>
-                    <li><a href="../index.html#youtube">Youtube</a></li>
-                    <li><a href="../index.html#instagram">インスタグラム</a></li>
-                    <li><a href="../index.html#contact">お問い合わせ</a></li>
+            <nav id="mainNav">
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul id="navMenu">
+                    <li><a href="/index.html">ホーム</a></li>
+                    <li><a href="/blog.html">ブログ</a></li>
+                    <li><a href="https://www.youtube.com/@ryuki_akane" target="_blank" rel="noopener">Youtube</a></li>
+                    <li><a href="https://www.instagram.com/akn_523" target="_blank" rel="noopener">Instagram</a></li>
+                    <li><a href="/contact.html">お問い合わせ</a></li>
                 </ul>
             </nav>
         </div>
@@ -828,4 +903,13 @@ a:hover {
     </script>
     
     <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
-    
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  var hamburger = document.getElementById('hamburger');
+  var navMenu = document.getElementById('navMenu');
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('show');
+  });
+});
+</script>

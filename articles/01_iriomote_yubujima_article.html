@@ -60,69 +60,76 @@ a:hover {
   color: #F2A7A0;
 }
 
-/* ...existing code... */
-</style><style>
-/* ...existing code... */
-
-/* 記事全体のベースフォント */
-body, .blog-post-content {
-  font-family: 'Noto Sans JP', 'Roboto', 'Arial', sans-serif;
-  font-size: 1.08rem;
-  color: #222;
-  line-height: 1.85;
-  letter-spacing: 0.1px;
-  font-variant-numeric: lining-nums tabular-nums;
-  background: #F2F2EB;
+/* ハンバーガーメニュー用追加 */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 5px;
 }
-
-/* タイトル・見出し */
-.blog-post-header h1,
-.blog-post-body h2,
-.blog-post-body h3 {
-  font-family: 'Cormorant Garamond', serif;
-  color: #BF6A39;
-  font-weight: 700;
-  line-height: 1.25;
-  letter-spacing: 1px;
-  margin-bottom: 20px;
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--black);
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
 }
-.blog-post-body h3 {
-  color: #0D0D0D;
-  font-size: 1.4rem;
-  margin-top: 30px;
-  margin-bottom: 15px;
+.hamburger.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
 }
-
-/* 本文 */
-.blog-post-body p {
-  font-family: 'Noto Sans JP', 'Roboto', 'Arial', sans-serif;
-  font-size: 1.05rem;
-  color: #444;
-  line-height: 1.85;
-  margin-bottom: 20px;
-  letter-spacing: 0.1px;
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
 }
-
-/* キャプション・英語・数字 */
-.blog-post-body .caption {
-  font-family: 'Roboto', 'Noto Sans JP', 'Arial', sans-serif;
-  color: #666;
-  font-style: italic;
-  font-size: .95rem;
-  margin-bottom: 20px;
-  letter-spacing: 0.2px;
+.hamburger.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
 }
-
-/* リンク */
-a {
-  color: #BF6A39;
-  text-decoration: none;
-  transition: color .3s;
+@media (max-width: 768px) {
+  nav ul {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--ivory);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 200px;
+    padding: 20px;
+    border-radius: 8px;
+    transform: translateY(-10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+  }
+  nav ul.show {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .header-container {
+    flex-direction: row;
+  }
+  .logo {
+    margin-bottom: 0;
+  }
+  nav li {
+    margin: 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+  nav li:last-child {
+    border-bottom: none;
+  }
+  nav a {
+    display: block;
+    padding: 10px 0;
+    width: 100%;
+  }
 }
-a:hover {
-  color: #F2A7A0;
-}
-
 /* ...existing code... */
 </style><!DOCTYPE html>
 <html lang="ja">
@@ -521,13 +528,18 @@ a:hover {
     <header>
         <div class="container header-container">
             <h1 class="logo">Ryuki<span> & </span>Akane</h1>
-            <nav>
-                <ul>
-                    <li><a href="../index.html#home">ホーム</a></li>
-                    <li><a href="../index.html#blog">ブログ</a></li>
-                    <li><a href="../index.html#youtube">Youtube</a></li>
-                    <li><a href="../index.html#instagram">インスタグラム</a></li>
-                    <li><a href="../index.html#contact">お問い合わせ</a></li>
+            <nav id="mainNav">
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul id="navMenu">
+                    <li><a href="/index.html">ホーム</a></li>
+                    <li><a href="/blog.html">ブログ</a></li>
+                    <li><a href="https://www.youtube.com/@ryuki_akane" target="_blank" rel="noopener">Youtube</a></li>
+                    <li><a href="https://www.instagram.com/akn_523" target="_blank" rel="noopener">Instagram</a></li>
+                    <li><a href="/contact.html">お問い合わせ</a></li>
                 </ul>
             </nav>
         </div>
@@ -774,6 +786,16 @@ a:hover {
     </script>
     
     <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  var hamburger = document.getElementById('hamburger');
+  var navMenu = document.getElementById('navMenu');
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('show');
+  });
+});
+</script>
 </body>
 </html>
-    
