@@ -268,8 +268,31 @@ a:hover {
         }
         /* data-filename 未設定などで src が無い画像は非表示にする */
         img.manza-img:not([src]) {
-          display: none;
+          visibility: hidden;
         }
+        img.manza-img[src] {
+          visibility: visible;
+        }
+
+        /* === Global defensive fixes === */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .blog-post-content { max-width: 900px; margin: 0 auto; }
+        /* Hide any placeholder images without src to avoid layout gaps */
+        /* img.manza-img:not([src]) { display: none; }  ← obsolete, see below */
+        /* Responsive YouTube wrapper */
+        .video-container { position: relative; width: 100%; max-width: 900px; margin: 0 auto 24px; }
+        .video-container::before { content:""; display:block; padding-top:56.25%; }
+        .video-container iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+
+        /* --- Header nav/layout defensive rules --- */
+        .header-container { justify-content: space-between; align-items: center; }
+        header nav { display: block; }
+        header nav ul { margin: 0; padding: 0; }
+        header nav ul li { list-style: none; }
+
+        * { box-sizing: border-box; }
+        .blog-post-image { height: 400px; overflow: hidden; border-radius: 8px; }
+        .blog-post-image img { width: 100%; height: 100%; object-fit: cover; }
 
         .blog-post-body .caption {
             text-align: center;
@@ -279,6 +302,26 @@ a:hover {
             margin-bottom: 20px;
         }
 
+        /* YouTube responsive */
+        .video-container {
+          position: relative;
+          width: 100%;
+          max-width: 900px;
+          margin: 0 auto 24px;
+        }
+        .video-container::before {
+          content: "";
+          display: block;
+          padding-top: 56.25%; /* 16:9 */
+        }
+        .video-container iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
         /* YouTube動画セクションのスタイルは article-common.js で統一管理 */
 
         /* Info Box */
@@ -392,21 +435,89 @@ a:hover {
             margin-bottom: 10px;
         }
 
-        /* Footer */
+        /* Footer (トップ画面と同等の黒帯デザイン) */
         footer {
             background-color: var(--black);
-            padding: 40px 0;
-            color: white;
+            color: #fff;
             margin-top: 80px;
         }
-
-        .footer-content {
-            text-align: center;
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 24px;
         }
-
-        .footer-content p {
-            font-size: 0.9rem;
-            color: #999;
+        .footer-brand h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--beige);
+            margin-bottom: 10px;
+        }
+        .footer-brand p {
+            color: #ccc;
+            font-size: .95rem;
+            line-height: 1.7;
+        }
+        .footer-nav ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(5, auto);
+            gap: 18px;
+            justify-content: end;
+            align-items: start;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-nav a {
+            color: #fff;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            opacity: .9;
+        }
+        .footer-nav a:hover {
+            color: var(--beige);
+            opacity: 1;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,.12);
+            padding: 14px 20px 22px;
+        }
+        .footer-bottom .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .copyright {
+            color: #bbb;
+            font-size: .85rem;
+        }
+        .to-top {
+            color: #fff;
+            text-decoration: none;
+            font-size: .9rem;
+            opacity: .85;
+        }
+        .to-top:hover { color: var(--beige); opacity: 1; }
+        @media (max-width: 768px) {
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 18px;
+                padding: 30px 20px;
+            }
+            .footer-nav ul {
+                grid-template-columns: repeat(5, minmax(0, auto));
+                justify-content: start;
+            }
+            .footer-bottom .container {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
         }
 
         /* Responsive Design */
@@ -483,7 +594,8 @@ a:hover {
                         </div>
                     </div>
 
-                    <h2>那覇空港からのアクセス抜群！車なしでも安心</h2>
+                    <h2>1日目：到着〜ティー＆ディナーブッフェ</h2>
+                    <h3>那覇空港からのアクセス抜群！車なしでも安心</h3>
                     <p>ANAインターコンチネンタル万座ビーチリゾートは、那覇空港から高速バス（やんばる急行バス／沖縄エアポートシャトル）で約1時間30～45分という好立地。車がなくても気軽にアクセスできるのが魅力的です。バスは1時間に1本程度運行しており、事前に時刻表をチェックしておけば安心です。</p>
                     
                     <p>バス停「万座ビーチ前」で下車すると、すぐ目の前がホテル。重い荷物を持っての長距離移動もこれなら心配ありません。沖縄らしい青い海と空が迎えてくれる瞬間は、旅の始まりを実感させてくれます。</p>
@@ -498,28 +610,11 @@ a:hover {
                         </ul>
                     </div>
 
-                    <h2>クラシックツインでオーシャンビューを満喫</h2>
+                    <h3>クラシックツインでオーシャンビューを満喫</h3>
                     <p>今回宿泊したのは「クラシックツイン（ミッドフロア）」。白とエメラルドブルーを基調とした爽やかでスタイリッシュなデザインの客室です。ミッドフロアということでオーシャンビューも素晴らしく、プライベートバルコニーから青く澄んだ輝く海を一望できました。</p>
 
                     <img class="manza-img" data-filename="インタコ万座部屋-1.jpg" alt="オーシャンビューの客室">
                     <div class="caption">白とブルーを基調とした爽やかな客室</div>
-
-                    <p>部屋の設備も充実しており、大きな窓からは万座毛の断崖絶壁と美しい海岸線が一望できます。朝は潮騒の音で目覚め、夕方にはバルコニーから美しいサンセットを眺めることができる贅沢な時間を過ごしました。</p>
-
-                    <h2>プライベートビーチで楽しむマリンアクティビティ</h2>
-                    <p>ホテル自慢のプライベートビーチでは、様々なマリンアクティビティが楽しめます。特に印象的だったのは、以下の3つのアクティビティでした。</p>
-
-                    <h3>潜水艦クルーズ：海中散歩の感動体験</h3>
-                    <p>毎日4回運航される潜水艦クルーズ（出航：9:00／10:00／15:00／16:00）は、このホテルならではの特別な体験。実際に海中に潜り、熱帯魚やサンゴ礁を間近で観察できます。船内は快適で、大きな窓から海中の世界をゆっくりと楽しむことができました。</p>
-
-                    <img class="manza-img" data-filename="潜水艦中-1.jpg" alt="潜水艦からの海中の様子">
-                    <div class="caption">潜水艦から見た美しい海中世界</div>
-
-
-                    <h3>ジャングル探検：陸と水の冒険</h3>
-                    <p>沖縄本島の豊かな自然を体感できるジャングル探検も体験しました。トレッキングと水中散策を組み合わせたプログラムで、普段見ることのできない沖縄の自然を満喫できます。</p>
-
-                    <h2>地元食材を活かしたグルメ体験</h2>
 
                     <h3>オーシャンカフェでのアフタヌーンティー</h3>
                     <p>ランチは館内の「オーシャンカフェ」でアフタヌーンティーを楽しみました。営業時間は10:00～22:00（L.O.21:30）。オリジナルのアフタヌーンティーセットがあり、海を眺めながらスイーツや軽食をゆったりいただけます。</p>
@@ -532,28 +627,56 @@ a:hover {
                     <p>沖縄らしい島野菜のお惣菜、ラフテーやタコライス風の一品、トロピカルフルーツのデザートまで“沖縄×インタコ”らしいラインアップ。混雑しやすい時間帯（19時前後）は入店待ちが出ることがあるため、早めの時間に動くとスムーズでした。</p>
 
                     <p>特に印象的だったのは、沖縄らしいトロピカルフルーツを使ったデザートの数々。マンゴー、パッションフルーツ、ドラゴンフルーツなど、本土ではなかなか味わえない新鮮なフルーツの甘さと酸味が絶妙でした。</p>
+                    <img class="manza-img" data-filename="ディナーブッフェ-1.jpg" alt="Aqua Belleのディナーブッフェ">
+                    <div class="caption">Aqua Belle ディナーブッフェ</div>
 
-                    <h3>日本料理レストランでの絶品ディナー</h3>
-                    <p>2日目の夕食は日本料理レストランで、メインは沖縄県産豚の<strong>しゃぶしゃぶ</strong>。さっと湯にくぐらせて、ポン酢や胡麻だれでいただくシンプルなスタイルが、移動や海遊びのあとでも重くなりすぎずちょうど良い満足感。瑞々しい島野菜と合わせて、テラス帰りの身体にやさしい一品でした。</p>
+                    <p>部屋の設備も充実しており、大きな窓からは万座毛の断崖絶壁と美しい海岸線が一望できます。朝は潮騒の音で目覚め、夕方にはバルコニーから美しいサンセットを眺めることができる贅沢な時間を過ごしました。</p>
 
-                    <p>前菜やお造り、小鉢などもバランス良く提供され、素材の持ち味を活かした味付け。動画の流れに合わせて、テーブル上のカット（湯気・つけだれ・野菜盛り）の写真を差し込むと、読者にも臨場感が伝わります。</p>
 
                     <h2>ホテル内施設も充実</h2>
                     <p>マリンアクティビティの合間には、ホテル内の施設も満喫しました。ロビーラウンジは「癒しのロビーラウンジ」という名前の通り、開放的な空間でゆったりとした時間を過ごせます。</p>
 
                     <p>また、ホテル内には複数のレストランやバーがあり、それぞれ異なる雰囲気とメニューを楽しめます。リゾート内を巡回するシャトルもあるため、広い敷地内の移動も楽々です。</p>
 
+                    <h2>2日目：朝食〜アクティビティ＆しゃぶしゃぶ</h2>
                     <h3>朝食は「Aqua Belle（アクアベル）」のブッフェ</h3>
                     <p>動画でも触れた朝食は、ガーデンプールを望む「Aqua Belle」で。島野菜や沖縄そば、トロピカルフルーツなど南国らしいラインアップが並び、テラス席では海風を感じながらゆったりいただけます。軽め派はサラダ＆スムージー、しっかり派は卵料理や和食コーナーで満足度高め。</p>
+                    <img class="manza-img" data-filename="朝食ブッフェ-1.jpg" alt="Aqua Belleの朝食ブッフェ">
+                    <div class="caption">Aqua Belle 朝食ブッフェ</div>
 
-                    <h3>万座毛サンセット＆夜のリゾート散歩</h3>
-                    <p>夕方はホテル前の遊歩道や万座毛方面へ。日没後はガーデンやプールエリアのライトアップがきれいで、動画でも印象的だったブルーアワーの色が建物の白に映えます。三脚があれば低感度でノイズ少なく撮影可能。風が強い日はバルコニーからの固定撮影がおすすめ。</p>
+                    <h3>プライベートビーチで楽しむマリンアクティビティ</h3>
+                    <p>ホテル自慢のプライベートビーチでは、様々なマリンアクティビティが楽しめます。特に印象的だったのは、以下の3つのアクティビティでした。</p>
 
-                    <h3>大浴場・サウナでクールダウン</h3>
-                    <p>アクティビティ後は館内の大浴場とサウナでリラックス。シャワーだけで済ませがちなビーチリゾートですが、しっかり温冷交代浴を挟むと翌日の疲労感が全然違います。タオルは館内でレンタル可、部屋からは軽装でOK。</p>
+                    <h3>潜水艦クルーズ：海中散歩の感動体験</h3>
+                    <p>毎日4回運航される潜水艦クルーズ（出航：9:00／10:00／15:00／16:00）は、このホテルならではの特別な体験。実際に海中に潜り、熱帯魚やサンゴ礁を間近で観察できます。船内は快適で、大きな窓から海中の世界をゆっくりと楽しむことができました。</p>
+
+                    <img class="manza-img" data-filename="潜水艦中-1.jpg" alt="潜水艦からの海中の様子">
+                    <div class="caption">潜水艦から見た美しい海中世界</div>
+
+                    <h3>ジャングル探検：陸と水の冒険</h3>
+                    <p>沖縄本島の豊かな自然を体感できるジャングル探検も体験しました。トレッキングと水中散策を組み合わせたプログラムで、普段見ることのできない沖縄の自然を満喫できます。</p>
+
+                    <h3>日本料理レストランでの絶品ディナー</h3>
+                    <p>2日目の夕食は日本料理レストランで、メインは沖縄県産豚の<strong>しゃぶしゃぶ</strong>。さっと湯にくぐらせて、ポン酢や胡麻だれでいただくシンプルなスタイルが、移動や海遊びのあとでも重くなりすぎずちょうど良い満足感。瑞々しい島野菜と合わせて、テラス帰りの身体にやさしい一品でした。</p>
+
+                    <p>前菜やお造り、小鉢などもバランス良く提供され、素材の持ち味を活かした味付け。動画の流れに合わせて、テーブル上のカット（湯気・つけだれ・野菜盛り）の写真を差し込むと、読者にも臨場感が伝わります。</p>
+                    <img class="manza-img" data-filename="しゃぶしゃぶ-1.jpg" alt="沖縄県産豚のしゃぶしゃぶ">
+                    <div class="caption">しゃぶしゃぶ（沖縄県産豚×島野菜）</div>
 
                     <h3>ビーチプール＆ガーデンプール</h3>
                     <p>海に近いビーチプールは開放感抜群、ガーデンプールはゆったり読書に最適。午前は逆光になりにくいビーチ側、午後は建物がレフ板になって肌がきれいに写るガーデン側と、時間帯で使い分けるのが撮影のコツ。</p>
+                    <img class="manza-img" data-filename="プール-1.jpg" alt="ビーチプールとガーデンプール">
+                    <div class="caption">ビーチプール＆ガーデンプール</div>
+
+                    <h3>万座毛サンセット＆夜のリゾート散歩</h3>
+                    <p>夕方はホテル前の遊歩道や万座毛方面へ。日没後はガーデンやプールエリアのライトアップがきれいで、動画でも印象的だったブルーアワーの色が建物の白に映えます。三脚があれば低感度でノイズ少なく撮影可能。風が強い日はバルコニーからの固定撮影がおすすめ。</p>
+                    <img class="manza-img" data-filename="サンセット-1.jpg" alt="万座毛のサンセット">
+                    <div class="caption">万座毛サンセット</div>
+
+                    <h3>大浴場・サウナでクールダウン</h3>
+                    <p>アクティビティ後は館内の大浴場とサウナでリラックス。シャワーだけで済ませがちなビーチリゾートですが、しっかり温冷交代浴を挟むと翌日の疲労感が全然違います。タオルは館内でレンタル可、部屋からは軽装でOK。</p>
+                    <img class="manza-img" data-filename="サウナ-1.jpg" alt="大浴場とサウナ">
+                    <div class="caption">大浴場・サウナでクールダウン</div>
 
                     <h2>フォトギャラリー（画像差し替え用）</h2>
                     <p>下の各画像は <code>../images/ANAインタコ万座/</code> のファイル名を <code>data-filename</code> に入れるだけで表示されます。</p>
@@ -676,11 +799,27 @@ a:hover {
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <p>© 2025 りゅうきとあかね | Travel Without a Car: Hidden Gems</p>
-            </div>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <h3>Ryuki & Akane</h3>
+          <p>車なし×夫婦旅でめぐる、ホテルと美味しいものの記録。YouTube・Instagramでも発信中。</p>
         </div>
+        <nav class="footer-nav" aria-label="Footer Navigation">
+          <ul>
+            <li><a href="/index.html" title="ホーム"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="/blog.html" title="ブログ"><i class="fas fa-book-open"></i> Blog</a></li>
+            <li><a href="https://www.youtube.com/@ryuki_akane" target="_blank" rel="noopener" title="YouTube"><i class="fab fa-youtube"></i> YouTube</a></li>
+            <li><a href="https://www.instagram.com/akn_523" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="/contact.html" title="お問い合わせ"><i class="far fa-envelope"></i> Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <span class="copyright">© 2025 りゅうきとあかね | Travel Without a Car: Hidden Gems</span>
+          <a href="#" class="to-top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><i class="fas fa-arrow-up"></i> PAGE TOP</a>
+        </div>
+      </div>
     </footer>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"96cf19c41be1d76c","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.7.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
 <script id="manza-image-loader">
@@ -689,6 +828,7 @@ a:hover {
     var fname = img.getAttribute('data-filename');
     if (!fname) return;
     img.setAttribute('loading', 'lazy');
+    // articles/ からみた相対パス前提
     img.src = '../images/ANAインタコ万座/' + fname;
     img.onerror = function() {
       this.onerror = null;

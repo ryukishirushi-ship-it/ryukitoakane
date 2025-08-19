@@ -1,67 +1,4 @@
-<style>
-/* ...existing code... */
-
-/* 記事全体のベースフォント */
-body, .blog-post-content {
-  font-family: 'Noto Sans JP', 'Roboto', 'Arial', sans-serif;
-  font-size: 1.08rem;
-  color: #222;
-  line-height: 1.85;
-  letter-spacing: 0.1px;
-  font-variant-numeric: lining-nums tabular-nums;
-  background: #F2F2EB;
-}
-
-/* タイトル・見出し */
-.blog-post-header h1,
-.blog-post-body h2,
-.blog-post-body h3 {
-  font-family: 'Cormorant Garamond', serif;
-  color: #BF6A39;
-  font-weight: 700;
-  line-height: 1.25;
-  letter-spacing: 1px;
-  margin-bottom: 20px;
-}
-.blog-post-body h3 {
-  color: #0D0D0D;
-  font-size: 1.4rem;
-  margin-top: 30px;
-  margin-bottom: 15px;
-}
-
-/* 本文 */
-.blog-post-body p {
-  font-family: 'Noto Sans JP', 'Roboto', 'Arial', sans-serif;
-  font-size: 1.05rem;
-  color: #444;
-  line-height: 1.85;
-  margin-bottom: 20px;
-  letter-spacing: 0.1px;
-}
-
-/* キャプション・英語・数字 */
-.blog-post-body .caption {
-  font-family: 'Roboto', 'Noto Sans JP', 'Arial', sans-serif;
-  color: #666;
-  font-style: italic;
-  font-size: .95rem;
-  margin-bottom: 20px;
-  letter-spacing: 0.2px;
-}
-
-/* リンク */
-a {
-  color: #BF6A39;
-  text-decoration: none;
-  transition: color .3s;
-}
-a:hover {
-  color: #F2A7A0;
-}
-
-/* ...existing code... */
-</style><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -139,6 +76,10 @@ a:hover {
             justify-content: space-between;
             align-items: center;
         }
+        .header-container { justify-content: space-between; align-items: center; }
+        header nav { display: block; }
+        header nav ul { margin: 0; padding: 0; }
+        header nav ul li { list-style: none; }
 
         .logo {
             font-family: 'Cormorant Garamond', serif;
@@ -411,53 +352,89 @@ a:hover {
             margin-bottom: 10px;
         }
 
-        /* Footer */
+        /* Footer (トップ画面と同等の黒帯デザイン) */
         footer {
             background-color: var(--black);
-            padding: 40px 0;
-            color: white;
-            margin-top: 50px;
+            color: #fff;
+            margin-top: 80px;
         }
-
-        .footer-content {
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 24px;
         }
-
-        .footer-column h4 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
+        .footer-brand h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
             color: var(--beige);
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
             margin-bottom: 10px;
         }
-
-        .footer-column ul li a {
+        .footer-brand p {
             color: #ccc;
-            transition: color 0.3s ease;
+            font-size: .95rem;
+            line-height: 1.7;
         }
-
-        .footer-column ul li a:hover {
-            color: var(--salmon);
+        .footer-nav ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(5, auto);
+            gap: 18px;
+            justify-content: end;
+            align-items: start;
+            padding: 0;
+            margin: 0;
         }
-
+        .footer-nav a {
+            color: #fff;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            opacity: .9;
+        }
+        .footer-nav a:hover {
+            color: var(--beige);
+            opacity: 1;
+        }
         .footer-bottom {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
+            border-top: 1px solid rgba(255,255,255,.12);
+            padding: 14px 20px 22px;
         }
-
-        .footer-bottom p {
-            font-size: 0.9rem;
-            color: #999;
+        .footer-bottom .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .copyright {
+            color: #bbb;
+            font-size: .85rem;
+        }
+        .to-top {
+            color: #fff;
+            text-decoration: none;
+            font-size: .9rem;
+            opacity: .85;
+        }
+        .to-top:hover { color: var(--beige); opacity: 1; }
+        @media (max-width: 768px) {
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 18px;
+                padding: 30px 20px;
+            }
+            .footer-nav ul {
+                grid-template-columns: repeat(5, minmax(0, auto));
+                justify-content: start;
+            }
+            .footer-bottom .container {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
         }
 
         /* Responsive Design */
@@ -503,23 +480,18 @@ a:hover {
 <body>
     <!-- Header -->
     <header>
-    <div class="container header-container">
+      <div class="container header-container">
         <h1 class="logo">Ryuki<span> & </span>Akane</h1>
-        <nav id="mainNav">
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul id="navMenu">
-                <li><a href="/index.html" title="ホーム"><i class="fas fa-home"></i></a></li>
-                <li><a href="/blog.html" title="ブログ"><i class="fas fa-book-open"></i></a></li>
-                <li><a href="https://www.youtube.com/@ryuki_akane" target="_blank" rel="noopener" title="Youtube"><i class="fab fa-youtube"></i></a></li>
-                <li><a href="https://www.instagram.com/akn_523" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="/contact.html" title="お問い合わせ"><i class="far fa-envelope"></i></a></li>
-            </ul>
+        <nav>
+          <ul style="display:flex;gap:22px;list-style:none;">
+            <li><a href="/index.html" title="ホーム"><i class="fas fa-home"></i></a></li>
+            <li><a href="/blog.html" title="ブログ"><i class="fas fa-book-open"></i></a></li>
+            <li><a href="https://www.youtube.com/@ryuki_akane" target="_blank" rel="noopener" title="YouTube"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="https://www.instagram.com/akn_523" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="/contact.html" title="お問い合わせ"><i class="far fa-envelope"></i></a></li>
+          </ul>
         </nav>
-    </div>
+      </div>
     </header>
 
     <!-- Blog Post Section -->
@@ -802,73 +774,30 @@ a:hover {
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h4>ブログカテゴリー</h4>
-                    <ul>
-                        <li><a href="#">沖縄旅行</a></li>
-                        <li><a href="#">温泉旅館</a></li>
-                        <li><a href="#">ラグジュアリーホテル</a></li>
-                        <li><a href="#">グルメ</a></li>
-                        <li><a href="#">おすすめスポット</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>人気の記事</h4>
-                    <ul>
-                        <li><a href="#">OMO5沖縄那覇滞在記</a></li>
-                        <li><a href="#">車なしで行く那覇グルメ</a></li>
-                        <li><a href="#">沖縄万座ビーチリゾート</a></li>
-                        <li><a href="#">宮古島イラフSUI滞在記</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>リンク</h4>
-                    <ul>
-                        <li><a href="#home">ホーム</a></li>
-                        <li><a href="#blog">ブログ</a></li>
-                        <li><a href="#youtube">Youtube</a></li>
-                        <li><a href="#instagram">Instagram</a></li>
-                        <li><a href="#contact">お問い合わせ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>フォロー</h4>
-                    <ul>
-                        <li><a href="https://www.youtube.com/@ryuki_akane" target="_blank">Youtube</a></li>
-                        <li><a href="https://www.instagram.com/akn_523" target="_blank">Instagram</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2025 りゅうきとあかね | Travel Without a Car:Hidden Gems</p>
-            </div>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <h3>Ryuki & Akane</h3>
+          <p>車なし×夫婦旅でめぐる、ホテルと美味しいものの記録。YouTube・Instagramでも発信中。</p>
         </div>
+        <nav class="footer-nav" aria-label="Footer Navigation">
+          <ul>
+            <li><a href="/index.html" title="ホーム"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="/blog.html" title="ブログ"><i class="fas fa-book-open"></i> Blog</a></li>
+            <li><a href="https://www.youtube.com/@ryuki_akane" target="_blank" rel="noopener" title="YouTube"><i class="fab fa-youtube"></i> YouTube</a></li>
+            <li><a href="https://www.instagram.com/akn_523" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="/contact.html" title="お問い合わせ"><i class="far fa-envelope"></i> Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <span class="copyright">© 2025 りゅうきとあかね | Travel Without a Car: Hidden Gems</span>
+          <a href="#" class="to-top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><i class="fas fa-arrow-up"></i> PAGE TOP</a>
+        </div>
+      </div>
     </footer>
 
-    <!-- タグクリック機能 -->
-    <script src="../js/article-tags.js"></script>
-    <!-- 記事共通機能 -->
-    <script src="../js/article-common.js"></script>
-    
-    <script id="html_badge_script1">
-        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
-            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDlq4npYucvBEuh76q%2BKYQqNFuTDg76audBDEPTIhKtDKuORqJx3Tp20Li3an%2BBXAUkPrJmOgYf7UqRO8glPgOZOdsSlKk6ZKbgapRj8lENb1s8RlF%2F2f5WwLVMWyQXpqIx8oBAaGM1oCf2h3OoxUjX6pqmEX%2FpUDF1TkOlmWSB6MLh0w7KB%2B45tapNYuCBYDP%2Fq5zmtXCf9dpBrPZImgEY90TbZpDSO1HHORjGZE%2BrfQRXz2dBopCSl7z%2F%2FWM7Wpwiwv4jwzPAYjPPxYTEa5qTXGauJqle4aIrgjyEQ%2F38HrjC1kTF7behtYNHvj4UXDXDuupZ1i83xirl6iBfIIRmYYK%2B6fW1nykGQeuNJe%2BRC3sifg2BtgYhglQB8qs9hBQ%2BJQNOKxbw9ohtrT2H%2F0aVTVl%2BRqdcaCFMu5QUjp5XKr4XrYBEwaHPH0OmHrWbMT49TYRopE%2BZgmamsisy9f8y0fvlIMsj2IBJp%2BCX9rAdeL3Bbj8NY61pL5%2BB7MKLvCzPm%2FF2Iq4Ckj2xyzYrHHRGg%3D";
-        window.__genspark_locale = "ja-JP";
-    </script>
-    
-    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
-
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
-  var hamburger = document.getElementById('hamburger');
-  var navMenu = document.getElementById('navMenu');
-  hamburger.addEventListener('click', function() {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('show');
-  });
-});
-</script>
+</body>
+</html>
 </body>
 </html>
